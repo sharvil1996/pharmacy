@@ -1,26 +1,24 @@
 package DrRAJ.Controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DrRAJ.Bean.AdminBean;
-import DrRAJ.DAO.AdminDAO;
+import DrRAJ.DAO.BookDAO;
+import DrRAJ.DAO.StoreDetailsDAO;
 
-public class AdminListServlet extends HttpServlet {
+@SuppressWarnings("serial")
+public class StoreDetailsDeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ArrayList<AdminBean> list = new AdminDAO().select();
-		if (list != null) {
-			request.setAttribute("adminList", list);
-			request.getRequestDispatcher("AdminList.jsp").forward(request, response);
+		String storeId = request.getParameter("storeId");
+		if (new StoreDetailsDAO().delete(storeId)) {
+			response.sendRedirect("StoreDetailsListServlet");
+		} else {
+			response.sendRedirect("StoreDetailsListServlet");
 		}
-		else
-			request.getRequestDispatcher("AdminList.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

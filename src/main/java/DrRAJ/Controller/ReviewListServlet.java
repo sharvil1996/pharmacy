@@ -8,23 +8,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DrRAJ.Bean.AdminBean;
-import DrRAJ.DAO.AdminDAO;
+import DrRAJ.Bean.ReviewBean;
+import DrRAJ.DAO.ReviewDAO;
 
-public class AdminListServlet extends HttpServlet {
+public class ReviewListServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ArrayList<AdminBean> list = new AdminDAO().select();
+		ArrayList<ReviewBean> list = (ArrayList<ReviewBean>) new ReviewDAO().getList();
+		System.out.println(list.size());
 		if (list != null) {
-			request.setAttribute("adminList", list);
-			request.getRequestDispatcher("AdminList.jsp").forward(request, response);
+			request.setAttribute("reviewList", list);
+			request.getRequestDispatcher("ReviewList.jsp").forward(request, response);
 		}
-		else
-			request.getRequestDispatcher("AdminList.jsp").forward(request, response);
+
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
