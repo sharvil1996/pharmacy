@@ -696,7 +696,7 @@
 		<servlet-name>BookTypeEditServlet</servlet-name>
 		<url-pattern>/BookTypeEditServlet</url-pattern>
 	</servlet-mapping>
-	<servlet>
+	<!-- <servlet>
 		<description></description>
 		<display-name>BookKeywordInsert</display-name>
 		<servlet-name>BookKeywordInsert</servlet-name>
@@ -705,7 +705,7 @@
 	<servlet-mapping>
 		<servlet-name>BookKeywordInsert</servlet-name>
 		<url-pattern>/BookKeywordInsert</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	<servlet>
 		<description></description>
 		<display-name>BookKeywordInsertServlet</display-name>
@@ -846,7 +846,6 @@
 		<servlet-name>PressInfoInsertServlet</servlet-name>
 		<url-pattern>/PressInfoInsertServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>PressInfoEditServlet</display-name>
@@ -857,7 +856,6 @@
 		<servlet-name>PressInfoEditServlet</servlet-name>
 		<url-pattern>/PressInfoEditServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>PressInfoListServlet</display-name>
@@ -868,7 +866,6 @@
 		<servlet-name>PressInfoListServlet</servlet-name>
 		<url-pattern>/PressInfoListServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>PressInfoUpdateServlet</display-name>
@@ -879,7 +876,6 @@
 		<servlet-name>PressInfoUpdateServlet</servlet-name>
 		<url-pattern>/PressInfoUpdateServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>PressInfoDeleteServlet</display-name>
@@ -890,7 +886,6 @@
 		<servlet-name>PressInfoDeleteServlet</servlet-name>
 		<url-pattern>/PressInfoDeleteServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>StoreDetailsInsertServlet</display-name>
@@ -901,7 +896,6 @@
 		<servlet-name>StoreDetailsInsertServlet</servlet-name>
 		<url-pattern>/StoreDetailsInsertServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>StoreDetailsEditServlet</display-name>
@@ -912,7 +906,6 @@
 		<servlet-name>StoreDetailsEditServlet</servlet-name>
 		<url-pattern>/StoreDetailsEditServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>StoreDetailsListServlet</display-name>
@@ -923,7 +916,6 @@
 		<servlet-name>StoreDetailsListServlet</servlet-name>
 		<url-pattern>/StoreDetailsListServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>StoreDetailsDeleteServlet</display-name>
@@ -934,7 +926,6 @@
 		<servlet-name>StoreDetailsDeleteServlet</servlet-name>
 		<url-pattern>/StoreDetailsDeleteServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<description></description>
 		<display-name>StoreDetailsUpdateServlet</display-name>
@@ -944,5 +935,255 @@
 	<servlet-mapping>
 		<servlet-name>StoreDetailsUpdateServlet</servlet-name>
 		<url-pattern>/StoreDetailsUpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductDosageInsertServlet</display-name>
+		<servlet-name>ProductDosageInsertServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductDosageInsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductDosageInsertServlet</servlet-name>
+		<url-pattern>/ProductDosageInsertServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductDosageListServlet</display-name>
+		<servlet-name>ProductDosageListServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductDosageListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductDosageListServlet</servlet-name>
+		<url-pattern>/ProductDosageListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductDosageEditServlet</display-name>
+		<servlet-name>ProductDosageEditServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductDosageEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductDosageEditServlet</servlet-name>
+		<url-pattern>/ProductDosageEditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductDosageUpdateServlet</display-name>
+		<servlet-name>ProductDosageUpdateServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductDosageUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductDosageUpdateServlet</servlet-name>
+		<url-pattern>/ProductDosageUpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductDosageDeleteServlet</display-name>
+		<servlet-name>ProductDosageDeleteServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductDosageDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductDosageDeleteServlet</servlet-name>
+		<url-pattern>/ProductDosageDeleteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ReletedProductInsertServlet</display-name>
+		<servlet-name>ReletedProductInsertServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ReletedProductInsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReletedProductInsertServlet</servlet-name>
+		<url-pattern>/ReletedProductInsertServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ReletedProductDeleteServlet</display-name>
+		<servlet-name>ReletedProductDeleteServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ReletedProductDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReletedProductDeleteServlet</servlet-name>
+		<url-pattern>/ReletedProductDeleteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ReletedProductEditServlet</display-name>
+		<servlet-name>ReletedProductEditServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ReletedProductEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReletedProductEditServlet</servlet-name>
+		<url-pattern>/ReletedProductEditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ReletedProductListServlet</display-name>
+		<servlet-name>ReletedProductListServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ReletedProductListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReletedProductListServlet</servlet-name>
+		<url-pattern>/ReletedProductListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ReletedProductUpdateServlet</display-name>
+		<servlet-name>ReletedProductUpdateServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ReletedProductUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReletedProductUpdateServlet</servlet-name>
+		<url-pattern>/ReletedProductUpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductCompositionInsertServlet</display-name>
+		<servlet-name>ProductCompositionInsertServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductCompositionInsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductCompositionInsertServlet</servlet-name>
+		<url-pattern>/ProductCompositionInsertServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductCompositionListServlet</display-name>
+		<servlet-name>ProductCompositionListServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductCompositionListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductCompositionListServlet</servlet-name>
+		<url-pattern>/ProductCompositionListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductCompositionEditServlet</display-name>
+		<servlet-name>ProductCompositionEditServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductCompositionEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductCompositionEditServlet</servlet-name>
+		<url-pattern>/ProductCompositionEditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductCompositionUpdateServlet</display-name>
+		<servlet-name>ProductCompositionUpdateServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductCompositionUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductCompositionUpdateServlet</servlet-name>
+		<url-pattern>/ProductCompositionUpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductCompositionDeleteServlet</display-name>
+		<servlet-name>ProductCompositionDeleteServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductCompositionDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductCompositionDeleteServlet</servlet-name>
+		<url-pattern>/ProductCompositionDeleteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductIndicationInsertServlet</display-name>
+		<servlet-name>ProductIndicationInsertServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductIndicationInsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductIndicationInsertServlet</servlet-name>
+		<url-pattern>/ProductIndicationInsertServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductIndicationEditServlet</display-name>
+		<servlet-name>ProductIndicationEditServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductIndicationEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductIndicationEditServlet</servlet-name>
+		<url-pattern>/ProductIndicationEditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductIndicationListServlet</display-name>
+		<servlet-name>ProductIndicationListServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductIndicationListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductIndicationListServlet</servlet-name>
+		<url-pattern>/ProductIndicationListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductIndicationDeleteServlet</display-name>
+		<servlet-name>ProductIndicationDeleteServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductIndicationDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductIndicationDeleteServlet</servlet-name>
+		<url-pattern>/ProductIndicationDeleteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ProductIndicationUpdateServlet</display-name>
+		<servlet-name>ProductIndicationUpdateServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.ProductIndicationUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductIndicationUpdateServlet</servlet-name>
+		<url-pattern>/ProductIndicationUpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>PriceInsertSevlet</display-name>
+		<servlet-name>PriceInsertSevlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.PriceInsertSevlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PriceInsertSevlet</servlet-name>
+		<url-pattern>/PriceInsertSevlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>PriceListServlet</display-name>
+		<servlet-name>PriceListServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.PriceListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PriceListServlet</servlet-name>
+		<url-pattern>/PriceListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>PriceEditServlet</display-name>
+		<servlet-name>PriceEditServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.PriceEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PriceEditServlet</servlet-name>
+		<url-pattern>/PriceEditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>PriceDeleteServlet</display-name>
+		<servlet-name>PriceDeleteServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.PriceDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PriceDeleteServlet</servlet-name>
+		<url-pattern>/PriceDeleteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>PriceUpdateServlet</display-name>
+		<servlet-name>PriceUpdateServlet</servlet-name>
+		<servlet-class>DrRAJ.Controller.PriceUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PriceUpdateServlet</servlet-name>
+		<url-pattern>/PriceUpdateServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

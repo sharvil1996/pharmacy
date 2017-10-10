@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import DrRAJ.Bean.ProductBean;
@@ -251,5 +252,54 @@ public class ProductDAO {
 
 		return false;
 	}
+
+	public HashMap<String, ProductBean> getListHashmap() {
+		HashMap<String, ProductBean> listOfProduct = new HashMap<String, ProductBean>();
+		connection = DBConnection.getConnection();
+
+		if (connection != null) {
+			String selectSQL = "Select * from product p,remedies r,productcategory pc WHERE p.remediesId=r.remediesId and pc.productCategoryId=p.productCategoryId";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+
+				rs = pstmt.executeQuery();
+
+				ProductBean product = null;
+				while (rs.next()) {
+					product = new ProductBean();
+
+					product.setProductId(rs.getString("productId"));
+					product.setDescription(rs.getString("description"));
+					product.setImageLink(rs.getString("imageLink"));
+					product.setContraIndication(rs.getString("contraIndication"));
+					product.setForwardLink(rs.getString("forwardLink"));
+					product.setProductCategoryId(rs.getString("productCategoryId"));
+					product.setProductId(rs.getString("productId"));
+					product.setProductName(rs.getString("productName"));
+					product.setPurpose(rs.getString("purpose"));
+					product.setRemediesId(rs.getString("remediesId"));
+					product.setRemediesName(rs.getString("name"));
+					product.setProductCategoryName(rs.getString("productCategoryName"));
+					product.setSideEffect(rs.getString("sideEffect"));
+					product.setInteraction(rs.getString("interaction"));
+					listOfProduct.put(product.getProductId(),product);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		return listOfProduct;
+
+	}
+
 
 }

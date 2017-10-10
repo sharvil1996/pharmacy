@@ -24,11 +24,11 @@
 <link rel="icon" href="photos/daiict.png" />
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
-	<%-- <%
+	<%
 		AdminBean adminBeanHeader = (AdminBean) session.getAttribute("adminBean");
 
 		if (adminBeanHeader != null) {
-	%> --%>
+	%>
 	<div class="wrapper">
 		<header class="main-header">
 			<a href="AdminDashBoard.jsp" class="logo"> <span
@@ -42,14 +42,14 @@
 					<ul class="nav navbar-nav">
 						<li class="dropdown user user-menu"><a href="#"
 							class="dropdown-toggle" data-toggle="dropdown"> <i
-								class="fa-user fa"></i> <%-- <%=adminBeanHeader.getEmailId()%> --%> <b
+								class="fa-user fa"></i> <%=adminBeanHeader.getEmailId()%> <b
 								class="caret"></b>
 						</a>
 							<ul class="dropdown-menu" style="border-color: black;">
 								<li class="user-header"><img src="photos/daiict_main.png"
 									class="img-circle" alt="User Image">
 									<p>
-										<%-- <%=adminBeanHeader.getEmailId()%> --%></p></li>
+										<%=adminBeanHeader.getFirstName() + " " + adminBeanHeader.getLastName()%></p></li>
 								<li class="user-footer">
 									<div class="pull-left">
 										<a href="ChangePassword.jsp" class="btn btn-default btn-flat">Change
@@ -76,7 +76,7 @@
 					<div class="pull-left info">
 						<p>
 							&emsp;
-							<%-- <%=adminBeanHeader.getFirstName()%> --%>
+							 <%=adminBeanHeader.getFirstName()%> 
 						</p>
 						<a href=""><i class="fa fa-circle text-success"></i> Online</a>
 					</div>
@@ -287,7 +287,7 @@
 									class="fa fa-gg"></i> Feedback Counter List</a></li>
 						</ul></li> -->
 
-					<li class=" treeview"><a href="CustomerReviewListServlet">
+					<li class=" treeview"><a href="ReviewListServlet">
 							<i class="fa fa-comment"></i> <span>Customer Review</span>
 					</a></li>
 
@@ -338,13 +338,13 @@
 		</script>
 
 	</div>
-	<%-- <%
+	<%
 		} else {
 
 			request.setAttribute("msgLogin", "Please Login To Continue");
 			response.sendRedirect("login.jsp");
 
 		}
-	%> --%>
+	%>
 </body>
 </html>

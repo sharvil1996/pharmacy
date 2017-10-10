@@ -45,23 +45,25 @@
 						</div>
 					</div>
 					<br />
-
-
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Enter
 								Image Link :</font>
 						</label>
 
 						<div class="col-lg-6">
-							<input class="form-control" type="text" value="${txtPhotoLink}"
-								name="txtPhotoLink" />${photoLink}
+							<input class="form-control imagetester" type="text" value="${txtPhotoLink}"
+								name="txtPhotoLink" target=".imagetarget"/>${photoLink}
+						</div>
+						<div class="col-md-3">
+							<img src="" alt="Image not found" class="imagetarget"
+								style="max-height: 200px; max-width: 200px;" />
 						</div>
 					</div>
 					<br />
 
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Enter Product
-								Forward Link :</font>
+						<label class="col-sm-2"> <font size="+1">Enter
+								Product Forward Link :</font>
 						</label>
 
 						<div class="col-lg-6">
@@ -167,8 +169,8 @@
 						</label>
 						<div class="col-lg-6">
 							<select name="selProductCategoryName" class="form-control">
-								<option value="0" selected="selected">Select
-									Product Category</option>
+								<option value="0" selected="selected">Select Product
+									Category</option>
 								<%
 									List<ProductCategoryBean> productCategoryList = new ProductCategoryDAO().getList();
 									for (int i = 0; i < productCategoryList.size(); i++) {
@@ -205,4 +207,14 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+$("body").on("change leave input",".imagetester",function(){
+	var target=$($(this).attr("target"));
+	target.attr("src",$(this).val());
+});
+var link=$(".imagetester").val();
+if(link!=""){
+	$(".imagetarget").attr("src",link);
+}
+</script>
 </html>
