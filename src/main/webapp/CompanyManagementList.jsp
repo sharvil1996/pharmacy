@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CompanyManagement | CompanyManagement List</title>
+<title>Company Management | CompanyManagement List</title>
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
@@ -25,16 +25,16 @@ td, tr, th {
 	<div style="margin-top: -850px; margin-left: 250px;">
 		<section class="content content-header">
 		<h1>
-			Admin <small>List</small>
+			Company Management <small>List</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="adminDashBoard.jsp"><i class="fa fa-dashboard"></i>
+			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
-			<li class="active">Admin</li>
+			<li class="active">Company Management</li>
 		</ol>
 		<br>
 		<br>
-		<a href="adminInsert.jsp"><input type="button" value="ADD"
+		<a href="CompanyManagementInsert.jsp"><input type="button" value="ADD"
 			name="ADD" class="btn btn-primary"></a> <br>
 		<br>
 		<div class="row">

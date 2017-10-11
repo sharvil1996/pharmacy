@@ -51,8 +51,9 @@
 						</label>
 
 						<div class="col-lg-6">
-							<input class="form-control imagetester" type="text" value="${txtPhotoLink}"
-								name="txtPhotoLink" target=".imagetarget"/>${photoLink}
+							<input class="form-control imagetester" type="text"
+								value="${txtPhotoLink}" name="txtPhotoLink"
+								target=".imagetarget" />${photoLink}
 						</div>
 						<div class="col-md-3">
 							<img src="" alt="Image not found" class="imagetarget"
@@ -118,6 +119,18 @@
 						<div class="col-lg-6">
 							<input class="form-control" type="text" value="${txtPurpose}"
 								name="txtPurpose" />${purpose}
+						</div>
+					</div>
+					<br />
+
+					<div class="row">
+						<label class="col-sm-2"> <font size="+1">Enter
+								Product URL :</font>
+						</label>
+
+						<div class="col-lg-6">
+							<input class="form-control" type="text" value="${txtProductURL}"
+								name="txtProductURL" />${productURL}
 						</div>
 					</div>
 					<br />
@@ -208,13 +221,13 @@
 	</div>
 </body>
 <script type="text/javascript">
-$("body").on("change leave input",".imagetester",function(){
-	var target=$($(this).attr("target"));
-	target.attr("src",$(this).val());
-});
-var link=$(".imagetester").val();
-if(link!=""){
-	$(".imagetarget").attr("src",link);
-}
+	$("body").on("change leave input", ".imagetester", function() {
+		var target = $($(this).attr("target"));
+		target.attr("src", $(this).val());
+	});
+	var link = $(".imagetester").val();
+	if (link != "") {
+		$(".imagetarget").attr("src", link);
+	}
 </script>
 </html>

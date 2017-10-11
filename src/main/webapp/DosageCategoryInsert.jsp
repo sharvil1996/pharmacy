@@ -19,7 +19,7 @@
 			Dosage Category <small>Insert</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="adminDashBoard.jsp"><i class="fa fa-dashboard"></i>
+			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
 			<li class="active">Admin</li>
 		</ol>

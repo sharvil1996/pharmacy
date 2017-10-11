@@ -28,13 +28,13 @@ td, tr, th {
 			State <small>List</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="adminDashBoard.jsp"><i class="fa fa-dashboard"></i>
+			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
 			<li class="active">State</li>
 		</ol>
 		<br>
 		<br>
-		<a href="adminInsert.jsp"><input type="button" value="ADD"
+		<a href="StateInsert.jsp"><input type="button" value="ADD"
 			name="ADD" class="btn btn-primary"></a> <br>
 		<br>
 		<div class="row">

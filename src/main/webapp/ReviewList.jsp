@@ -34,8 +34,8 @@ td, tr, th {
 		</ol>
 		<br>
 		<br>
-		<a href="adminInsert.jsp"><input type="button" value="ADD"
-			name="ADD" class="btn btn-primary"></a> <br>
+		<!-- <a href="adminInsert.jsp"><input type="button" value="ADD"
+			name="ADD" class="btn btn-primary"></a> --> <br>
 		<br>
 		<div class="row">
 			<div class="col-xs-12">
@@ -71,10 +71,10 @@ td, tr, th {
 									<td><%=review.getRating()%></td>
 									<td><textarea rows="2" cols="20" disabled="disabled"><%=review.getDescription()%></textarea></td>
 									<td><%=review.getIsValid()%></td>
-									<td><a
+									<td><%-- <a
 										href="ReviewEditServlet?reviewId=<%=review.getReviewId()%>"><img
 											src="photos/edit.ico" height="30" width="30"
-											class="img-rounded" /></a>&nbsp;&nbsp;<a
+											class="img-rounded" /></a>&nbsp;&nbsp; --%><a
 										href="ReviewDeleteServlet?reviewId=<%=review.getReviewId()%>"><img
 											src="photos/Recycle Bin.ico" height="30" width="30"
 											class="img-rounded" /></a></td>

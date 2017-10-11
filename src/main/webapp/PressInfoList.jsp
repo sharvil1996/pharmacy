@@ -27,12 +27,12 @@ td, tr, th {
 	<div style="margin-top: -850px; margin-left: 250px;">
 		<section class="content content-header">
 		<h1>
-			PressInfo <small>List</small>
+			Press Info <small>List</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="adminDashBoard.jsp"><i class="fa fa-dashboard"></i>
+			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
-			<li class="active">Admin</li>
+			<li class="active">Press Info</li>
 		</ol>
 		<br>
 		<br>

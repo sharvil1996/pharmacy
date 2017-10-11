@@ -15,6 +15,15 @@ public class ProductBean {
 	private String remediesName;
 	private String productCategoryId;
 	private String productCategoryName;
+	private String productURL;
+
+	public String getProductURL() {
+		return productURL;
+	}
+
+	public void setProductURL(String productURL) {
+		this.productURL = productURL;
+	}
 
 	public String getProductId() {
 		return productId;

@@ -35,6 +35,9 @@ td, tr, th {
 		</ol>
 		<br>
 		<br>
+		<a href="ProductIndicationInsert.jsp"><input type="button" value="ADD"
+			name="ADD" class="btn btn-primary"></a> <br>
+		<br>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="box">

@@ -16,10 +16,10 @@
 	<div style="margin-top: -850px; margin-left: 250px;">
 		<section class="content-header">
 		<h1>
-			Admin <small>Insert</small>
+			Testimonial <small>Insert</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="adminDashBoard.jsp"><i class="fa fa-dashboard"></i>
+			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
 			<li class="active">Admin</li>
 		</ol>
@@ -48,7 +48,13 @@
 						</label>
 
 						<div class="col-lg-6">
-							<input class="form-control"  type="text" value="${txtPhotoLink}" name="txtPhotoLink" />${photoLink}
+							<input class="form-control imagetester" type="text"
+								value="${txtPhotoLink}" name="txtPhotoLink"
+								target=".imagetarget" />${photoLink}
+						</div>
+						<div class="col-md-3">
+							<img src="" alt="Image not found" class="imagetarget"
+								style="max-height: 200px; max-width: 200px;" />
 						</div>
 					</div>
 					<br />
@@ -73,4 +79,14 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$("body").on("change leave input", ".imagetester", function() {
+		var target = $($(this).attr("target"));
+		target.attr("src", $(this).val());
+	});
+	var link = $(".imagetester").val();
+	if (link != "") {
+		$(".imagetarget").attr("src", link);
+	}
+</script>
 </html>

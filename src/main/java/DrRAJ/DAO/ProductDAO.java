@@ -22,7 +22,7 @@ public class ProductDAO {
 		if (connection != null) {
 			String insertSQL = "INSERT INTO product(productId, productName, imageLink, forwardLink, "
 					+ "interaction, sideEffect, contraIndication, purpose, "
-					+ "description, remediesId, productCategoryId) " + "values (?,?,?,?,?,?,?,?,?,?,?)";
+					+ "description, remediesId, productURL,productCategoryId) " + "values (?,?,?,?,?,?,?,?,?,?,?,?)";
 			try {
 				connection.setAutoCommit(false);
 				pstmt = connection.prepareStatement(insertSQL);
@@ -36,7 +36,8 @@ public class ProductDAO {
 				pstmt.setString(8, productBean.getPurpose());
 				pstmt.setString(9, productBean.getDescription());
 				pstmt.setString(10, productBean.getRemediesId());
-				pstmt.setString(11, productBean.getProductCategoryId());
+				pstmt.setString(11, productBean.getProductURL());
+				pstmt.setString(12, productBean.getProductCategoryId());
 				int rowsAffected = pstmt.executeUpdate();
 				if (rowsAffected > 0) {
 					result = true;
@@ -120,6 +121,7 @@ public class ProductDAO {
 					product.setProductCategoryName(rs.getString("productCategoryName"));
 					product.setSideEffect(rs.getString("sideEffect"));
 					product.setInteraction(rs.getString("interaction"));
+					product.setProductURL(rs.getString("productURL"));
 					listOfProduct.add(product);
 				}
 
@@ -169,6 +171,7 @@ public class ProductDAO {
 					product.setProductCategoryName(rs.getString("productCategoryName"));
 					product.setSideEffect(rs.getString("sideEffect"));
 					product.setInteraction(rs.getString("interaction"));
+					product.setProductURL(rs.getString("productURL"));
 				}
 
 			} catch (SQLException e) {
@@ -190,10 +193,10 @@ public class ProductDAO {
 		if (connection != null) {
 			String updateSQL = "UPDATE product set productName=?, imageLink=?, forwardLink=?, "
 					+ "interaction=?, sideEffect=?, contraIndication=?, purpose=?, "
-					+ "description=?, remediesId=?, productCategoryId=? where productId=?";
+					+ "description=?, remediesId=?, productCategoryId=?, productURL=? where productId=?";
 			try {
 				pstmt = connection.prepareStatement(updateSQL);
-				pstmt.setString(11, productBean.getProductId());
+				pstmt.setString(12, productBean.getProductId());
 				pstmt.setString(1, productBean.getProductName());
 				pstmt.setString(2, productBean.getImageLink());
 				pstmt.setString(3, productBean.getForwardLink());
@@ -204,6 +207,7 @@ public class ProductDAO {
 				pstmt.setString(8, productBean.getDescription());
 				pstmt.setString(9, productBean.getRemediesId());
 				pstmt.setString(10, productBean.getProductCategoryId());
+				pstmt.setString(11, productBean.getProductURL());
 				int rowsAffected = pstmt.executeUpdate();
 				if (rowsAffected > 0) {
 					result = true;
@@ -282,6 +286,7 @@ public class ProductDAO {
 					product.setProductCategoryName(rs.getString("productCategoryName"));
 					product.setSideEffect(rs.getString("sideEffect"));
 					product.setInteraction(rs.getString("interaction"));
+					product.setProductURL(rs.getString("productURL"));
 					listOfProduct.put(product.getProductId(),product);
 				}
 

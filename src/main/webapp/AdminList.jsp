@@ -28,14 +28,14 @@ td, tr, th {
 			Admin <small>List</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="adminDashBoard.jsp"><i class="fa fa-dashboard"></i>
+			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
 			<li class="active">Admin</li>
 		</ol>
 		<br>
 		<br>
-		<a href="adminInsert.jsp"><input type="button" value="ADD"
-			name="ADD" class="btn btn-primary"></a> <br>
+		<!-- <a href="adminInsert.jsp"><input type="button" value="ADD"
+			name="ADD" class="btn btn-primary"></a> <br> -->
 		<br>
 		<div class="row">
 			<div class="col-xs-12">
@@ -52,7 +52,7 @@ td, tr, th {
 									<th><center>First Name</center></th>
 									<th><center>Last Name</center></th>
 									<th><center>Email Id</center></th>
-									<th><center>Action</center></th>
+									<!-- <th><center>Action</center></th> -->
 								</tr>
 							</thead>
 							<tbody>
@@ -63,10 +63,10 @@ td, tr, th {
 									<td><%=bean.getFirstName()%></td>
 									<td><%=bean.getLastName()%></td>
 									<td><%=bean.getEmailId()%></td>
-									<td><a
+									<%-- <td><a
 										href="AdminDeleteServlet?adminId=<%=bean.getAdminId()%>"><img
 											src="photos/Recycle Bin.ico" height="30" width="30"
-											class="img-rounded" /></a> <%-- <a
+											class="img-rounded" /></a> <a
 										href="AdminEditServlet?adminId=<%=bean.getAdminId()%>">Update</a> --%>
 								</tr>
 								<%

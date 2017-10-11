@@ -139,14 +139,25 @@
 						</div>
 					</div>
 					<br />
+					<div class="row">
+						<label class="col-sm-2"> <font size="+1">Enter
+								Product URL :</font>
+						</label>
+
+						<div class="col-lg-6">
+							<input class="form-control" type="text"
+								value="<%=productBean.getProductURL()%>" name="txtProductURL" />${productURL}
+						</div>
+					</div>
+					<br />
+
 
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Select
 								Remedies</font>
 						</label>
 						<div class="col-lg-6">
-							<select name="selRemedies" id="selRemedies"
-								class="form-control">
+							<select name="selRemedies" id="selRemedies" class="form-control">
 								<option value="0" selected="selected">Select Remedies</option>
 								<%
 									List<RemediesBean> remediesList = new RemediesDAO().getList();

@@ -19,7 +19,7 @@
 			Admin <small>Insert</small>
 		</h1>
 		<ol class="breadcrumb">
-			<li><a href="adminDashBoard.jsp"><i class="fa fa-dashboard"></i>
+			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
 			<li class="active">Admin</li>
 		</ol>
@@ -60,8 +60,13 @@
 						</label>
 
 						<div class="col-lg-6">
-							<input class="form-control" type="text"
-								value="${txtIngredientPhotoLink}" name="txtIngredientPhotoLink" />${ingredientPhotoLink}
+							<input class="form-control imagetester" type="text"
+								value="${txtIngredientPhotoLink}" name="txtIngredientPhotoLink"
+								target=".imagetarget" />${ingredientPhotoLink}
+						</div>
+						<div class="col-md-3">
+							<img src="" alt="Image not found" class="imagetarget"
+								style="max-height: 200px; max-width: 200px;" />
 						</div>
 					</div>
 					<br />
@@ -99,58 +104,14 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$("body").on("change leave input", ".imagetester", function() {
+		var target = $($(this).attr("target"));
+		target.attr("src", $(this).val());
+	});
+	var link = $(".imagetester").val();
+	if (link != "") {
+		$(".imagetarget").attr("src", link);
+	}
+</script>
 </html>
-
-
-
-
-
-
-
-
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<form action="IngredientInsertServlet">
-		<table>
-			<tr>
-				<td>Enter Ingredient Title</td>
-				<td><input type="text" name="txtIngredientTitle"
-					value="${txtIngredientTitle}">${ingredientTitle}</td>
-			</tr>
-			<tr>
-				<td>Enter Ingredient SubTitle</td>
-				<td><input type="text" name="txtIngredientSubTitle"
-					value="${txtIngredientSubTitle}">${ingredientSubTitle}</td>
-			</tr>
-			<tr>
-				<td>Enter Ingredient Description</td>
-				<td><input type="text" name="txtIngredientDescription"
-					value="${txtIngredientDescription}">${ingredientDescription}</td>
-			</tr>
-			<tr>
-				<td>Enter Ingredient PhotoLink</td>
-				<td><input type="text" name="txtIngredientPhotoLink"
-					value="${txtIngredientPhotoLink}">${ingredientPhotoLink}</td>
-			</tr>
-			<tr>
-				<td>Enter Ingredient URLLink</td>
-				<td><input type="text" name="txtIngredientURLLink"
-					value="${txtIngredientURLLink}">${ingredientURLLink}</td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit"></td>
-			</tr>
-		</table>
-	</form>
-</body>
-</html>
-
-
- --%>

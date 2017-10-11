@@ -31,7 +31,7 @@ public class ProductUpdateServlet extends HttpServlet {
 		String selRemedies = request.getParameter("selRemedies");
 		String selProductCategoryName = request.getParameter("selProductCategoryName");
 		String productId = request.getParameter("productId");
-
+		String productURL = request.getParameter("txtProductURL");
 		ProductBean productBean = new ProductBean();
 
 		boolean isError = false;
@@ -115,6 +115,14 @@ public class ProductUpdateServlet extends HttpServlet {
 			request.setAttribute("txtDescription", description);
 			productBean.setDescription(description);
 		}
+		if (ValidationUtils.isEmpty(productURL)) {
+			isError = true;
+			request.setAttribute("productURL", "<font color=red>* ProductURL is Required</font>");
+		} else {
+			request.setAttribute("txtProductURL", productURL);
+			productBean.setProductURL(productURL);
+		}
+
 
 		if (isError) {
 			productBean.setProductName(name);
@@ -128,6 +136,7 @@ public class ProductUpdateServlet extends HttpServlet {
 			productBean.setInteraction(interaction);
 			productBean.setDescription(description);
 			productBean.setSideEffect(sideEffect);
+			productBean.setProductURL(productURL);
 			request.setAttribute("productBean", productBean);
 			request.getRequestDispatcher("ProductEdit.jsp").forward(request, response);
 		} else {

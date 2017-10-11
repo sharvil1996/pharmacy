@@ -76,7 +76,7 @@
 					<div class="pull-left info">
 						<p>
 							&emsp;
-							 <%=adminBeanHeader.getFirstName()%> 
+							<%=adminBeanHeader.getFirstName()%>
 						</p>
 						<a href=""><i class="fa fa-circle text-success"></i> Online</a>
 					</div>
@@ -89,193 +89,360 @@
 
 
 
-					<li class="treeview"><a href=""> <i
-							class="fa fa-plus-square"></i> <span>Management</span> <i
+
+					<!-- -----------------------------------Products-------------------------------   -->
+					<li class="treeview"><a href="ProductListServlet"> <i
+							class="fa fa-question-circle"></i> <span>Products</span> <i
 							class="fa fa-angle-left pull-right"></i>
 					</a>
 						<ul class="treeview-menu">
 
 
+							<!-- -----------------------------------Products > Product List--------------------------------->
 
-							<!-- -----------------------------------Products-------------------------------   -->
 							<li class="treeview"><a href="ProductListServlet"> <i
-									class="fa fa-question-circle"></i> <span>Products</span> <i
+									class="fa fa-plus-square"></i> <span>Product </span> <i
 									class="fa fa-angle-left pull-right"></i>
 							</a>
 								<ul class="treeview-menu">
-
-
-									<!-- -----------------------------------Products > Product List--------------------------------->
-
-									<li class="treeview"><a href="ProductListServlet"> <i
-											class="fa fa-plus-square"></i> <span>Product </span> <i
-											class="fa fa-angle-left pull-right"></i>
-									</a>
-										<ul class="treeview-menu">
-											<li><a href="ProductInsert.jsp"><i class="fa fa-gg"></i>
-													Insert </a></li>
-											<li><a href="ProductListServlet"><i class="fa fa-gg"></i>
-													List</a></li>
-										</ul></li>
-
-									<!-- -----------------------------------Products > Product Category-------------------------------   -->
-
-									<li class="treeview"><a href="ProductListServlet"> <i
-											class="fa fa-plus-square"></i> <span>Product Category</span>
-											<i class="fa fa-angle-left pull-right"></i>
-									</a>
-										<ul class="treeview-menu">
-											<li><a href="ProductCategoryInsert.jsp"><i
-													class="fa fa-gg"></i> Insert </a></li>
-											<li><a href="ProductCategoryListServlet"><i
-													class="fa fa-gg"></i> List</a></li>
-										</ul></li>
-
-									<!-- -----------------------------------Dosage Category-------------------------------   -->
-
-									<li class="treeview"><a
-										href="AddSpecialQuestionListServlet"> <i
-											class="fa fa-plus-square"></i> <span>Dosage Category</span> <i
-											class="fa fa-angle-left pull-right"></i>
-									</a>
-										<ul class="treeview-menu">
-											<li><a href="addSpecialQuestionInsert.jsp"><i
-													class="fa fa-gg"></i> Add </a></li>
-											<li><a href="AddSpecialQuestionListServlet"><i
-													class="fa fa-gg"></i> List</a></li>
-										</ul></li>
-
-									<!-- -----------------------------------Ingredients-------------------------------   -->
-
-									<li class="treeview"><a
-										href="RemoveSpecialQuestionListServlet"> <i
-											class="fa fa-plus-square"></i> <span>Ingredients</span> <i
-											class="fa fa-angle-left pull-right"></i>
-									</a>
-										<ul class="treeview-menu">
-											<li><a href="removeSpecialQuestionInsert.jsp"><i
-													class="fa fa-gg"></i> Add </a></li>
-											<li><a href="RemoveSpecialQuestionListServlet"><i
-													class="fa fa-gg"></i> List </a></li>
-										</ul></li>
-
+									<li><a href="ProductInsert.jsp"><i class="fa fa-gg"></i>
+											Insert </a></li>
+									<li><a href="ProductListServlet"><i class="fa fa-gg"></i>
+											List</a></li>
 								</ul></li>
 
-							<!-- -----------------------------------Products close-------------------------------   -->
+							<!-- -----------------------------------Products > Product Category-------------------------------   -->
+
+							<li class="treeview"><a href="ProductCategoryListServlet">
+									<i class="fa fa-plus-square"></i> <span>Product Category</span>
+									<i class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="ProductCategoryInsert.jsp"><i
+											class="fa fa-gg"></i> Insert </a></li>
+									<li><a href="ProductCategoryListServlet"><i
+											class="fa fa-gg"></i> List</a></li>
+								</ul></li>
 
 
-							<li class="treeview"><a href="AdminListServlet"> <i
-									class="fa fa-user-secret"></i> <span>Admin Management</span> <i
+
+							<!-- -----------------------------------Product Indication-------------------------------   -->
+
+							<li class="treeview"><a href="ProductIndicationListServlet">
+									<i class="fa fa-plus-square"></i> <span>Product
+										Indication</span> <i class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="ProductIndicationInsert.jsp"><i
+											class="fa fa-gg"></i> Add </a></li>
+									<li><a href="ProductIndicationListServlet"><i
+											class="fa fa-gg"></i> List </a></li>
+								</ul></li>
+
+							<!-- -----------------------------------Dosage Category-------------------------------   -->
+
+							<li class="treeview"><a href="DosageCategoryListServlet">
+									<i class="fa fa-plus-square"></i> <span>Dosage Category</span>
+									<i class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="DosageCategoryInsert.jsp"><i
+											class="fa fa-gg"></i> Add </a></li>
+									<li><a href="DosageCategoryListServlet"><i
+											class="fa fa-gg"></i> List</a></li>
+								</ul></li>
+
+							<!-- -----------------------------------Product Dosage-------------------------------   -->
+
+							<li class="treeview"><a href="ProductDosageListServlet">
+									<i class="fa fa-plus-square"></i> <span>Product Dosage</span> <i
 									class="fa fa-angle-left pull-right"></i>
 							</a>
 								<ul class="treeview-menu">
-									<li><a href="adminInsert.jsp"><i
-											class="fa fa-user-plus"></i> Insert</a></li>
-									<li><a href="AdminListServlet"><i class="fa fa-users"></i>
+									<li><a href="ProductDosageInsert.jsp"><i
+											class="fa fa-gg"></i> Add </a></li>
+									<li><a href="ProductDosageListServlet"><i
+											class="fa fa-gg"></i> List </a></li>
+								</ul></li>
+
+							<!-- -----------------------------------Product Indication-------------------------------   -->
+
+							<li class="treeview"><a href="ProductCompositionListServlet">
+									<i class="fa fa-plus-square"></i> <span>Product
+										Composition</span> <i class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="ProductCompositionInsert.jsp"><i
+											class="fa fa-gg"></i> Add </a></li>
+									<li><a href="ProductCompositionListServlet"><i
+											class="fa fa-gg"></i> List </a></li>
+								</ul></li>
+
+
+							<!-- -----------------------------------Product Related Product-------------------------------   -->
+
+							<li class="treeview"><a href="RelatedProductListServlet">
+									<i class="fa fa-plus-square"></i> <span>Related Product</span>
+									<i class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="RelatedProductInsert.jsp"><i
+											class="fa fa-gg"></i> Add </a></li>
+									<li><a href="RelatedProductListServlet"><i
+											class="fa fa-gg"></i> List </a></li>
+								</ul></li>
+
+							<!-- -----------------------------------Remedies-------------------------------   -->
+
+							<li class="treeview"><a href="RemediesListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Remedies</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="RemediesInsert.jsp"><i class="fa fa-gg"></i>
+											Add </a></li>
+									<li><a href="RemediesListServlet"><i class="fa fa-gg"></i>
+											List </a></li>
+								</ul></li>
+
+							<!-- -----------------------------------Ingredients-------------------------------   -->
+
+							<li class="treeview"><a href="IngredientListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Ingredients</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="IngredientInsert.jsp"><i class="fa fa-gg"></i>
+											Add </a></li>
+									<li><a href="IngredientListServlet"><i
+											class="fa fa-gg"></i> List </a></li>
+								</ul></li>
+
+
+
+
+
+
+							<!-- -----------------------------------Product Price-------------------------------   -->
+
+							<li class="treeview"><a href="PriceListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Product Price</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="PriceInsert.jsp"><i class="fa fa-gg"></i>
+											Add </a></li>
+									<li><a href="PriceListServlet"><i class="fa fa-gg"></i>
+											List </a></li>
+								</ul></li>
+
+
+
+
+							<!-- -----------------------------------Product Review-------------------------------   -->
+
+							<li class=" treeview"><a href="ReviewListServlet"> <i
+									class="fa fa-comment"></i> <span>Product Review</span>
+							</a></li>
+
+
+						</ul></li>
+
+
+
+
+					<!-- -----------------------------------Products close-------------------------------   -->
+
+
+					<!-- <li class="treeview"><a href="AdminListServlet"> <i
+							class="fa fa-user-secret"></i> <span>Admin Management</span> <i
+							class="fa fa-angle-left pull-right"></i>
+					</a>
+						<ul class="treeview-menu">
+							<li><a href="AdminInsert.jsp"><i class="fa fa-user-plus"></i>
+									Insert</a></li>
+							<li><a href="AdminListServlet"><i class="fa fa-users"></i>
+									List</a></li>
+						</ul></li> -->
+
+					<li class=" treeview"><a href="AdminListServlet"> <i
+							class="fa fa-comment"></i> <span>Admin</span>
+					</a></li>
+
+
+					<li class="treeview"><a href="BookListServlet"> <i
+							class="fa fa-pencil-square-o"></i> <span>Book's Details</span> <i
+							class="fa fa-angle-left pull-right"></i>
+					</a>
+						<ul class="treeview-menu">
+
+
+							<!-- -----------------------------------Book > BookList--------------------------------->
+
+							<li class="treeview"><a href="BookListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Book</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="BookInsert.jsp"><i class="fa fa-gg"></i>
+											Insert </a></li>
+									<li><a href="BookListServlet"><i class="fa fa-gg"></i>
 											List</a></li>
 								</ul></li>
 
 
-							<li class="treeview"><a href="BookListServlet"> <i
-									class="fa fa-pencil-square-o"></i> <span>Book Details</span> <i
+							<!-- -----------------------------------Book > Book Keyword List--------------------------------->
+
+							<li class="treeview"><a href="BookKeywordListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Book Keyword</span> <i
 									class="fa fa-angle-left pull-right"></i>
 							</a>
 								<ul class="treeview-menu">
-									<li><a href="courseDetailsInsert.jsp"><i
-											class="fa fa-gg"></i><span> Insert</span></a></li>
-									<li><a href="CourseDetailsListServlet"><i
+									<li><a href="BookKeywordInsert.jsp"><i
+											class="fa fa-gg"></i> Insert </a></li>
+									<li><a href="BookKeywordListServlet"><i
 											class="fa fa-gg"></i> List</a></li>
 								</ul></li>
 
-							<!-- -----------------------------------Store Management-------------------------------   -->
+							<!-- -----------------------------------Book > Book Type List--------------------------------->
 
-
-							<li class="treeview"><a href="ProductListServlet"> <i
-									class="fa fa-question-circle"></i> <span>Store</span> <i
+							<li class="treeview"><a href="BookTypeListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Book Type</span> <i
 									class="fa fa-angle-left pull-right"></i>
 							</a>
 								<ul class="treeview-menu">
+									<li><a href="BookTypeInsert.jsp"><i class="fa fa-gg"></i>
+											Insert </a></li>
+									<li><a href="BookTypeListServlet"><i class="fa fa-gg"></i>
+											List</a></li>
+								</ul></li>
 
 
-									<!-- -----------------------------------Store > StoreList--------------------------------->
+						</ul></li>
 
-									<li class="treeview"><a href="StoreListServlet"> <i
-											class="fa fa-plus-square"></i> <span>Store</span> <i
-											class="fa fa-angle-left pull-right"></i>
-									</a>
-										<ul class="treeview-menu">
-											<li><a href="StoreInsert.jsp"><i class="fa fa-gg"></i>
-													Insert </a></li>
-											<li><a href="StoreListServlet"><i class="fa fa-gg"></i>
-													List</a></li>
-										</ul></li>
+					<!-- -----------------------------------Store Management-------------------------------   -->
 
 
-									<!-- -----------------------------------Store > State--------------------------------->
-
-									<li class="treeview"><a href="StateListServlet"> <i
-											class="fa fa-plus-square"></i> <span>State</span> <i
-											class="fa fa-angle-left pull-right"></i>
-									</a>
-										<ul class="treeview-menu">
-											<li><a href="StateInsert.jsp"><i class="fa fa-gg"></i>
-													Insert </a></li>
-											<li><a href="StateListServlet"><i class="fa fa-gg"></i>
-													List</a></li>
-										</ul></li>
-
-									<!-- -----------------------------------Store > City--------------------------------->
-
-									<li class="treeview"><a href="CityListServlet"> <i
-											class="fa fa-plus-square"></i> <span>City</span> <i
-											class="fa fa-angle-left pull-right"></i>
-									</a>
-										<ul class="treeview-menu">
-											<li><a href="CityInsert.jsp"><i class="fa fa-gg"></i>
-													Insert </a></li>
-											<li><a href="CityListServlet"><i class="fa fa-gg"></i>
-													List</a></li>
-										</ul></li>
+					<li class="treeview"><a href="StoreListServlet"> <i
+							class="fa fa-question-circle"></i> <span>Place and Cities</span>
+							<i class="fa fa-angle-left pull-right"></i>
+					</a>
+						<ul class="treeview-menu">
 
 
+							<!-- -----------------------------------Store > StoreList--------------------------------->
+
+							<li class="treeview"><a href="StoreDetailsListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Store</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="StoreDetailsInsert.jsp"><i class="fa fa-gg"></i>
+											Insert </a></li>
+									<li><a href="StoreDetailsListServlet"><i class="fa fa-gg"></i>
+											List</a></li>
+								</ul></li>
+
+
+							<!-- -----------------------------------Store > State--------------------------------->
+
+							<li class="treeview"><a href="StateListServlet"> <i
+									class="fa fa-plus-square"></i> <span>State</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="StateInsert.jsp"><i class="fa fa-gg"></i>
+											Insert </a></li>
+									<li><a href="StateListServlet"><i class="fa fa-gg"></i>
+											List</a></li>
+								</ul></li>
+
+							<!-- -----------------------------------Store > City--------------------------------->
+
+							<li class="treeview"><a href="CityListServlet"> <i
+									class="fa fa-plus-square"></i> <span>City</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="CityInsert.jsp"><i class="fa fa-gg"></i>
+											Insert </a></li>
+									<li><a href="CityListServlet"><i class="fa fa-gg"></i>
+											List</a></li>
+								</ul></li>
+
+
+						</ul></li>
+
+
+
+					<!-- -----------------------------------Store Management close-------------------------------   -->
+
+					<li class="treeview"><a href="BookListServlet"> <i
+							class="fa fa-pencil-square-o"></i> <span>Press Info
+								Details</span> <i class="fa fa-angle-left pull-right"></i>
+					</a>
+						<ul class="treeview-menu">
+
+
+
+							<!-- -----------------------------------Press > Press Info--------------------------------->
+
+							<li class="treeview"><a href="StoreListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Press Info</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="PressInfoInsert.jsp"><i class="fa fa-gg"></i>
+											Insert </a></li>
+									<li><a href="PressInfoListServlet"><i class="fa fa-gg"></i>
+											List</a></li>
+								</ul></li>
+
+							<!-- -----------------------------------Press > Press Type--------------------------------->
+
+							<li class="treeview"><a href="PressTypeListServlet"> <i
+									class="fa fa-plus-square"></i> <span>Press Type</span> <i
+									class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="PressTypeTypeInsert.jsp"><i
+											class="fa fa-gg"></i> Insert </a></li>
+									<li><a href="PressTypeInsertListServlet"><i
+											class="fa fa-gg"></i> List</a></li>
 								</ul></li>
 
 
 
-							<!-- -----------------------------------Store Management close-------------------------------   -->
-
 						</ul></li>
 
-
-					<li class="treeview"><a href="StateListServlet"> <i
-							class="fa fa-plus-square"></i> <span>Press Info</span> <i
-							class="fa fa-angle-left pull-right"></i>
-					</a>
-						<ul class="treeview-menu">
-							<li><a href="StateInsert.jsp"><i class="fa fa-gg"></i>
-									Insert </a></li>
-							<li><a href="StateListServlet"><i class="fa fa-gg"></i>
-									List</a></li>
-						</ul></li>
 
 					<li class="treeview"><a href="AdminListServlet"> <i
 							class="fa fa-user-secret"></i> <span>Company Information</span> <i
 							class="fa fa-angle-left pull-right"></i>
 					</a>
 						<ul class="treeview-menu">
-							<li><a href="adminInsert.jsp"><i class="fa fa-user-plus"></i>
-									Insert</a></li>
-							<li><a href="AdminListServlet"><i class="fa fa-users"></i>
-									List</a></li>
+							<li><a href="CompanyManagementInsert.jsp"><i
+									class="fa fa-user-plus"></i> Insert</a></li>
+							<li><a href="CompanyManagementListServlet"><i
+									class="fa fa-users"></i> List</a></li>
 						</ul></li>
+
+
 					<li class="treeview"><a href="AdminListServlet"> <i
-							class="fa fa-user-secret"></i> <span>Query Details</span> <i
+							class="fa fa-user-secret"></i> <span>Testimonial</span> <i
 							class="fa fa-angle-left pull-right"></i>
 					</a>
 						<ul class="treeview-menu">
-							<li><a href="AdminListServlet"><i class="fa fa-users"></i>
-									List</a></li>
+							<li><a href="TestimonialInsert.jsp"><i
+									class="fa fa-user-plus"></i> Insert</a></li>
+							<li><a href="TestimonialListServlet"><i
+									class="fa fa-users"></i> List</a></li>
 						</ul></li>
+
+
+					<li class=" treeview"><a href="ReviewListServlet"> <i
+							class="fa fa-comment"></i> <span>Review</span>
+					</a></li>
 					<!-- <li class="treeview"><a href="FeedbackListServlet"> <i
 							class="fa fa-comment"></i> <span>Feedback</span> <i
 							class="fa fa-angle-left pull-right"></i>
@@ -287,8 +454,8 @@
 									class="fa fa-gg"></i> Feedback Counter List</a></li>
 						</ul></li> -->
 
-					<li class=" treeview"><a href="ReviewListServlet">
-							<i class="fa fa-comment"></i> <span>Customer Review</span>
+					<li class=" treeview"><a href="ContactUsListServlet"> <i
+							class="fa fa-comment"></i> <span>Query List</span>
 					</a></li>
 
 				</ul>
