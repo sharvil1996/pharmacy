@@ -6,7 +6,6 @@ public class IngredientBean {
 	private String subTitle;
 	private String description;
 	private String photoLink;
-	private String urlLink;
 	private String ingredientsId;
 
 	public String getTitle() {
@@ -41,13 +40,6 @@ public class IngredientBean {
 		this.photoLink = photoLink;
 	}
 
-	public String getUrlLink() {
-		return urlLink;
-	}
-
-	public void setUrlLink(String urlLink) {
-		this.urlLink = urlLink;
-	}
 
 	public String getIngredientsId() {
 		return ingredientsId;

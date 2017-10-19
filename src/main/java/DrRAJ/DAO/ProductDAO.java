@@ -17,6 +17,24 @@ public class ProductDAO {
 	private ResultSet rs = null;
 	boolean result = false;
 
+	public void cntIncrement(String productURL) {
+
+		Connection connection = DBConnection.getConnection();
+		try {
+			if (connection != null) {
+				String updateSQL = "update product set cnt=? where productURL=?";
+				PreparedStatement statement = connection.prepareStatement(updateSQL);
+				statement.setString(1, (new ProductDAO().getCnt(productURL) + 1) + "");
+				statement.setString(2, productURL);
+				int a = statement.executeUpdate();
+				System.out.println(new ProductDAO().getCnt(productURL));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public boolean insert(ProductBean productBean) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
@@ -91,6 +109,27 @@ public class ProductDAO {
 		return false;
 	}
 
+	public Integer getCnt(String productURL) {
+
+		connection = DBConnection.getConnection();
+
+		if (connection != null) {
+			String selectSQL = "Select cnt from product where productURL=?";
+			try {
+				connection = DBConnection.getConnection();
+				pstmt = connection.prepareStatement(selectSQL);
+				pstmt.setString(1, productURL);
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next())
+					return rs.getInt("cnt");
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
 	public List<ProductBean> getList() {
 
 		List<ProductBean> listOfProduct = new ArrayList<ProductBean>();
@@ -122,6 +161,7 @@ public class ProductDAO {
 					product.setSideEffect(rs.getString("sideEffect"));
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
+					product.setCnt(rs.getInt("cnt") + "");
 					listOfProduct.add(product);
 				}
 
@@ -172,6 +212,7 @@ public class ProductDAO {
 					product.setSideEffect(rs.getString("sideEffect"));
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
+					product.setCnt(rs.getInt("cnt") + "");
 				}
 
 			} catch (SQLException e) {
@@ -182,6 +223,47 @@ public class ProductDAO {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
+			}
+		}
+		return product;
+	}
+
+	public ProductBean getByURL(String productURL) {
+
+		connection = DBConnection.getConnection();
+		ProductBean product = new ProductBean();
+
+		if (connection != null) {
+			String selectSQL = "Select * from product p,remedies r,productcategory pc WHERE p.remediesId=r.remediesId and pc.productCategoryId=p.productCategoryId and productURL=?";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+
+				pstmt.setString(1, productURL);
+
+				rs = pstmt.executeQuery();
+
+				while (rs.next()) {
+
+					product.setProductId(rs.getString("productId"));
+					product.setDescription(rs.getString("description"));
+					product.setImageLink(rs.getString("imageLink"));
+					product.setContraIndication(rs.getString("contraIndication"));
+					product.setForwardLink(rs.getString("forwardLink"));
+					product.setProductCategoryId(rs.getString("productCategoryId"));
+					product.setProductId(rs.getString("productId"));
+					product.setProductName(rs.getString("productName"));
+					product.setPurpose(rs.getString("purpose"));
+					product.setRemediesId(rs.getString("remediesId"));
+					product.setRemediesName(rs.getString("name"));
+					product.setProductCategoryName(rs.getString("productCategoryName"));
+					product.setSideEffect(rs.getString("sideEffect"));
+					product.setInteraction(rs.getString("interaction"));
+					product.setProductURL(rs.getString("productURL"));
+					product.setCnt(rs.getInt("cnt") + "");
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}
 		return product;
@@ -287,7 +369,8 @@ public class ProductDAO {
 					product.setSideEffect(rs.getString("sideEffect"));
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
-					listOfProduct.put(product.getProductId(),product);
+					product.setCnt(rs.getInt("cnt") + "");
+					listOfProduct.put(product.getProductId(), product);
 				}
 
 			} catch (SQLException e) {
@@ -306,5 +389,21 @@ public class ProductDAO {
 
 	}
 
+	public static void main(String[] args) {
+		Connection connection = DBConnection.getConnection();
+		try {
+			if (connection != null) {
+				String updateSQL = "update product set cnt=? where productURL=?";
+				PreparedStatement statement = connection.prepareStatement(updateSQL);
+				statement.setString(1, (new ProductDAO().getCnt("Akshat") + 1) + "");
+				statement.setString(2, "Akshat");
+				int a = statement.executeUpdate();
+				System.out.println(new ProductDAO().getCnt("Akshat"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }

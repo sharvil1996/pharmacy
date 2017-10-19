@@ -141,7 +141,7 @@
 
 							<!-- -----------------------------------Dosage Category-------------------------------   -->
 
-							<li class="treeview"><a href="DosageCategoryListServlet">
+							<!-- <li class="treeview"><a href="DosageCategoryListServlet">
 									<i class="fa fa-plus-square"></i> <span>Dosage Category</span>
 									<i class="fa fa-angle-left pull-right"></i>
 							</a>
@@ -150,7 +150,7 @@
 											class="fa fa-gg"></i> Add </a></li>
 									<li><a href="DosageCategoryListServlet"><i
 											class="fa fa-gg"></i> List</a></li>
-								</ul></li>
+								</ul></li> -->
 
 							<!-- -----------------------------------Product Dosage-------------------------------   -->
 
@@ -236,6 +236,18 @@
 											List </a></li>
 								</ul></li>
 
+							<!-- -----------------------------------Product Keyword-------------------------------   -->
+
+							<li class="treeview"><a href="ProductKeywordListServlet">
+									<i class="fa fa-plus-square"></i> <span>Product Keyword</span>
+									<i class="fa fa-angle-left pull-right"></i>
+							</a>
+								<ul class="treeview-menu">
+									<li><a href="ProductKeywordInsert.jsp"><i
+											class="fa fa-gg"></i> Add </a></li>
+									<li><a href="ProductKeywordListServlet"><i
+											class="fa fa-gg"></i> List </a></li>
+								</ul></li>
 
 
 
@@ -332,15 +344,15 @@
 
 							<!-- -----------------------------------Store > StoreList--------------------------------->
 
-							<li class="treeview"><a href="StoreDetailsListServlet"> <i
-									class="fa fa-plus-square"></i> <span>Store</span> <i
+							<li class="treeview"><a href="StoreDetailsListServlet">
+									<i class="fa fa-plus-square"></i> <span>Store</span> <i
 									class="fa fa-angle-left pull-right"></i>
 							</a>
 								<ul class="treeview-menu">
-									<li><a href="StoreDetailsInsert.jsp"><i class="fa fa-gg"></i>
-											Insert </a></li>
-									<li><a href="StoreDetailsListServlet"><i class="fa fa-gg"></i>
-											List</a></li>
+									<li><a href="StoreDetailsInsert.jsp"><i
+											class="fa fa-gg"></i> Insert </a></li>
+									<li><a href="StoreDetailsListServlet"><i
+											class="fa fa-gg"></i> List</a></li>
 								</ul></li>
 
 
@@ -405,9 +417,9 @@
 									class="fa fa-angle-left pull-right"></i>
 							</a>
 								<ul class="treeview-menu">
-									<li><a href="PressTypeTypeInsert.jsp"><i
+									<li><a href="PressInfoTypeInsert.jsp"><i
 											class="fa fa-gg"></i> Insert </a></li>
-									<li><a href="PressTypeInsertListServlet"><i
+									<li><a href="PressTypeInfoListServlet"><i
 											class="fa fa-gg"></i> List</a></li>
 								</ul></li>
 

@@ -1,3 +1,5 @@
+<%@page import="DrRAJ.Bean.ProductKeywordBean"%>
+<%@page import="DrRAJ.Bean.ProductBean"%>
 <%@page import="DrRAJ.Bean.IngredientBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -6,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ingredient | Ingredient List</title>
+<title>Admin | Product Keyword List</title>
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
@@ -23,16 +25,17 @@ td, tr, th {
 	<div style="margin-top: -850px; margin-left: 250px;">
 		<section class="content content-header">
 		<h1>
-			Ingredient <small>List</small>
+			Product Keyword<small>List</small>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="AdminDashBoard.jsp"><i class="fa fa-dashboard"></i>
 					Home</a></li>
-			<li class="active">Ingredient</li>
+			<li class="active">Admin</li>
 		</ol>
 		<br>
 		<br>
-		<a href="IngredientInsert.jsp" name="ADD" class="btn btn-primary">ADD</a> <br>
+		<a href="ProductKeywordInsert.jsp" name="ADD" class="btn btn-primary">ADD</a>
+		<br>
 		<br>
 		<div class="row">
 			<div class="col-xs-12">
@@ -42,31 +45,28 @@ td, tr, th {
 							class="table table-bordered table-hover table-striped">
 
 							<%
-								ArrayList<IngredientBean> list = (ArrayList<IngredientBean>) request.getAttribute("ingredientList");
+								ArrayList<ProductKeywordBean> list = (ArrayList<ProductKeywordBean>) request
+										.getAttribute("listOfProductKeyword");
 							%>
 							<thead class="gujju-theme text-uppercase">
 								<tr>
-									<th><center>Title</center></th>
-									<th><center>SubTitle</center></th>
-									<th><center>Description</center></th>
-									<th><center>PhotoLink</center></th>
+									<th><center>Keyword</center></th>
+									<th><center>Product Name</center></th>
 									<th><center>Action</center></th>
 								</tr>
 							</thead>
 							<tbody>
 								<%
-									for (IngredientBean bean : list) {
+									for (ProductKeywordBean bean : list) {
 								%>
 								<tr align="center">
-									<td><%=bean.getTitle()%></td>
-									<td><%=bean.getSubTitle()%></td>
-									<td><%=bean.getDescription()%></td>
-									<td><%=bean.getPhotoLink()%></td>
+									<td><%=bean.getKeyword()%></td>
+									<td><%=bean.getProductName()%></td>
 									<td><a
-										href="IngredientEditServlet?ingredientId=<%=bean.getIngredientsId()%>"><img
+										href="ProductKeywordEditServlet?productKeywordId=<%=bean.getProductKeywordId()%>"><img
 											src="photos/edit.ico" height="30" width="30"
 											class="img-rounded" /></a>&nbsp;&nbsp; <a
-										href="IngredientDeleteServlet?ingredientId=<%=bean.getIngredientsId()%>"><img
+										href="ProductKeywordDeleteServlet?productKeywordId=<%=bean.getProductKeywordId()%>"><img
 											src="photos/Recycle Bin.ico" height="30" width="30"
 											class="img-rounded" /></a>
 								</tr>

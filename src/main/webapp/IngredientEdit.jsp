@@ -74,18 +74,6 @@
 					<br />
 
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Enter URL
-								Link :</font>
-						</label>
-
-						<div class="col-lg-6">
-							<input class="form-control" type="text"
-								value="<%=bean.getUrlLink()%>" name="txtIngredientURLLink" />${ingredientURLLink}
-						</div>
-					</div>
-					<br />
-
-					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Enter
 								Description :</font>
 						</label>

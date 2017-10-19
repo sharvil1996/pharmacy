@@ -3,6 +3,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
 	metadata-complete="false" version="3.0"> -->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" metadata-complete="true" version="3.0">
+  <filter>
+    <filter-name>DoMyFilter</filter-name>
+    <filter-class>DrRAJ.Filter.DoMyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>DoMyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
     <description></description>
     <display-name>StateInsertServlet</display-name>
@@ -1183,4 +1191,67 @@
     <servlet-name>AdminLogoutServlet</servlet-name>
     <url-pattern>/AdminLogoutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductDetailsServlet</display-name>
+    <servlet-name>ProductDetailsServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.ProductDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductDetailsServlet</servlet-name>
+    <url-pattern>/ProductDetailsServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>ProductKeywordInsertServlet</display-name>
+    <servlet-name>ProductKeywordInsertServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.ProductKeywordInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductKeywordInsertServlet</servlet-name>
+    <url-pattern>/ProductKeywordInsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductKeywordEditServlet</display-name>
+    <servlet-name>ProductKeywordEditServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.ProductKeywordEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductKeywordEditServlet</servlet-name>
+    <url-pattern>/ProductKeywordEditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductKeywordListServlet</display-name>
+    <servlet-name>ProductKeywordListServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.ProductKeywordListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductKeywordListServlet</servlet-name>
+    <url-pattern>/ProductKeywordListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductKeywordDeleteServlet</display-name>
+    <servlet-name>ProductKeywordDeleteServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.ProductKeywordDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductKeywordDeleteServlet</servlet-name>
+    <url-pattern>/ProductKeywordDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductKeywordUpdateServlet</display-name>
+    <servlet-name>ProductKeywordUpdateServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.ProductKeywordUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductKeywordUpdateServlet</servlet-name>
+    <url-pattern>/ProductKeywordUpdateServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

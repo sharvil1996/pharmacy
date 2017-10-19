@@ -17,7 +17,7 @@ public class IngredientDAO {
 
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "insert into ingredients(ingredientsId,photoLink,title,subTitle,description,urlLink) values(?,?,?,?,?,?)";
+			String sql = "insert into ingredients(ingredientsId,photoLink,title,subTitle,description) values(?,?,?,?,?,?)";
 			try {
 				PreparedStatement statement = conn.prepareStatement(sql);
 				statement.setString(1, bean.getIngredientsId());
@@ -25,7 +25,6 @@ public class IngredientDAO {
 				statement.setString(3, bean.getTitle());
 				statement.setString(4, bean.getSubTitle());
 				statement.setString(5, bean.getDescription());
-				statement.setString(6, bean.getUrlLink());
 
 				int row = statement.executeUpdate();
 
@@ -64,7 +63,6 @@ public class IngredientDAO {
 					bean.setPhotoLink(rs.getString("photoLink"));
 					bean.setSubTitle(rs.getString("subTitle"));
 					bean.setTitle(rs.getString("title"));
-					bean.setUrlLink(rs.getString("urlLink"));
 					list.add(bean);
 
 				}
@@ -132,7 +130,6 @@ public class IngredientDAO {
 					bean.setPhotoLink(rs.getString("photoLink"));
 					bean.setSubTitle(rs.getString("subTitle"));
 					bean.setTitle(rs.getString("title"));
-					bean.setUrlLink(rs.getString("urlLink"));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -152,7 +149,7 @@ public class IngredientDAO {
 	public boolean update(IngredientBean bean) {
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "update ingredients set photoLink=? , title=?,subTitle=? ,description=? ,urlLink=? where ingredientsId=?";
+			String sql = "update ingredients set photoLink=? , title=?,subTitle=? ,description=? where ingredientsId=?";
 			try {
 				PreparedStatement statement = conn.prepareStatement(sql);
 
@@ -160,8 +157,7 @@ public class IngredientDAO {
 				statement.setString(2, bean.getTitle());
 				statement.setString(3, bean.getSubTitle());
 				statement.setString(4, bean.getDescription());
-				statement.setString(5, bean.getUrlLink());
-				statement.setString(6, bean.getIngredientsId());
+				statement.setString(5, bean.getIngredientsId());
 
 				int row = statement.executeUpdate();
 

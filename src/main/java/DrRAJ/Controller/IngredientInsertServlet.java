@@ -19,7 +19,6 @@ public class IngredientInsertServlet extends HttpServlet {
 		String subTitle = request.getParameter("txtIngredientSubTitle");
 		String description = request.getParameter("txtIngredientDescription");
 		String photoLink = request.getParameter("txtIngredientPhotoLink");
-		String urlLink = request.getParameter("txtIngredientURLLink");
 
 		IngredientBean bean = new IngredientBean();
 		request.setAttribute("txtIngredientSubTitle", subTitle);
@@ -56,14 +55,7 @@ public class IngredientInsertServlet extends HttpServlet {
 			bean.setPhotoLink(photoLink);
 
 		}
-		if (ValidationUtils.isEmpty(urlLink)) {
-			isError = true;
-			request.setAttribute("ingredientURLLink", " <font color='red'> * Title is Required </font>");
-		} else {
-			request.setAttribute("txtIngredientURLLink", urlLink);
-			bean.setUrlLink(urlLink);
-
-		}
+		
 
 		if (isError) {
 			request.getRequestDispatcher("IngredientInsert.jsp").forward(request, response);

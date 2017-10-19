@@ -39,7 +39,7 @@
 						</label>
 						<div class="col-lg-6">
 							<select name="txtProductId" class="form-control">
-								<option value="0" selected="selected">Select City</option>
+								<option value="0" selected="selected">Select Product</option>
 								<%
 									List<ProductBean> productBeans = new ProductDAO().getList();
 									for (int i = 0; i < productBeans.size(); i++) {
@@ -66,7 +66,7 @@
 						</label>
 						<div class="col-lg-6">
 							<select name="txtRelatedProductId" class="form-control">
-								<option value="0" selected="selected">Select City</option>
+								<option value="0" selected="selected">Select Product</option>
 								<%
 									for (int i = 0; i < productBeans.size(); i++) {
 

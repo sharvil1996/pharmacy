@@ -63,8 +63,8 @@
 					<br />
 
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Enter
-								Product Forward Link :</font>
+						<label class="col-sm-2"> <font size="+1">Enter Buy
+								Online Product Link :</font>
 						</label>
 
 						<div class="col-lg-6">
@@ -130,7 +130,7 @@
 
 						<div class="col-lg-6">
 							<input class="form-control" type="text" value="${txtProductURL}"
-								name="txtProductURL" />${productURL}
+								name="txtProductURL" placeholder="memoriup-brain-tonic" />${productURL}
 						</div>
 					</div>
 					<br />
