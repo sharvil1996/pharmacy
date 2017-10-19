@@ -7,7 +7,6 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
 public class DoMyFilter implements Filter {
@@ -17,9 +16,9 @@ public class DoMyFilter implements Filter {
 
 		int a = ((HttpServletRequest) request).getRequestURI().toString().split("/").length;
 		String s[] = ((HttpServletRequest) request).getRequestURI().toString().split("/");
-		if (a == 3 && !(s[2].contains(".jsp") || s[2].contains("Servlet") || s[2].contains(".html")
-				|| s[2].contains(".htm") || s[2].contains("servlet"))) {
-			System.out.println("ddddddd "+s[2]);
+		if (a == 2 && !(s[1].contains(".jsp") || s[1].contains("Servlet") || s[1].contains(".html")
+				|| s[1].contains(".htm") || s[1].contains("servlet"))) {
+			System.out.println("ddddddd "+s[1]);
 			String str= "/ProductDetails.jsp";
 			request.getRequestDispatcher(str).forward(request, response);
 			//request.getRequestDispatcher("/index.html").forward(request, response);
