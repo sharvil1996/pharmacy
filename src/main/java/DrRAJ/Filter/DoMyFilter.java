@@ -9,6 +9,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import DrRAJ.Bean.ProductBean;
+import DrRAJ.DAO.ProductDAO;
+
 public class DoMyFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -16,14 +19,25 @@ public class DoMyFilter implements Filter {
 
 		int a = ((HttpServletRequest) request).getRequestURI().toString().split("/").length;
 		String s[] = ((HttpServletRequest) request).getRequestURI().toString().split("/");
-		if (a == 2 && !(s[1].contains(".jsp") || s[1].contains("Servlet") || s[1].contains(".html")
-				|| s[1].contains(".htm") || s[1].contains("servlet"))) {
-			System.out.println("ddddddd "+s[1]);
-			String str= "/ProductDetails.jsp";
-			request.getRequestDispatcher(str).forward(request, response);
-			//request.getRequestDispatcher("/index.html").forward(request, response);
-		} else {
+		if (s[1].equalsIgnoreCase("login") || s[1].equalsIgnoreCase("company-info") || s[1].equalsIgnoreCase("manufacturing-practices")
+				|| s[1].equalsIgnoreCase("contract-manufacturing")
+				) {
+			System.out.println("HI");
 			chain.doFilter(request, response);
+		} else {
+			if (a == 3 && !(s[1].contains(".jsp") || s[1].contains("Servlet") || s[1].contains(".html")
+					|| s[1].contains(".htm") || s[1].contains("servlet"))) {
+				ProductBean bean = new ProductDAO().getByURL(s[1]);
+				if (bean != null) {
+					request.setAttribute("bean", bean);
+					String str = "/Product.jsp";
+					request.getRequestDispatcher(str).forward(request, response);
+				} else {
+					response.getWriter().write("Error");
+				}
+			} else {
+				chain.doFilter(request, response);
+			}
 		}
 	}
 

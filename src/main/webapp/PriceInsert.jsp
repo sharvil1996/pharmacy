@@ -31,7 +31,7 @@
 		<br> <br>
 		<div class="col-lg-6">
 			<div class="container">
-				<form action="PriceInsertSevlet" method="post">
+				<form action="PriceInsertServlet" method="post">
 					<br />
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Select
@@ -77,7 +77,7 @@
 						</label>
 
 						<div class="col-lg-6">
-							<inpu0t type="text" class="form-control"
+							<input type="text" class="form-control"
 								value="${txtPackagePrice}" name="txtPackagePrice" />${price}
 						</div>
 					</div>

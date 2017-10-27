@@ -7,7 +7,7 @@ public class IngredientBean {
 	private String description;
 	private String photoLink;
 	private String ingredientsId;
-
+	
 	public String getTitle() {
 		return title;
 	}

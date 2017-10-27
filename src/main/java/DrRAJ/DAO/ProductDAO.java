@@ -8,7 +8,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import DrRAJ.Bean.IngredientBean;
+import DrRAJ.Bean.PriceBean;
 import DrRAJ.Bean.ProductBean;
+import DrRAJ.Bean.ProductCompositionBean;
+import DrRAJ.Bean.ProductDosageBean;
+import DrRAJ.Bean.ProductIndicationBean;
+import DrRAJ.Bean.ReviewBean;
 import DrRAJ.Utils.DBConnection;
 
 public class ProductDAO {
@@ -181,6 +187,57 @@ public class ProductDAO {
 
 	}
 
+	public List<ProductBean> getAllList(String productId) {
+
+		List<ProductBean> listOfProduct = new ArrayList<ProductBean>();
+		connection = DBConnection.getConnection();
+
+		if (connection != null) {
+			String selectSQL = "Select * from product p,remedies r,productcategory pc WHERE p.remediesId=r.remediesId and pc.productCategoryId=p.productCategoryId";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+
+				rs = pstmt.executeQuery();
+
+				ProductBean product = null;
+				while (rs.next()) {
+					product = new ProductBean();
+
+					product.setProductId(rs.getString("productId"));
+					product.setDescription(rs.getString("description"));
+					product.setImageLink(rs.getString("imageLink"));
+					product.setContraIndication(rs.getString("contraIndication"));
+					product.setForwardLink(rs.getString("forwardLink"));
+					product.setProductCategoryId(rs.getString("productCategoryId"));
+					product.setProductId(rs.getString("productId"));
+					product.setProductName(rs.getString("productName"));
+					product.setPurpose(rs.getString("purpose"));
+					product.setRemediesId(rs.getString("remediesId"));
+					product.setRemediesName(rs.getString("name"));
+					product.setProductCategoryName(rs.getString("productCategoryName"));
+					product.setSideEffect(rs.getString("sideEffect"));
+					product.setInteraction(rs.getString("interaction"));
+					product.setProductURL(rs.getString("productURL"));
+					product.setCnt(rs.getInt("cnt") + "");
+					listOfProduct.add(product);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		return listOfProduct;
+
+	}
+
 	public ProductBean getByPK(String productId) {
 
 		connection = DBConnection.getConnection();
@@ -231,7 +288,7 @@ public class ProductDAO {
 	public ProductBean getByURL(String productURL) {
 
 		connection = DBConnection.getConnection();
-		ProductBean product = new ProductBean();
+		ProductBean product = null;
 
 		if (connection != null) {
 			String selectSQL = "Select * from product p,remedies r,productcategory pc WHERE p.remediesId=r.remediesId and pc.productCategoryId=p.productCategoryId and productURL=?";
@@ -243,7 +300,7 @@ public class ProductDAO {
 				rs = pstmt.executeQuery();
 
 				while (rs.next()) {
-
+					product = new ProductBean();
 					product.setProductId(rs.getString("productId"));
 					product.setDescription(rs.getString("description"));
 					product.setImageLink(rs.getString("imageLink"));
@@ -261,12 +318,16 @@ public class ProductDAO {
 					product.setProductURL(rs.getString("productURL"));
 					product.setCnt(rs.getInt("cnt") + "");
 				}
+				System.out.println("HI");
+				return product;
 
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return product;
+		
+		System.out.println("Hello");
+		return null;
 	}
 
 	public boolean update(ProductBean productBean) {
@@ -388,22 +449,230 @@ public class ProductDAO {
 		return listOfProduct;
 
 	}
+	public ArrayList<ProductIndicationBean> getIndication(String productId) {
 
-	public static void main(String[] args) {
-		Connection connection = DBConnection.getConnection();
-		try {
-			if (connection != null) {
-				String updateSQL = "update product set cnt=? where productURL=?";
-				PreparedStatement statement = connection.prepareStatement(updateSQL);
-				statement.setString(1, (new ProductDAO().getCnt("Akshat") + 1) + "");
-				statement.setString(2, "Akshat");
-				int a = statement.executeUpdate();
-				System.out.println(new ProductDAO().getCnt("Akshat"));
+		ArrayList<ProductIndicationBean> list = new ArrayList<ProductIndicationBean>();		
+		connection = DBConnection.getConnection();
+		ProductIndicationBean bean = null;
+		if (connection != null) {
+			String selectSQL = "select * from productIndication pi,product p where pi.productId=p.productId and p.productId=?";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+
+				pstmt.setString(1, productId);
+
+				rs = pstmt.executeQuery();
+
+				while (rs.next()) {
+					bean = new ProductIndicationBean();
+					bean.setProductId(rs.getString("productId"));
+					bean.setProductIndicationId(rs.getString("productIndicationId"));
+					bean.setIndication(rs.getString("indication"));
+					list.add(bean);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
+		return list;
 	}
+	
+	public List<ProductCompositionBean> getComposition(String productId) {
 
+		List<ProductCompositionBean> listOfProductComposition = new ArrayList<ProductCompositionBean>();
+		connection = DBConnection.getConnection();
+
+		if (connection != null) {
+			String selectSQL = "Select * from productComposition pc,product p,ingredients i where pc.productId=p.productId and pc.ingredientsId=i.ingredientsId and p.productId=?";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+				pstmt.setString(1, productId);
+				rs = pstmt.executeQuery();
+
+				ProductCompositionBean productComposition = null;
+				while (rs.next()) {
+					productComposition = new ProductCompositionBean();
+
+					productComposition.setCompositionContent(rs.getString("compositionContent"));
+					productComposition.setIngredientsId(rs.getString("ingredientsId"));
+					productComposition.setIngredientsName(rs.getString("title"));
+					productComposition.setProductCompositionId(rs.getString("productCompositionId"));
+					productComposition.setProductId(rs.getString("productId"));
+					productComposition.setProductName(rs.getString("productName"));
+					listOfProductComposition.add(productComposition);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		return listOfProductComposition;
+
+	}
+	
+	public ArrayList<PriceBean> getPrice(String productId) {
+		ArrayList<PriceBean> list = new ArrayList<PriceBean>();
+		String sql = "select * from price,product where price.productId=product.productId and product.productId=?";
+		connection = DBConnection.getConnection();
+		if (connection != null) {
+			try {
+				pstmt = connection.prepareStatement(sql);
+				pstmt.setString(1, productId);
+				rs = pstmt.executeQuery();
+				PriceBean bean = null;
+				while (rs.next()) {
+					bean = new PriceBean();
+					bean.setProductId(rs.getString("productId"));
+					bean.setPriceId(rs.getString("priceId"));
+					bean.setProductName(rs.getString("productName"));
+					bean.setPackageSize(rs.getString("packageSize"));
+					bean.setPrice(rs.getString("price"));
+					list.add(bean);
+				}
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		return list;
+	}
+	
+	public List<ProductDosageBean> getDosage(String productId) {
+
+		List<ProductDosageBean> listOfProductDosage = new ArrayList<ProductDosageBean>();
+		connection = DBConnection.getConnection();
+
+		if (connection != null) {
+			String selectSQL = "Select * from productDosage pd,product p WHERE p.productId=pd.productId and p.productId=?";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+				pstmt.setString(1, productId);
+				rs = pstmt.executeQuery();
+
+				ProductDosageBean productDosage = null;
+				while (rs.next()) {
+					productDosage = new ProductDosageBean();
+					productDosage.setProductDosageId(rs.getString("productDosageId"));
+					productDosage.setContent(rs.getString("content"));
+					productDosage.setProductId(rs.getString("productId"));
+					productDosage.setProductName(rs.getString("productName"));
+					listOfProductDosage.add(productDosage);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		return listOfProductDosage;
+
+	}
+	
+	public ArrayList<IngredientBean> getIngredient(String productId) {
+		ArrayList<IngredientBean> list = new ArrayList<IngredientBean>();
+		connection = (Connection) DBConnection.getConnection();
+		if (connection != null) {
+			String sql = "SELECT * FROM productcomposition pc, product p, ingredients i where p.productId=pc.productId and i.ingredientsId=pc.ingredientsId and p.productId=?";
+			PreparedStatement statement;
+			try {
+				statement = connection.prepareStatement(sql);
+				statement.setString(1, productId);
+				ResultSet rs = statement.executeQuery();
+				IngredientBean bean = new IngredientBean();
+				while (rs.next()) {
+					bean = new IngredientBean();
+					bean.setDescription(rs.getString("description"));
+					bean.setIngredientsId(rs.getString("ingredientsId"));
+					bean.setPhotoLink(rs.getString("photoLink"));
+					bean.setSubTitle(rs.getString("subTitle"));
+					bean.setTitle(rs.getString("title"));
+					list.add(bean);
+
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return list;
+	}
+	public List<ReviewBean> getReview(String productId) {
+
+		List<ReviewBean> listOfReview = new ArrayList<ReviewBean>();
+		connection = DBConnection.getConnection();
+
+		if (connection != null) {
+			String selectSQL = "Select * from review,product where product.productId=review.productId and product.productId=?";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+				pstmt.setString(1, productId);
+				rs = pstmt.executeQuery();
+
+				ReviewBean review = null;
+				while (rs.next()) {
+					review = new ReviewBean();
+					review.setReviewId(rs.getString("reviewId"));
+					review.setDescription(rs.getString("description"));
+					review.setCustomerName(rs.getString("customerName"));
+					review.setIsValid(rs.getString("isValid"));
+					review.setProductId(rs.getString("productId"));
+					review.setProductName(rs.getString("productName"));
+					review.setRating(rs.getInt("rating"));
+					review.setTitle(rs.getString("title"));
+					listOfReview.add(review);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		return listOfReview;
+
+	}
+	
 }

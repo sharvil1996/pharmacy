@@ -12,6 +12,38 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <servlet>
+    <servlet-name>Hello</servlet-name>
+    <jsp-file>/login.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hello</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CompanyInfo</servlet-name>
+    <jsp-file>/AboutusCompanyInfo.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CompanyInfo</servlet-name>
+    <url-pattern>/company-info</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ManufacturingPractices</servlet-name>
+    <jsp-file>/AboutusManufacturingPractices.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManufacturingPractices</servlet-name>
+    <url-pattern>/manufacturing-practices</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ContractManufacturing</servlet-name>
+    <jsp-file>/AboutusContractManufacturing.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContractManufacturing</servlet-name>
+    <url-pattern>/contract-manufacturing</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <description></description>
     <display-name>StateInsertServlet</display-name>
     <servlet-name>StateInsertServlet</servlet-name>
@@ -1133,13 +1165,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>PriceInsertSevlet</display-name>
-    <servlet-name>PriceInsertSevlet</servlet-name>
-    <servlet-class>DrRAJ.Controller.PriceInsertSevlet</servlet-class>
+    <display-name>PriceInsertServlet</display-name>
+    <servlet-name>PriceInsertServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.PriceInsertServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>PriceInsertSevlet</servlet-name>
-    <url-pattern>/PriceInsertSevlet</url-pattern>
+    <servlet-name>PriceInsertServlet</servlet-name>
+    <url-pattern>/PriceInsertServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -1201,8 +1233,6 @@
     <servlet-name>ProductDetailsServlet</servlet-name>
     <url-pattern>/ProductDetailsServlet</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>ProductKeywordInsertServlet</display-name>
@@ -1253,5 +1283,104 @@
     <servlet-name>ProductKeywordUpdateServlet</servlet-name>
     <url-pattern>/ProductKeywordUpdateServlet</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>BlogInsertServlet</display-name>
+    <servlet-name>BlogInsertServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.BlogInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BlogInsertServlet</servlet-name>
+    <url-pattern>/BlogInsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BlogEditServlet</display-name>
+    <servlet-name>BlogEditServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.BlogEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BlogEditServlet</servlet-name>
+    <url-pattern>/BlogEditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BlogListServlet</display-name>
+    <servlet-name>BlogListServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.BlogListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BlogListServlet</servlet-name>
+    <url-pattern>/BlogListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BlogDeleteServlet</display-name>
+    <servlet-name>BlogDeleteServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.BlogDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BlogDeleteServlet</servlet-name>
+    <url-pattern>/BlogDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BlogUpdateServlet</display-name>
+    <servlet-name>BlogUpdateServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.BlogUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BlogUpdateServlet</servlet-name>
+    <url-pattern>/BlogUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubBlogInsertServlet</display-name>
+    <servlet-name>SubBlogInsertServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.SubBlogInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubBlogInsertServlet</servlet-name>
+    <url-pattern>/SubBlogInsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubBlogListServlet</display-name>
+    <servlet-name>SubBlogListServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.SubBlogListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubBlogListServlet</servlet-name>
+    <url-pattern>/SubBlogListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubBlogEditServlet</display-name>
+    <servlet-name>SubBlogEditServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.SubBlogEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubBlogEditServlet</servlet-name>
+    <url-pattern>/SubBlogEditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubBlogUpdateServlet</display-name>
+    <servlet-name>SubBlogUpdateServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.SubBlogUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubBlogUpdateServlet</servlet-name>
+    <url-pattern>/SubBlogUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubBlogDeleteServlet</display-name>
+    <servlet-name>SubBlogDeleteServlet</servlet-name>
+    <servlet-class>DrRAJ.Controller.SubBlogDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubBlogDeleteServlet</servlet-name>
+    <url-pattern>/SubBlogDeleteServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

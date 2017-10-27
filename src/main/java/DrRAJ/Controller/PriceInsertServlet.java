@@ -15,7 +15,7 @@ import DrRAJ.DAO.ReletedProductDAO;
 import DrRAJ.Utils.GenrateMathodsUtils;
 import DrRAJ.Utils.ValidationUtils;
 
-public class PriceInsertSevlet extends HttpServlet {
+public class PriceInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -56,9 +56,10 @@ public class PriceInsertSevlet extends HttpServlet {
 		if (isError) {
 			request.getRequestDispatcher("PriceInsert.jsp").forward(request, response);
 		} else {
-
+			System.out.println("JI");
 			bean.setPriceId(GenrateMathodsUtils.getRandomString(15));
 			if (new PriceDAO().insert(bean)) {
+				System.out.println("J...I");
 				response.sendRedirect("PriceListServlet");
 			} else {
 				request.getRequestDispatcher("PriceInsert.jsp").forward(request, response);

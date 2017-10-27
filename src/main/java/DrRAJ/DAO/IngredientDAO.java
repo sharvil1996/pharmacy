@@ -17,7 +17,7 @@ public class IngredientDAO {
 
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "insert into ingredients(ingredientsId,photoLink,title,subTitle,description) values(?,?,?,?,?,?)";
+			String sql = "insert into ingredients(ingredientsId,photoLink,title,subTitle,description) values(?,?,?,?,?)";
 			try {
 				PreparedStatement statement = conn.prepareStatement(sql);
 				statement.setString(1, bean.getIngredientsId());
