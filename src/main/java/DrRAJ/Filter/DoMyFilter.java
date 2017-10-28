@@ -18,6 +18,7 @@ public class DoMyFilter implements Filter {
 			throws IOException, ServletException {
 
 		int a = ((HttpServletRequest) request).getRequestURI().toString().split("/").length;
+		System.out.println("Helo " + ((HttpServletRequest) request).getRequestURI().toString());
 		String s[] = ((HttpServletRequest) request).getRequestURI().toString().split("/");
 		if (s[1].equalsIgnoreCase("login") || s[1].equalsIgnoreCase("company-info") || s[1].equalsIgnoreCase("manufacturing-practices")
 				|| s[1].equalsIgnoreCase("contract-manufacturing")
@@ -25,7 +26,7 @@ public class DoMyFilter implements Filter {
 			System.out.println("HI");
 			chain.doFilter(request, response);
 		} else {
-			if (a == 3 && !(s[1].contains(".jsp") || s[1].contains("Servlet") || s[1].contains(".html")
+			if (a == 2 && !(s[1].contains(".jsp") || s[1].contains("Servlet") || s[1].contains(".html")
 					|| s[1].contains(".htm") || s[1].contains("servlet"))) {
 				ProductBean bean = new ProductDAO().getByURL(s[1]);
 				if (bean != null) {
