@@ -22,7 +22,7 @@ public class BookTypeDAO {
 	public boolean insert(BookTypeBean bookTypeBean) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO bookType(typeId,name)" + " values(?,?)";
+			String insertSQL = "INSERT INTO booktype(typeId,name)" + " values(?,?)";
 			try {
 				connection.setAutoCommit(false);
 				pstmt = connection.prepareStatement(insertSQL);
@@ -61,7 +61,7 @@ public class BookTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from bookType order by name";
+			String selectSQL = "Select * from booktype order by name";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -97,7 +97,7 @@ public class BookTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from bookType where name=?";
+			String selectSQL = "Select * from booktype where name=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 				pstmt.setString(1, bookTypeName);
@@ -123,7 +123,7 @@ public class BookTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String deleteSQL = "DELETE FROM bookType WHERE typeId=?";
+			String deleteSQL = "DELETE FROM booktype WHERE typeId=?";
 
 			try {
 				pstmt = connection.prepareStatement(deleteSQL);
@@ -156,7 +156,7 @@ public class BookTypeDAO {
 		BookTypeBean bookType = new BookTypeBean();
 
 		if (connection != null) {
-			String selectSQL = "Select * from bookType WHERE typeId=?";
+			String selectSQL = "Select * from booktype WHERE typeId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -188,7 +188,7 @@ public class BookTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String updateSQL = "UPDATE bookType set name=? WHERE typeId=?";
+			String updateSQL = "UPDATE booktype set name=? WHERE typeId=?";
 
 			try {
 				pstmt = connection.prepareStatement(updateSQL);

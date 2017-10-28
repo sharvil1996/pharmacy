@@ -61,7 +61,7 @@ public class BookKeywordDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from bookKeyword bk,book b where b.bookId=bk.bookId";
+			String selectSQL = "Select * from bookkeyword bk,book b where b.bookId=bk.bookId";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 

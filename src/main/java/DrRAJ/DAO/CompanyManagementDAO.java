@@ -20,7 +20,7 @@ public class CompanyManagementDAO {
 	public boolean insert(CompanyManagementBean companyManagementBean) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO companyManagement(companyManagementId,photoLink,name,description,title)"
+			String insertSQL = "INSERT INTO companymanagement(companyManagementId,photoLink,name,description,title)"
 					+ " values(?,?,?,?,?)";
 			try {
 				connection.setAutoCommit(false);
@@ -63,7 +63,7 @@ public class CompanyManagementDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from companyManagement";
+			String selectSQL = "Select * from companymanagement";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -102,7 +102,7 @@ public class CompanyManagementDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String deleteSQL = "DELETE FROM companyManagement WHERE companyManagementId=?";
+			String deleteSQL = "DELETE FROM companymanagement WHERE companyManagementId=?";
 
 			try {
 				pstmt = connection.prepareStatement(deleteSQL);
@@ -135,7 +135,7 @@ public class CompanyManagementDAO {
 		CompanyManagementBean companyManagement = new CompanyManagementBean();
 
 		if (connection != null) {
-			String selectSQL = "Select * from companyManagement WHERE companyManagementId=?";
+			String selectSQL = "Select * from companymanagement WHERE companyManagementId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -169,7 +169,7 @@ public class CompanyManagementDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String updateSQL = "UPDATE companyManagement set photoLink=?,name=?,description=?,title=? WHERE companyManagementId=?";
+			String updateSQL = "UPDATE companymanagement set photoLink=?,name=?,description=?,title=? WHERE companyManagementId=?";
 			try {
 				pstmt = connection.prepareStatement(updateSQL);
 				pstmt.setString(1, companyManagementBean.getPhotoLink());

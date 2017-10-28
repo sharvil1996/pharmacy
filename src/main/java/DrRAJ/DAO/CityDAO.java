@@ -20,7 +20,7 @@ public class CityDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String insertSQL = "INSERT INTO City(cityName,cityId,stateId) values(?,?,?)";
+			String insertSQL = "INSERT INTO city(cityName,cityId,stateId) values(?,?,?)";
 			try {
 
 				pstmt = conn.prepareStatement(insertSQL);
@@ -121,7 +121,7 @@ public class CityDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String deleteSQL = "DELETE FROM City WHERE cityId=?";
+			String deleteSQL = "DELETE FROM city WHERE cityId=?";
 
 			try {
 				pstmt = conn.prepareStatement(deleteSQL);
@@ -186,7 +186,7 @@ public class CityDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String updateSQL = "UPDATE City set cityName=?,stateId=? WHERE cityId=?";
+			String updateSQL = "UPDATE city set cityName=?,stateId=? WHERE cityId=?";
 
 			try {
 				pstmt = conn.prepareStatement(updateSQL);

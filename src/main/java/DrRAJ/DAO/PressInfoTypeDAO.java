@@ -21,7 +21,7 @@ public class PressInfoTypeDAO {
 	public boolean insert(PressInfoTypeBean pressInfoTypeBean) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO pressInfoType(typeId,name)" + " values(?,?)";
+			String insertSQL = "INSERT INTO pressinfotype(typeId,name)" + " values(?,?)";
 			try {
 				connection.setAutoCommit(false);
 				pstmt = connection.prepareStatement(insertSQL);
@@ -60,7 +60,7 @@ public class PressInfoTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from pressInfoType order by name";
+			String selectSQL = "Select * from pressinfotype order by name";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -96,7 +96,7 @@ public class PressInfoTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from pressInfoType where name=?";
+			String selectSQL = "Select * from pressinfotype where name=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 				pstmt.setString(1, pressInfoTypeName);
@@ -122,7 +122,7 @@ public class PressInfoTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String deleteSQL = "DELETE FROM pressInfoType WHERE typeId=?";
+			String deleteSQL = "DELETE FROM pressinfotype WHERE typeId=?";
 
 			try {
 				pstmt = connection.prepareStatement(deleteSQL);
@@ -155,7 +155,7 @@ public class PressInfoTypeDAO {
 		PressInfoTypeBean pressInfoType = new PressInfoTypeBean();
 
 		if (connection != null) {
-			String selectSQL = "Select * from pressInfoType WHERE typeId=?";
+			String selectSQL = "Select * from pressinfotype WHERE typeId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -187,7 +187,7 @@ public class PressInfoTypeDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String updateSQL = "UPDATE pressInfoType set name=? WHERE typeId=?";
+			String updateSQL = "UPDATE pressinfotype set name=? WHERE typeId=?";
 
 			try {
 				pstmt = connection.prepareStatement(updateSQL);

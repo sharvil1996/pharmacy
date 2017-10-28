@@ -22,7 +22,7 @@ public class ReletedProductDAO {
 	public boolean insert(RelatedProductBean bean) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO relatedProduct(relatedProductId,relatedId,productId)" + " values(?,?,?)";
+			String insertSQL = "INSERT INTO relatedproduct(relatedProductId,relatedId,productId)" + " values(?,?,?)";
 			try {
 				connection.setAutoCommit(false);
 				pstmt = connection.prepareStatement(insertSQL);
@@ -102,7 +102,7 @@ public class ReletedProductDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from relatedProduct where relatedId=? and productId=?";
+			String selectSQL = "Select * from relatedproduct where relatedId=? and productId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 				pstmt.setString(1, bean.getReletedId());
@@ -128,7 +128,7 @@ public class ReletedProductDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String deleteSQL = "DELETE FROM relatedProduct WHERE relatedProductId=?";
+			String deleteSQL = "DELETE FROM relatedproduct WHERE relatedProductId=?";
 
 			try {
 				pstmt = connection.prepareStatement(deleteSQL);
@@ -162,7 +162,7 @@ public class ReletedProductDAO {
 
 		if (connection != null) {
 			HashMap<String, ProductBean> hashMap = new ProductDAO().getListHashmap();
-			String selectSQL = "Select * from relatedProduct WHERE relatedProductId=?";
+			String selectSQL = "Select * from relatedproduct WHERE relatedProductId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -197,7 +197,7 @@ public class ReletedProductDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String updateSQL = "UPDATE relatedProduct set relatedId=?,productId=? WHERE relatedProductId=?";
+			String updateSQL = "UPDATE relatedproduct set relatedId=?,productId=? WHERE relatedProductId=?";
 			try {
 				pstmt = connection.prepareStatement(updateSQL);
 				pstmt.setString(1, relatedProductBean.getReletedId());

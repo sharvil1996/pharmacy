@@ -20,7 +20,7 @@ public class ProductIndicationDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String insertSQL = "INSERT INTO productIndication(productIndicationId,productId,indication) values(?,?,?)";
+			String insertSQL = "INSERT INTO productindication(productIndicationId,productId,indication) values(?,?,?)";
 			try {
 
 				pstmt = conn.prepareStatement(insertSQL);
@@ -52,7 +52,7 @@ public class ProductIndicationDAO {
 
 	public ArrayList<ProductIndicationBean> getList() {
 		ArrayList<ProductIndicationBean> list = new ArrayList<ProductIndicationBean>();
-		String sql = "select * from productIndication,product where productIndication.productId=product.productId";
+		String sql = "select * from productindication,product where productindication.productId=product.productId";
 		conn = DBConnection.getConnection();
 		if (conn != null) {
 			try {
@@ -88,7 +88,7 @@ public class ProductIndicationDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String deleteSQL = "DELETE FROM productIndication WHERE productIndicationId=?";
+			String deleteSQL = "DELETE FROM productindication WHERE productIndicationId=?";
 
 			try {
 				pstmt = conn.prepareStatement(deleteSQL);
@@ -120,7 +120,7 @@ public class ProductIndicationDAO {
 		conn = DBConnection.getConnection();
 		ProductIndicationBean bean = null;
 		if (conn != null) {
-			String selectSQL = "select * from productIndication where productIndicationId=?";
+			String selectSQL = "select * from productindication where productIndicationId=?";
 			try {
 				pstmt = conn.prepareStatement(selectSQL);
 
@@ -152,7 +152,7 @@ public class ProductIndicationDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String updateSQL = "UPDATE productIndication set productId=?,indication=? WHERE productIndicationId=?";
+			String updateSQL = "UPDATE productindication set productId=?,indication=? WHERE productIndicationId=?";
 
 			try {
 				pstmt = conn.prepareStatement(updateSQL);

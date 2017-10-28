@@ -20,7 +20,7 @@ public class ProductCategoryDAO {
 	public boolean insert(ProductCategoryBean productCategoryBean) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO productCategory(productCategoryId,productCategoryName)" + " values(?,?)";
+			String insertSQL = "INSERT INTO productcategory(productCategoryId,productCategoryName)" + " values(?,?)";
 			try {
 				connection.setAutoCommit(false);
 				pstmt = connection.prepareStatement(insertSQL);
@@ -59,7 +59,7 @@ public class ProductCategoryDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productCategory order by productCategoryName";
+			String selectSQL = "Select * from productcategory order by productCategoryName";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -95,7 +95,7 @@ public class ProductCategoryDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productCategory where productCategoryName=?";
+			String selectSQL = "Select * from productcategory where productCategoryName=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 				pstmt.setString(1, productCategoryName);
@@ -121,7 +121,7 @@ public class ProductCategoryDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String deleteSQL = "DELETE FROM productCategory WHERE productCategoryId=?";
+			String deleteSQL = "DELETE FROM productcategory WHERE productCategoryId=?";
 
 			try {
 				pstmt = connection.prepareStatement(deleteSQL);
@@ -154,7 +154,7 @@ public class ProductCategoryDAO {
 		ProductCategoryBean productCategory = new ProductCategoryBean();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productCategory WHERE productCategoryId=?";
+			String selectSQL = "Select * from productcategory WHERE productCategoryId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -186,7 +186,7 @@ public class ProductCategoryDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String updateSQL = "UPDATE productCategory set productCategoryName=? WHERE productCategoryId=?";
+			String updateSQL = "UPDATE productcategory set productCategoryName=? WHERE productCategoryId=?";
 
 			try {
 				pstmt = connection.prepareStatement(updateSQL);

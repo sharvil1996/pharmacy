@@ -95,7 +95,7 @@ public class DosageCategoryDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from dosageCategory where name=?";
+			String selectSQL = "Select * from dosagecategory where name=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 				pstmt.setString(1, dosageCategoryName);
@@ -121,7 +121,7 @@ public class DosageCategoryDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String deleteSQL = "DELETE FROM dosageCategory WHERE dosageCategoryId=?";
+			String deleteSQL = "DELETE FROM dosagecategory WHERE dosageCategoryId=?";
 
 			try {
 				pstmt = connection.prepareStatement(deleteSQL);
@@ -154,7 +154,7 @@ public class DosageCategoryDAO {
 		DosageCategoryBean dosageCategory = new DosageCategoryBean();
 
 		if (connection != null) {
-			String selectSQL = "Select * from dosageCategory WHERE dosageCategoryId=?";
+			String selectSQL = "Select * from dosagecategory WHERE dosageCategoryId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -185,7 +185,7 @@ public class DosageCategoryDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String updateSQL = "UPDATE dosageCategory set name=? WHERE dosageCategoryId=?";
+			String updateSQL = "UPDATE dosagecategory set name=? WHERE dosageCategoryId=?";
 
 			try {
 				pstmt = connection.prepareStatement(updateSQL);

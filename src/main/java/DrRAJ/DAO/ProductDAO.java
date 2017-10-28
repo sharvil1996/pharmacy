@@ -455,7 +455,7 @@ public class ProductDAO {
 		connection = DBConnection.getConnection();
 		ProductIndicationBean bean = null;
 		if (connection != null) {
-			String selectSQL = "select * from productIndication pi,product p where pi.productId=p.productId and p.productId=?";
+			String selectSQL = "select * from productindication pi,product p where pi.productId=p.productId and p.productId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -490,7 +490,7 @@ public class ProductDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productComposition pc,product p,ingredients i where pc.productId=p.productId and pc.ingredientsId=i.ingredientsId and p.productId=?";
+			String selectSQL = "Select * from productcomposition pc,product p,ingredients i where pc.productId=p.productId and pc.ingredientsId=i.ingredientsId and p.productId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 				pstmt.setString(1, productId);
@@ -566,7 +566,7 @@ public class ProductDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productDosage pd,product p WHERE p.productId=pd.productId and p.productId=?";
+			String selectSQL = "Select * from productdosage pd,product p WHERE p.productId=pd.productId and p.productId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 				pstmt.setString(1, productId);

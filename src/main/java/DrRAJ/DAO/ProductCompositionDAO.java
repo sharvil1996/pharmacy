@@ -61,7 +61,7 @@ public class ProductCompositionDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productComposition pc,product p,ingredients i where pc.productId=p.productId and pc.ingredientsId=i.ingredientsId";
+			String selectSQL = "Select * from productcomposition pc,product p,ingredients i where pc.productId=p.productId and pc.ingredientsId=i.ingredientsId";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -101,7 +101,7 @@ public class ProductCompositionDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String deleteSQL = "DELETE FROM productComposition WHERE productCompositionId=?";
+			String deleteSQL = "DELETE FROM productcomposition WHERE productCompositionId=?";
 
 			try {
 				pstmt = connection.prepareStatement(deleteSQL);
@@ -134,7 +134,7 @@ public class ProductCompositionDAO {
 		ProductCompositionBean productComposition = new ProductCompositionBean();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productComposition pc,product p,ingredients i where pc.productId=p.productId and pc.ingredientsId=i.ingredientsId and productCompositionId=?";
+			String selectSQL = "Select * from productcomposition pc,product p,ingredients i where pc.productId=p.productId and pc.ingredientsId=i.ingredientsId and productCompositionId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 

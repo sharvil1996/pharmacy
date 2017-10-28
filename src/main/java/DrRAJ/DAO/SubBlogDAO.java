@@ -53,7 +53,7 @@ public class SubBlogDAO {
 
 	public ArrayList<SubBlogBean> getList() {
 		ArrayList<SubBlogBean> list = new ArrayList<SubBlogBean>();
-		String sql = "select * from subBlog,blog where subBlog.blogId=blog.blogId";
+		String sql = "select * from subblog,blog where subblog.blogId=blog.blogId";
 		conn = DBConnection.getConnection();
 		if (conn != null) {
 			try {
@@ -65,8 +65,8 @@ public class SubBlogDAO {
 					subBlogBean.setSubBlogId(rs.getString("subBlogId"));
 					subBlogBean.setBlogId(rs.getString("blogId"));
 					subBlogBean.setBlogTitle(rs.getString("blog.title"));
-					subBlogBean.setContent(rs.getString("subBlog.content"));
-					subBlogBean.setTitle(rs.getString("subBlog.title"));
+					subBlogBean.setContent(rs.getString("subblog.content"));
+					subBlogBean.setTitle(rs.getString("subblog.title"));
 					list.add(subBlogBean);
 				}
 			} catch (SQLException e) {
@@ -87,7 +87,7 @@ public class SubBlogDAO {
 
 	public ArrayList<SubBlogBean> getSubBlogList(String blogId) {
 		ArrayList<SubBlogBean> list = new ArrayList<SubBlogBean>();
-		String sql = "select * from subBlog,blog where subBlog.blogId=blog.blogId and blog.blogId=?";
+		String sql = "select * from subblog,blog where subblog.blogId=blog.blogId and blog.blogId=?";
 		conn = DBConnection.getConnection();
 		if (conn != null) {
 			try {
@@ -100,8 +100,8 @@ public class SubBlogDAO {
 					subBlogBean.setSubBlogId(rs.getString("subBlogId"));
 					subBlogBean.setBlogId(rs.getString("blogId"));
 					subBlogBean.setBlogTitle(rs.getString("blog.title"));
-					subBlogBean.setContent(rs.getString("subBlog.content"));
-					subBlogBean.setTitle(rs.getString("subBlog.title"));
+					subBlogBean.setContent(rs.getString("subblog.content"));
+					subBlogBean.setTitle(rs.getString("subblog.title"));
 
 					list.add(subBlogBean);
 				}
@@ -125,7 +125,7 @@ public class SubBlogDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String deleteSQL = "DELETE FROM subBlog WHERE subBlogId=?";
+			String deleteSQL = "DELETE FROM subblog WHERE subBlogId=?";
 
 			try {
 				pstmt = conn.prepareStatement(deleteSQL);
@@ -158,7 +158,7 @@ public class SubBlogDAO {
 		SubBlogBean subBlogBean = new SubBlogBean();
 
 		if (conn != null) {
-			String selectSQL = "select * from subBlog,blog where subBlog.blogId=blog.blogId and subBlogId=?";
+			String selectSQL = "select * from subblog,blog where subblog.blogId=blog.blogId and subBlogId=?";
 			try {
 				pstmt = conn.prepareStatement(selectSQL);
 
@@ -170,8 +170,8 @@ public class SubBlogDAO {
 					subBlogBean.setSubBlogId(rs.getString("subBlogId"));
 					subBlogBean.setBlogId(rs.getString("blogId"));
 					subBlogBean.setBlogTitle(rs.getString("blog.title"));
-					subBlogBean.setContent(rs.getString("subBlog.content"));
-					subBlogBean.setTitle(rs.getString("subBlog.title"));
+					subBlogBean.setContent(rs.getString("subblog.content"));
+					subBlogBean.setTitle(rs.getString("subblog.title"));
 				}
 
 			} catch (SQLException e) {
@@ -191,7 +191,7 @@ public class SubBlogDAO {
 		conn = DBConnection.getConnection();
 
 		if (conn != null) {
-			String updateSQL = "UPDATE subBlog set title=?,blogId=?,content=? WHERE subBlogId=?";
+			String updateSQL = "UPDATE subblog set title=?,blogId=?,content=? WHERE subBlogId=?";
 
 			try {
 				pstmt = conn.prepareStatement(updateSQL);

@@ -59,7 +59,7 @@ public class ProductDosageDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productDosage pd,product p WHERE p.productId=pd.productId";
+			String selectSQL = "Select * from productdosage pd,product p WHERE p.productId=pd.productId";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -97,7 +97,7 @@ public class ProductDosageDAO {
 		ProductDosageBean productDosage = new ProductDosageBean();
 
 		if (connection != null) {
-			String selectSQL = "Select * from productDosage pd,product p WHERE p.productId=pd.productId and productDosageId=?";
+			String selectSQL = "Select * from productdosage pd,product p WHERE p.productId=pd.productId and productDosageId=?";
 			try {
 				pstmt = connection.prepareStatement(selectSQL);
 
@@ -159,7 +159,7 @@ public class ProductDosageDAO {
 
 		connection = (Connection) DBConnection.getConnection();
 		if (connection != null) {
-			String sql = "delete from productDosage where productDosageId=?";
+			String sql = "delete from productdosage where productDosageId=?";
 			PreparedStatement statement;
 			try {
 				statement = connection.prepareStatement(sql);

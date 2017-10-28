@@ -17,7 +17,7 @@ public class PressInfoDAO {
 
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "insert into pressInfo(pressInfoId,typeId,title,link) values(?,?,?,?)";
+			String sql = "insert into pressinfo(pressInfoId,typeId,title,link) values(?,?,?,?)";
 			try {
 				PreparedStatement statement = conn.prepareStatement(sql);
 				statement.setString(1, bean.getPressInfoId());
@@ -49,7 +49,7 @@ public class PressInfoDAO {
 		ArrayList<PressInfoBean> list = new ArrayList<PressInfoBean>();
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "select * from pressInfo pi,pressInfoType pt where pt.typeId=pi.typeId";
+			String sql = "select * from pressinfo pi,pressInfoType pt where pt.typeId=pi.typeId";
 			PreparedStatement statement;
 			try {
 				statement = conn.prepareStatement(sql);
@@ -84,7 +84,7 @@ public class PressInfoDAO {
 
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "delete from pressInfo where pressInfoId=?";
+			String sql = "delete from pressinfo where pressInfoId=?";
 			PreparedStatement statement;
 			try {
 				statement = conn.prepareStatement(sql);
@@ -116,7 +116,7 @@ public class PressInfoDAO {
 
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "select * from pressInfo pi,pressInfoType pt where pt.typeId=pi.typeId and pressInfoId=?";
+			String sql = "select * from pressinfo pi,pressInfoType pt where pt.typeId=pi.typeId and pressInfoId=?";
 			PreparedStatement statement;
 			try {
 				statement = conn.prepareStatement(sql);
@@ -148,7 +148,7 @@ public class PressInfoDAO {
 	public boolean update(PressInfoBean bean) {
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
-			String sql = "update pressInfo set title=?,typeId=?,link=? where pressInfoId=?";
+			String sql = "update pressinfo set title=?,typeId=?,link=? where pressInfoId=?";
 			try {
 				PreparedStatement statement = conn.prepareStatement(sql);
 
