@@ -38,6 +38,12 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -131,6 +137,12 @@ public class ProductDAO {
 
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		return null;
@@ -324,8 +336,16 @@ public class ProductDAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+
+			finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
-		
+
 		System.out.println("Hello");
 		return null;
 	}
@@ -449,9 +469,10 @@ public class ProductDAO {
 		return listOfProduct;
 
 	}
+
 	public ArrayList<ProductIndicationBean> getIndication(String productId) {
 
-		ArrayList<ProductIndicationBean> list = new ArrayList<ProductIndicationBean>();		
+		ArrayList<ProductIndicationBean> list = new ArrayList<ProductIndicationBean>();
 		connection = DBConnection.getConnection();
 		ProductIndicationBean bean = null;
 		if (connection != null) {
@@ -483,7 +504,7 @@ public class ProductDAO {
 		}
 		return list;
 	}
-	
+
 	public List<ProductCompositionBean> getComposition(String productId) {
 
 		List<ProductCompositionBean> listOfProductComposition = new ArrayList<ProductCompositionBean>();
@@ -524,7 +545,7 @@ public class ProductDAO {
 		return listOfProductComposition;
 
 	}
-	
+
 	public ArrayList<PriceBean> getPrice(String productId) {
 		ArrayList<PriceBean> list = new ArrayList<PriceBean>();
 		String sql = "select * from price,product where price.productId=product.productId and product.productId=?";
@@ -559,7 +580,7 @@ public class ProductDAO {
 
 		return list;
 	}
-	
+
 	public List<ProductDosageBean> getDosage(String productId) {
 
 		List<ProductDosageBean> listOfProductDosage = new ArrayList<ProductDosageBean>();
@@ -597,7 +618,7 @@ public class ProductDAO {
 		return listOfProductDosage;
 
 	}
-	
+
 	public ArrayList<IngredientBean> getIngredient(String productId) {
 		ArrayList<IngredientBean> list = new ArrayList<IngredientBean>();
 		connection = (Connection) DBConnection.getConnection();
@@ -633,6 +654,7 @@ public class ProductDAO {
 		}
 		return list;
 	}
+
 	public List<ReviewBean> getReview(String productId) {
 
 		List<ReviewBean> listOfReview = new ArrayList<ReviewBean>();
@@ -674,5 +696,5 @@ public class ProductDAO {
 		return listOfReview;
 
 	}
-	
+
 }
