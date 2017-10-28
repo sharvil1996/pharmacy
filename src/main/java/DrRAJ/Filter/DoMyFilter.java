@@ -18,7 +18,7 @@ public class DoMyFilter implements Filter {
 			throws IOException, ServletException {
 
 		int a = ((HttpServletRequest) request).getRequestURI().toString().split("/").length;
-		System.out.println("Helo " + ((HttpServletRequest) request).getRequestURI().toString());
+		
 		String s[] = ((HttpServletRequest) request).getRequestURI().toString().split("/");
 		if (s[1].equalsIgnoreCase("login") || s[1].equalsIgnoreCase("company-info") || s[1].equalsIgnoreCase("manufacturing-practices")
 				|| s[1].equalsIgnoreCase("contract-manufacturing")
