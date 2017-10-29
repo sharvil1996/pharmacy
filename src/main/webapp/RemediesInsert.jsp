@@ -57,8 +57,20 @@
 								style="max-height: 200px; max-width: 200px;" />
 						</div>
 					</div>
-					<br /> <br /> <label class="col-sm-2 control-label"></label> <input
-						type="reset" value="Reset" name="reset" class="btn  btn-danger">
+					<br />
+					<div class="row">
+						<label class="col-sm-2"> <font size="+1">Enter
+								Remedies URL :</font>
+						</label>
+
+						<div class="col-lg-6">
+							<input type="text" class="form-control" value="${txtRemediesURL}"
+								name="txtRemediesURL" />${remediesURL}
+						</div>
+					</div>
+					<br /> <br /> <br /> <label class="col-sm-2 control-label"></label>
+					<input type="reset" value="Reset" name="reset"
+						class="btn  btn-danger">
 					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 					<input type="Submit" value="Add" name="submit"
 						class="btn btn-success">

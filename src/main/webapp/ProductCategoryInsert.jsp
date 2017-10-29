@@ -39,6 +39,18 @@
 								value="${txtProductCategoryName}" name="txtProductCategoryName" />${productCategoryName}
 						</div>
 					</div>
+					
+					<div class="row">
+						<label class="col-sm-2"> <font size="+1">Enter
+								Product Category URL :</font>
+						</label>
+
+						<div class="col-lg-6">
+							<input type="text" class="form-control"
+								value="${txtProductCategoryURL}" name="txtProductCategoryURL" />${productCategoryURL}
+						</div>
+					</div>
+					
 					<br /> <br /> <br /> <label class="col-sm-2 control-label"></label>
 					<input type="reset" value="Reset" name="reset"
 						class="btn  btn-danger">

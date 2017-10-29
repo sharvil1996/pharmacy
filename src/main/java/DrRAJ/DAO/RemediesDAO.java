@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import DrRAJ.Bean.ProductBean;
 import DrRAJ.Bean.RemediesBean;
 import DrRAJ.Utils.DBConnection;
 
@@ -20,13 +21,14 @@ public class RemediesDAO {
 	public boolean insert(RemediesBean remediesBean) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO remedies(remediesId,photoLink,name)" + " values(?,?,?)";
+			String insertSQL = "INSERT INTO remedies(remediesId,photoLink,name,forwardLink)" + " values(?,?,?,?)";
 			try {
 				connection.setAutoCommit(false);
 				pstmt = connection.prepareStatement(insertSQL);
 				pstmt.setString(1, remediesBean.getRemediesId());
 				pstmt.setString(2, remediesBean.getPhotolink());
 				pstmt.setString(3, remediesBean.getName());
+				pstmt.setString(4, remediesBean.getForwardLink());
 				int rowsAffected = pstmt.executeUpdate();
 				if (rowsAffected > 0) {
 					result = true;
@@ -54,6 +56,47 @@ public class RemediesDAO {
 		return result;
 	}
 
+	public RemediesBean getByURL(String remedisURL) {
+
+		connection = DBConnection.getConnection();
+		RemediesBean remedies = null;
+
+		if (connection != null) {
+			String selectSQL = "Select * from remedies where forwardLink=?";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+
+				pstmt.setString(1, remedisURL);
+
+				rs = pstmt.executeQuery();
+
+				while (rs.next()) {
+					remedies = new RemediesBean();
+					remedies.setRemediesId((rs.getString("remediesId")));
+					remedies.setPhotolink(rs.getString("photoLink"));
+					remedies.setName(rs.getString("name"));
+					remedies.setForwardLink(rs.getString("forwardLink"));
+				}
+				System.out.println("HI");
+				return remedies;
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		System.out.println("Hello");
+		return null;
+	}
+
 	public List<RemediesBean> getList() {
 
 		List<RemediesBean> listOfRemedies = new ArrayList<RemediesBean>();
@@ -73,6 +116,7 @@ public class RemediesDAO {
 					testimonial.setRemediesId((rs.getString("remediesId")));
 					testimonial.setPhotolink(rs.getString("photoLink"));
 					testimonial.setName(rs.getString("name"));
+					testimonial.setForwardLink(rs.getString("forwardLink"));
 					listOfRemedies.add(testimonial);
 				}
 
@@ -168,6 +212,7 @@ public class RemediesDAO {
 					remediesBean.setRemediesId(rs.getString("remediesId"));
 					remediesBean.setPhotolink(rs.getString("photoLink"));
 					remediesBean.setName(rs.getString("name"));
+					remediesBean.setForwardLink(rs.getString("forwardLink"));
 				}
 
 			} catch (SQLException e) {
@@ -187,12 +232,13 @@ public class RemediesDAO {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
-			String updateSQL = "UPDATE remedies set photoLink=?,name=? WHERE remediesId=?";
+			String updateSQL = "UPDATE remedies set photoLink=?,name=?,forwardLink=? WHERE remediesId=?";
 			try {
 				pstmt = connection.prepareStatement(updateSQL);
 				pstmt.setString(1, remediesBean.getPhotolink());
 				pstmt.setString(2, remediesBean.getName());
-				pstmt.setString(3, remediesBean.getRemediesId());
+				pstmt.setString(4, remediesBean.getRemediesId());
+				pstmt.setString(3, remediesBean.getForwardLink());
 				int rowsAffected = pstmt.executeUpdate();
 				if (rowsAffected > 0) {
 					result = true;

@@ -21,7 +21,7 @@ public class RemediesInsertServlet extends HttpServlet {
 
 		String name = request.getParameter("txtRemediesName");
 		String photoLink = request.getParameter("txtPhotoLink");
-
+		String remediesURL = request.getParameter("txtRemediesURL");
 		RemediesBean remediesBean = new RemediesBean();
 
 		boolean isError = false;
@@ -44,6 +44,14 @@ public class RemediesInsertServlet extends HttpServlet {
 		} else {
 			request.setAttribute("txtPhotoLink", photoLink);
 			remediesBean.setPhotolink(photoLink);
+		}
+		
+		if (ValidationUtils.isEmpty(remediesURL)) {
+			isError = true;
+			request.setAttribute("remediesURL", "<font color=red>* Remedies URL Link is Required</font>");
+		} else {
+			request.setAttribute("txtRemediesURL", remediesURL);
+			remediesBean.setForwardLink(remediesURL);
 		}
 
 		if (isError) {

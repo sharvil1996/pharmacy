@@ -16,24 +16,30 @@ public class ProductCategoryUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String productCategoryName = request.getParameter("txtProductCategoryName");
+		String productCategoryURL = request.getParameter("txtProductCategoryURL");
 		String productCategoryId = request.getParameter("productCategoryId");
 		ProductCategoryBean productCategoryBean = new ProductCategoryBean();
 
 		boolean isError = false;
-		System.out.println(productCategoryName + " ProductCategoryName");
 		if (ValidationUtils.isEmpty(productCategoryName)) {
 			isError = true;
 			request.setAttribute("productCategoryName", "<font color=red>* ProductCategory Name is Required</font>");
-		} else if (new ProductCategoryDAO().isProductCategoryExists(productCategoryName)) {
-			isError = true;
-			request.setAttribute("productCategoryName", "<font color=red>* ProductCategory Name is Already Exists</font>");
 		} else {
 			request.setAttribute("txtProductCategoryName", productCategoryName);
 			productCategoryBean.setProductCategoryName(productCategoryName);
 		}
 
+		if (ValidationUtils.isEmpty(productCategoryURL)) {
+			isError = true;
+			request.setAttribute("productCategoryURL", "<font color=red>* Product Category URL is Required</font>");
+		} else {
+			request.setAttribute("txtProductCategoryURL", productCategoryURL);
+			productCategoryBean.setForwardLink(productCategoryURL);
+		}
+
 		if (isError) {
 			productCategoryBean.setProductCategoryName(productCategoryName);
+			productCategoryBean.setForwardLink(productCategoryURL);
 			request.setAttribute("productCategoryBean", productCategoryBean);
 			request.getRequestDispatcher("ProductCategoryEdit.jsp").forward(request, response);
 		} else {
@@ -47,10 +53,6 @@ public class ProductCategoryUpdateServlet extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

@@ -5,6 +5,15 @@ public class RemediesBean {
 	private String remediesId;
 	private String name;
 	private String photolink;
+	private String forwardLink;
+
+	public String getForwardLink() {
+		return forwardLink;
+	}
+
+	public void setForwardLink(String forwardLink) {
+		this.forwardLink = forwardLink;
+	}
 
 	public String getRemediesId() {
 		return remediesId;

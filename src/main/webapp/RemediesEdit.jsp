@@ -42,12 +42,16 @@
 							String photoLink = remediesBean.getPhotolink();
 							if (photoLink == null)
 								photoLink = "";
+							
+							String forwardLink = remediesBean.getForwardLink();
+							if(forwardLink==null)
+								forwardLink="";
 					%>
 					<input type="hidden" name="remediesId"
 						value=<%=remediesBean.getRemediesId()%>> <br />
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Enter
-								Testimonial Name :</font>
+								Remedies Name :</font>
 						</label>
 
 						<div class="col-lg-6">
@@ -64,11 +68,27 @@
 						</label>
 
 						<div class="col-lg-6">
-							<input class="form-control" type="text" value="<%=photoLink%>"
-								name="txtPhotoLink" />${photoLink}
+							<input class="form-control imagetester" type="text" value="<%=photoLink%>"
+								name="txtPhotoLink" target=".imagetarget" />${photoLink}
+						</div>
+						<div class="col-md-3">
+							<img src="" alt="Image not found" class="imagetarget"
+								style="max-height: 200px; max-width: 200px;" />
 						</div>
 					</div>
-					<br /> <br /> <label class="col-sm-2 control-label"></label> <input
+					<br /> 
+					<div class="row">
+						<label class="col-sm-2"> <font size="+1">Enter
+								Remedies Forward URL :</font>
+						</label>
+
+						<div class="col-lg-6">
+							<input type="text" class="form-control" value="<%=forwardLink%>"
+								name="txtForwardLink" />${forwardLink}
+						</div>
+					</div>
+					<br />
+					<br /> <label class="col-sm-2 control-label"></label> <input
 						type="reset" value="Reset" name="reset" class="btn  btn-danger">
 					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 					<input type="Submit" value="Add" name="submit"
@@ -84,6 +104,16 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$("body").on("change leave input", ".imagetester", function() {
+		var target = $($(this).attr("target"));
+		target.attr("src", $(this).val());
+	});
+	var link = $(".imagetester").val();
+	if (link != "") {
+		$(".imagetarget").attr("src", link);
+	}
+</script>
 </html>
 
 

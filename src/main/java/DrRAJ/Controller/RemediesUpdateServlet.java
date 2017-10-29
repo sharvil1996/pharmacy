@@ -22,10 +22,8 @@ public class RemediesUpdateServlet extends HttpServlet {
 		String name = request.getParameter("txtRemediesName");
 		String photoLink = request.getParameter("txtPhotoLink");
 		String remediesId = request.getParameter("remediesId");
-
+		String forwardLink = request.getParameter("txtForwardLink");
 		RemediesBean remediesBean = new RemediesBean();
-
-		System.out.println(name + " " + photoLink + " " + remediesId);
 		remediesBean.setRemediesId(remediesId);
 		boolean isError = false;
 
@@ -43,6 +41,14 @@ public class RemediesUpdateServlet extends HttpServlet {
 		} else {
 			request.setAttribute("txtPhotoLink", photoLink);
 			remediesBean.setPhotolink(photoLink);
+		}
+
+		if (ValidationUtils.isEmpty(forwardLink)) {
+			isError = true;
+			request.setAttribute("forwardLink", "<font color=red>* Forward Link is Required</font>");
+		} else {
+			request.setAttribute("txtForwardLink", forwardLink);
+			remediesBean.setForwardLink(forwardLink);
 		}
 
 		if (isError) {

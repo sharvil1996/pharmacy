@@ -17,6 +17,7 @@ public class ProductCategoryInsertServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String productCategoryName = request.getParameter("txtProductCategoryName");
+		String productCategoryURL = request.getParameter("txtProductCategoryURL");
 		ProductCategoryBean productCategoryBean = new ProductCategoryBean();
 
 		boolean isError = false;
@@ -33,6 +34,14 @@ public class ProductCategoryInsertServlet extends HttpServlet {
 			productCategoryBean.setProductCategoryName(productCategoryName);
 		}
 
+		if (ValidationUtils.isEmpty(productCategoryURL)) {
+			isError = true;
+			request.setAttribute("productCategoryURL", "<font color=red>* Product Category URL is Required</font>");
+		} else {
+			request.setAttribute("txtProductCategoryURL", productCategoryURL);
+			productCategoryBean.setForwardLink(productCategoryURL);
+		}
+		
 		if (isError) {
 			request.getRequestDispatcher("ProductCategoryInsert.jsp").forward(request, response);
 		} else {

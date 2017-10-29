@@ -49,6 +49,7 @@ td, tr, th {
 								<tr>
 									<th><center>NAME</center></th>
 									<th><center>Link</center></th>
+									<th><center>Forward URL</center></th>
 									<th><center>ACTION</center></th>
 								</tr>
 							</thead>
@@ -63,7 +64,8 @@ td, tr, th {
 
 								<tr align="center">
 									<td><%=remediesBean.getName()%></td>
-									<td><%=remediesBean.getPhotolink()%></td>
+									<td><img src="<%=remediesBean.getPhotolink()%>" height="50" width="50" /></td>
+									<td><%=remediesBean.getForwardLink()%></td>
 									<td><a
 										href="RemediesDeleteServlet?remediesId=<%=remediesBean.getRemediesId()%>"><img
 											src="photos/Recycle Bin.ico" height="30" width="30"

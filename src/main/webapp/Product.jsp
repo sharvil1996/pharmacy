@@ -37,7 +37,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="cm5 tcenter">
-				<img src="imgs/product_sample.png" class="imgResponsive"
+				<img src="<%=bean.getImageLink() %>" class="imgResponsive"
 					style="max-height: 400px;">
 			</div>
 			<div class="cm7">

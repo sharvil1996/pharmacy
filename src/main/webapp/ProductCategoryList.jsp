@@ -49,6 +49,7 @@ td, tr, th {
 							<thead class="gujju-theme text-uppercase">
 								<tr>
 									<th><center>NAME</center></th>
+									<th><center>URL</center></th>
 									<th><center>ACTION</center></th>
 								</tr>
 							</thead>
@@ -61,6 +62,7 @@ td, tr, th {
 								%>
 								<tr align="center">
 									<td><%=productCategory.getProductCategoryName()%></td>
+									<td><%=productCategory.getForwardLink()%></td>
 									<td><a
 										href="ProductCategoryEditServlet?productCategoryId=<%=productCategory.getProductCategoryId()%>"><img
 											src="photos/edit.ico" height="30" width="30"

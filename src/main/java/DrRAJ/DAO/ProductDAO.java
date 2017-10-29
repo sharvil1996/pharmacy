@@ -250,6 +250,54 @@ public class ProductDAO {
 
 	}
 
+	public List<ProductBean> getAllListByRemedies(String remediesId) {
+
+		List<ProductBean> listOfProduct = new ArrayList<ProductBean>();
+		connection = DBConnection.getConnection();
+
+		if (connection != null) {
+			String selectSQL = "Select * from product where remediesId=?";
+			try {
+				pstmt = connection.prepareStatement(selectSQL);
+				pstmt.setString(1, remediesId);
+				rs = pstmt.executeQuery();
+
+				ProductBean product = null;
+				while (rs.next()) {
+					product = new ProductBean();
+					product.setProductId(rs.getString("productId"));
+					product.setDescription(rs.getString("description"));
+					product.setImageLink(rs.getString("imageLink"));
+					product.setContraIndication(rs.getString("contraIndication"));
+					product.setForwardLink(rs.getString("forwardLink"));
+					product.setProductCategoryId(rs.getString("productCategoryId"));
+					product.setProductId(rs.getString("productId"));
+					product.setProductName(rs.getString("productName"));
+					product.setPurpose(rs.getString("purpose"));
+					product.setRemediesId(rs.getString("remediesId"));
+					product.setSideEffect(rs.getString("sideEffect"));
+					product.setInteraction(rs.getString("interaction"));
+					product.setProductURL(rs.getString("productURL"));
+					product.setCnt(rs.getInt("cnt") + "");
+					listOfProduct.add(product);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		return listOfProduct;
+
+	}
+
 	public ProductBean getByPK(String productId) {
 
 		connection = DBConnection.getConnection();
