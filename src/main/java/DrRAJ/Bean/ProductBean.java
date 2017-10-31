@@ -17,6 +17,15 @@ public class ProductBean {
 	private String productCategoryName;
 	private String productURL;
 	private String cnt;
+	private String remediesImageLink;
+	public String getRemediesImageLink() {
+		return remediesImageLink;
+	}
+
+	public void setRemediesImageLink(String remediesImageLink) {
+		this.remediesImageLink = remediesImageLink;
+	}
+
 	public String getCnt() {
 		return cnt;
 	}

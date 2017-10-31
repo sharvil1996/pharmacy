@@ -1102,7 +1102,7 @@ header{
   position: relative;
   .blackback{
     background-color: black;
-    opacity: 0.2;
+    opacity: 0.4;
     position: absolute;
     top: 0;
     left: 0;
@@ -1127,7 +1127,7 @@ header{
   }
   &:hover,&:active,&:focus,&.active{
     .blackback{
-      opacity: 0.6;
+      opacity: 0.7;
       transition: opacity 0.3s ease;
     }
   }
@@ -1163,4 +1163,5 @@ header{
 }
 .store_template{
   padding: 10px 15px;
+  height: 120px;
 }

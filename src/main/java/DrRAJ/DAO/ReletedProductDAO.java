@@ -11,6 +11,7 @@ import java.util.List;
 import DrRAJ.Bean.ProductBean;
 import DrRAJ.Bean.RelatedProductBean;
 import DrRAJ.Utils.DBConnection;
+import DrRAJ.Utils.GenrateMathodsUtils;
 
 public class ReletedProductDAO {
 
@@ -19,39 +20,35 @@ public class ReletedProductDAO {
 	private ResultSet rs = null;
 	boolean result = false;
 
-	public boolean insert(RelatedProductBean bean) {
+	public boolean insert(RelatedProductBean bean, String relatedProducts) {
+	
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO relatedproduct(relatedProductId,relatedId,productId)" + " values(?,?,?)";
-			try {
-				connection.setAutoCommit(false);
-				pstmt = connection.prepareStatement(insertSQL);
-				pstmt.setString(1, bean.getReletedProductId());
-				pstmt.setString(2, bean.getReletedId());
-				pstmt.setString(3, bean.getProductId());
-				int rowsAffected = pstmt.executeUpdate();
-				if (rowsAffected > 0) {
-					result = true;
-				}
-			} catch (SQLException e) {
-				try {
-					connection.rollback();
-					result = false;
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-				e.printStackTrace();
-			} finally {
-				try {
-					connection.commit();
-					connection.setAutoCommit(true);
-					connection.close();
 
+			String arr[] = relatedProducts.split(" ");
+			
+			for (int i = 0; i < arr.length; i++) {
+				System.out.println(arr[i] + "Hiiii");
+				String insertSQL = "INSERT INTO relatedproduct(relatedProductId,relatedId,productId)"
+						+ " values(?,?,?)";
+				try {
+					pstmt = connection.prepareStatement(insertSQL);
+					pstmt.setString(1, GenrateMathodsUtils.getRandomString(15));
+					pstmt.setString(2, arr[i]);
+					pstmt.setString(3, bean.getProductId());
+					
+					System.out.println("Inserted");
+					int rowsAffected = pstmt.executeUpdate();
+					if (rowsAffected > 0) {
+						result = true;
+					}
 				} catch (SQLException e) {
-					e.printStackTrace();
+						e.printStackTrace();
+				} finally {
+					
 				}
-			}
 
+			}
 		}
 		return result;
 	}

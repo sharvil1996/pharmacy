@@ -180,6 +180,7 @@ public class ProductDAO {
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
 					product.setCnt(rs.getInt("cnt") + "");
+					product.setRemediesImageLink(rs.getString("photoLink"));
 					listOfProduct.add(product);
 				}
 
@@ -231,6 +232,7 @@ public class ProductDAO {
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
 					product.setCnt(rs.getInt("cnt") + "");
+					product.setRemediesImageLink(rs.getString("photoLink"));
 					listOfProduct.add(product);
 				}
 
@@ -330,6 +332,7 @@ public class ProductDAO {
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
 					product.setCnt(rs.getInt("cnt") + "");
+					product.setRemediesImageLink(rs.getString("photoLink"));
 				}
 
 			} catch (SQLException e) {
@@ -377,6 +380,7 @@ public class ProductDAO {
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
 					product.setCnt(rs.getInt("cnt") + "");
+					product.setRemediesImageLink(rs.getString("photoLink"));
 				}
 				System.out.println("HI");
 				return product;
@@ -499,6 +503,7 @@ public class ProductDAO {
 					product.setInteraction(rs.getString("interaction"));
 					product.setProductURL(rs.getString("productURL"));
 					product.setCnt(rs.getInt("cnt") + "");
+					product.setRemediesImageLink(rs.getString("photoLink"));
 					listOfProduct.put(product.getProductId(), product);
 				}
 

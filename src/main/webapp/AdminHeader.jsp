@@ -181,14 +181,14 @@
 
 							<!-- -----------------------------------Product Related Product-------------------------------   -->
 
-							<li class="treeview"><a href="RelatedProductListServlet">
+							<li class="treeview"><a href="ReletedProductListServlet">
 									<i class="fa fa-plus-square"></i> <span>Related Product</span>
 									<i class="fa fa-angle-left pull-right"></i>
 							</a>
 								<ul class="treeview-menu">
 									<li><a href="RelatedProductInsert.jsp"><i
 											class="fa fa-gg"></i> Add </a></li>
-									<li><a href="RelatedProductListServlet"><i
+									<li><a href="ReletedProductListServlet"><i
 											class="fa fa-gg"></i> List </a></li>
 								</ul></li>
 

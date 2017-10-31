@@ -12,7 +12,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import DrRAJ.Bean.ProductBean;
-import DrRAJ.Bean.ProductCategoryBean;
 import DrRAJ.Bean.RemediesBean;
 import DrRAJ.DAO.ProductCategoryDAO;
 import DrRAJ.DAO.ProductDAO;
@@ -33,7 +32,13 @@ public class DoMyFilter implements Filter {
 			// request).getRequestURI().toString());
 			if (s[1].equalsIgnoreCase("login") || s[1].equalsIgnoreCase("company-info")
 					|| s[1].equalsIgnoreCase("manufacturing-practices")
-					|| s[1].equalsIgnoreCase("contract-manufacturing")) {
+					|| s[1].equalsIgnoreCase("contract-manufacturing") 
+					|| s[1].equalsIgnoreCase("dr-raj-products")
+					|| s[1].equalsIgnoreCase("find-a-store-or-practitioner")
+					|| s[1].equalsIgnoreCase("faq")
+					|| s[1].equalsIgnoreCase("know-your-medicine")
+					|| s[1].equalsIgnoreCase("remedies")
+			) {
 				chain.doFilter(request, response);
 			} else {
 				// System.out.println("Hello" + s[1]);

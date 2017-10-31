@@ -172,20 +172,18 @@ public class ReviewDAO {
 		return review;
 	}
 
-	public boolean makeItValid(String reviewId) {
+	public String makeItValid(String reviewId, String value) {
 		connection = DBConnection.getConnection();
 
 		if (connection != null) {
 			String updateSQL = "UPDATE review SET isValid=? WHERE reviewId=?";
 			try {
 				pstmt = connection.prepareStatement(updateSQL);
-				pstmt.setString(1,"1");
+				pstmt.setInt(1, Integer.parseInt(value));
 				pstmt.setString(2, reviewId);
 				int rowsAffected = pstmt.executeUpdate();
-				if (rowsAffected > 0) {
-					result = true;
-				} else {
-				}
+				if (rowsAffected > 0)
+					return "1";
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -197,7 +195,7 @@ public class ReviewDAO {
 			}
 
 		}
-		return result;
+		return "0";
 	}
 
 	public boolean update(ReviewBean reviewBean) {

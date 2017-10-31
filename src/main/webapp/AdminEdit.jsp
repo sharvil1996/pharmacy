@@ -38,7 +38,7 @@
 			<tr>
 				<td>Enter First Name</td>
 				<td><input type="text" name="txtIngredientTitle"
-					value="<%=bean.getTitle()%>">${ingredientTitle}</td>
+					value="<%=/*bean.getTitle()*/%>">${ingredientTitle}</td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit"></td>

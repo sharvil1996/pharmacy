@@ -23,6 +23,10 @@ public class ProductCompositionInsertServlet extends HttpServlet {
 		String productId = request.getParameter("selProductName");
 		String content = request.getParameter("txtContent");
 		String ingredientsId = request.getParameter("selIngredientsName");
+		
+		String contents[] = request.getParameter("contentArr").split(" ");
+		String ingredientsArr[] = request.getParameter("ingredientsArr").split(" ");
+		
 		ProductCompositionBean productCompositionBean = new ProductCompositionBean();
 
 		boolean isError = false;
@@ -35,29 +39,10 @@ public class ProductCompositionInsertServlet extends HttpServlet {
 			productCompositionBean.setProductId(productId);
 		}
 
-		
-		if (ValidationUtils.isEmpty(ingredientsId) || ingredientsId.equals("0")) {
-			isError = true;
-			request.setAttribute("ingredients", "<font color=red>* Ingredients Name is Required</font>");
-		} else {
-			request.setAttribute("selIngredientsName", productId);
-			productCompositionBean.setIngredientsId(ingredientsId);
-		}
-
-		
-		if (ValidationUtils.isEmpty(content)) {
-			isError = true;
-			request.setAttribute("content", "<font color=red>* Content is Required</font>");
-		} else {
-			request.setAttribute("txtContent", content);
-			productCompositionBean.setCompositionContent(content);
-		}
-
 		if (isError) {
 			request.getRequestDispatcher("ProductCompositionInsert.jsp").forward(request, response);
 		} else {
-			productCompositionBean.setProductCompositionId(GenrateMathodsUtils.getRandomString(15));
-			if (new ProductCompositionDAO().insert(productCompositionBean)) {
+			if (new ProductCompositionDAO().insert(productCompositionBean,contents,ingredientsArr)) {
 				response.sendRedirect("ProductCompositionListServlet");
 			} else {
 				request.getRequestDispatcher("ProductCompositionInsert.jsp").forward(request, response);

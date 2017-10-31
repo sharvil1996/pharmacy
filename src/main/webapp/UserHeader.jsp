@@ -30,7 +30,7 @@
 			<div class="whiteSeperator"></div>
 			<div class="bold">Health & Homoeopathy</div>
 			<div class="whiteSeperator"></div>
-			<a href="#">FAQ on Homoeopathy</a> <a href="#">Know Your Medicine</a>
+			<a href="#">FAQ on Homoeopathy</a> <a href="know-your-medicine">Know Your Medicine</a>
 			<a href="#">Mind, Body & Spirit</a> <a href="#">Homoeopathic
 				Self-Help</a>
 			<div class="whiteSeperator"></div>
@@ -48,7 +48,7 @@
 				for (int i = 0; i < list.size(); i++) {
 			%>
 
-			<a href="#"><%=list.get(i).getName()%></a>
+			<a href="<%=list.get(i).getForwardLink()%>"><%=list.get(i).getName()%></a>
 			<%
 				}
 			%>
@@ -59,7 +59,7 @@
 				for (int i = 0; i < productCategoryList.size(); i++) {
 			%>
 
-			<a href="#"><%=productCategoryList.get(i).getProductCategoryName()%></a>
+			<a href="<%=productCategoryList.get(i).getForwardLink()%>"><%=productCategoryList.get(i).getProductCategoryName()%></a>
 			<%
 				}
 			%>
@@ -82,7 +82,7 @@
 				</div>
 				<div class="rightnavbar">
 					<div class="topnavbar">
-						<a class="smallLink" href="#">Find a Store or Practitioner</a> <a
+						<a class="smallLink" href="find-a-store-or-practitioner">Find a Store or Practitioner</a> <a
 							class="smallButton"
 							href="https://www.homeomart.com/seo_key_word?&filter_name=dr.%20raj&filter=ATTRIBU=Dr+Raj+Homoeo+Pharmacy=2=Manufacturer"
 							target="_blank">Buy Online</a>
@@ -95,7 +95,7 @@
 						<div class="hover-dropdown">
 							Health & Homoeopathy
 							<div class="hover-dropdown-menu">
-								<a href="#">FAQ on Homoeopathy</a> <a href="#">Know Your
+								<a href="#">FAQ on Homoeopathy</a> <a href="know-your-medicine">Know Your
 									Medicine</a> <a href="#">Mind, Body & Spirit</a> <a href="#">Homoeopathic
 									Self-Help</a>
 							</div>
@@ -110,8 +110,7 @@
 									Information</a> <a href="#">Contact Customer Service</a>
 							</div>
 						</div>
-						<a class="link dropdown-button" href="#"
-							target=".remedies-container-dropdown">Remedies</a>
+						<a class="link dropdown-button cursorPointer"	target=".remedies-container-dropdown">Remedies</a>
 						<div class="hover-dropdown">
 							Products
 							<div class="hover-dropdown-menu">
@@ -119,7 +118,7 @@
 									for (int i = 0; i < productCategoryList.size(); i++) {
 								%>
 
-								<a href="#"><%=productCategoryList.get(i).getProductCategoryName()%></a>
+								<a href="<%=productCategoryList.get(i).getForwardLink()%>"><%=productCategoryList.get(i).getProductCategoryName()%></a>
 								<%
 									}
 								%>
@@ -141,7 +140,7 @@
 					%>
 
 					<div class="cx3 tcenter" style="margin-bottom: 15px;">
-						<a href="#" class="link black"><%=list.get(i).getName()%></a>
+						<a href="<%=list.get(i).getForwardLink()%>" class="link black"><%=list.get(i).getName()%></a>
 					</div>
 					<%
 						}

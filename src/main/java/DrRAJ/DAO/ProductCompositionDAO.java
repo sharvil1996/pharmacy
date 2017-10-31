@@ -9,6 +9,7 @@ import java.util.List;
 
 import DrRAJ.Bean.ProductCompositionBean;
 import DrRAJ.Utils.DBConnection;
+import DrRAJ.Utils.GenrateMathodsUtils;
 
 public class ProductCompositionDAO {
 
@@ -17,40 +18,30 @@ public class ProductCompositionDAO {
 	private ResultSet rs = null;
 	boolean result = false;
 
-	public boolean insert(ProductCompositionBean bean) {
+	public boolean insert(ProductCompositionBean bean, String[] contents, String[] ingredientsArr) {
 		connection = DBConnection.getConnection();
 		if (connection != null) {
-			String insertSQL = "INSERT INTO productcomposition(productCompositionId, productId, compositionContent, ingredientsId) VALUES (?,?,?,?)";
-			try {
-				connection.setAutoCommit(false);
-				pstmt = connection.prepareStatement(insertSQL);
-				pstmt.setString(1, bean.getProductCompositionId());
-				pstmt.setString(2, bean.getProductId());
-				pstmt.setString(3, bean.getCompositionContent());
-				pstmt.setString(4, bean.getIngredientsId());
-				int rowsAffected = pstmt.executeUpdate();
-				if (rowsAffected > 0) {
-					result = true;
-				}
-			} catch (SQLException e) {
-				try {
-					connection.rollback();
-					result = false;
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-				e.printStackTrace();
-			} finally {
-				try {
-					connection.commit();
-					connection.setAutoCommit(true);
-					connection.close();
 
+			for (int i = 0; i < contents.length; i++) {
+
+				String insertSQL = "INSERT INTO productcomposition(productCompositionId, productId, compositionContent, ingredientsId) VALUES (?,?,?,?)";
+				try {
+					pstmt = connection.prepareStatement(insertSQL);
+					pstmt.setString(1, GenrateMathodsUtils.getRandomString(15));
+					pstmt.setString(2, bean.getProductId());
+					pstmt.setString(3, contents[i]);
+					pstmt.setString(4, ingredientsArr[i]);
+					int rowsAffected = pstmt.executeUpdate();
+					if (rowsAffected > 0) {
+						result = true;
+					}
 				} catch (SQLException e) {
 					e.printStackTrace();
-				}
-			}
+				} finally {
 
+				}
+
+			}
 		}
 		return result;
 	}

@@ -18,7 +18,7 @@
 </title>
 <%@include file="UserHeader.jsp"%>
 <section class="bgimage"
-	style="background-image: url(imgs/homebanner.jpg);">
+	style="background-image: url(<%=bean.getRemediesImageLink()%>);">
 	<div class="blackcover opaq2"></div>
 	<div class="container posrel" style="z-index: 2;">
 		<br> <br> <br>

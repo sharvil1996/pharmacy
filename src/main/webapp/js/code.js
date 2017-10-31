@@ -147,3 +147,11 @@ if($(".ratingBlock")[0]){
 		}
 	});
 }
+function callAjax(url, executor) {
+    $.ajax({
+        url: url,
+        success: function (data) {
+            executor(data);
+        }
+    });
+}

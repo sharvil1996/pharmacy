@@ -20,8 +20,8 @@ public class ReletedProductInsertServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String productId = request.getParameter("txtProductId");
-		String relatedProductId = request.getParameter("txtRelatedProductId");
-
+		String relatedProducts = request.getParameter("txtDummy");
+		System.out.println(relatedProducts+ "RELATED");
 		RelatedProductBean relatedProductBean = new RelatedProductBean();
 
 		boolean isError = false;
@@ -32,19 +32,6 @@ public class ReletedProductInsertServlet extends HttpServlet {
 		} else {
 			request.setAttribute("txtProductId", productId);
 			relatedProductBean.setProductId(productId);
-		}
-
-		if (ValidationUtils.isEmpty(relatedProductId) || relatedProductId.equals("0")) {
-			isError = true;
-			request.setAttribute("relatedProduct", "<font color=red>* Related Product is Required</font>");
-		} else {
-			request.setAttribute("txtRelatedProductId", relatedProductId);
-			relatedProductBean.setReletedId(relatedProductId);
-		}
-
-		if (productId.equals(relatedProductId)) {
-			isError = true;
-			request.setAttribute("relatedProduct", "<font color=red>* This relation is not required</font>");
 		}
 
 		if (isError) {
@@ -58,7 +45,7 @@ public class ReletedProductInsertServlet extends HttpServlet {
 
 			} else {
 				relatedProductBean.setReletedProductId(GenrateMathodsUtils.getRandomString(15));
-				if (new ReletedProductDAO().insert(relatedProductBean)) {
+				if (new ReletedProductDAO().insert(relatedProductBean,relatedProducts)) {
 					response.sendRedirect("ReletedProductListServlet");
 				} else {
 					request.getRequestDispatcher("RelatedProductInsert.jsp").forward(request, response);

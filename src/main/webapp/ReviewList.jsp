@@ -70,7 +70,20 @@ td, tr, th {
 									<td><%=review.getTitle()%></td>
 									<td><%=review.getRating()%></td>
 									<td><textarea rows="2" cols="20" disabled="disabled"><%=review.getDescription()%></textarea></td>
-									<td><%=review.getIsValid()%></td>
+									<td>
+										<%
+										if(review.getIsValid().equals("1")){
+										%>	
+											<input type="button" target="<%=review.getReviewId() %>" targetValue="0" class="btn btn-success reviewStateChangeButton" value="Yes"/>
+										<%
+										}
+										else{
+										%>	
+											<input type="button" target="<%=review.getReviewId() %>" targetValue="1" class="btn btn-danger reviewStateChangeButton" value="No"/>
+										<%
+										}
+										%>
+									</td>
 									<td><%-- <a
 										href="ReviewEditServlet?reviewId=<%=review.getReviewId()%>"><img
 											src="photos/edit.ico" height="30" width="30"
@@ -91,5 +104,34 @@ td, tr, th {
 		</div>
 		</section>
 	</div>
+	<script type="text/javascript" src="js/jq.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+	<script type="text/javascript">
+		$("body").on("click",".reviewStateChangeButton",function(){
+			if(!$(this).hasClass("disabled")){
+				var reviewId=$(this).attr("target");
+				var value=$(this).attr("targetValue");
+				var me=$(this);
+				$(this).val("Wait");
+				$(this).addClass("disab btn-warning");
+				callAjax("AJAXServlet?method=reviewUpdate&reviewId="+reviewId+"&value="+value,function(data,extra=me){
+					if(data=="1"){
+						$(extra).removeClass("disab btn-warning btn-danger btn-success");
+						var value=$(extra).attr("targetValue");
+						if(value=="1"){
+							$(extra).addClass("btn-success");
+							$(extra).val("Yes");
+							$(extra).attr("targetValue","0");
+						}
+						else{
+							$(extra).addClass("btn-danger");
+							$(extra).val("No");
+							$(extra).attr("targetValue","1");
+						}
+					}
+				});
+			}
+		});
+	</script>
 </body>
 </html>
