@@ -33,8 +33,7 @@ td, tr, th {
 		</ol>
 		<br>
 		<br>
-		<a href="BookInsert.jsp" name="ADD" class="btn btn-primary">ADD</a>
-		<br>
+		<a href="BookInsert.jsp" name="ADD" class="btn btn-primary">ADD</a> <br>
 		<br>
 		<div class="row">
 			<div class="col-xs-12">
@@ -70,8 +69,7 @@ td, tr, th {
 									<td><%=bean.getPhotolink()%></td>
 									<td><%=bean.getUrllink()%></td>
 									<td><textarea disabled="disabled"><%=bean.getDescription()%></textarea></td>
-									<td><a
-										href="BookEditServlet?bookId=<%=bean.getBookId()%>"><img
+									<td><a href="BookEditServlet?bookId=<%=bean.getBookId()%>"><img
 											src="photos/edit.ico" height="30" width="30"
 											class="img-rounded" /></a>&nbsp;&nbsp; <a
 										href="BookDeleteServlet?bookId=<%=bean.getBookId()%>"><img

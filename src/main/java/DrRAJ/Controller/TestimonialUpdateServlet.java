@@ -59,7 +59,6 @@ public class TestimonialUpdateServlet extends HttpServlet {
 //			testimonialBean.setName(name);
 //			testimonialBean.setPhotoLink(photoLink);
 //			testimonialBean.setTestimonialId(testimonialId);
-			System.out.println("HI");
 			request.setAttribute("testimonialBean", testimonialBean);
 			request.getRequestDispatcher("TestimonialEdit.jsp").forward(request, response);
 		} else {

@@ -37,8 +37,8 @@
 
 						if (productDosageBean != null) {
 					%>
-					<br />
-					<input type="hidden" name="productDosageId" value="<%=productDosageBean.getProductDosageId()%>">  
+					<br /> <input type="hidden" name="productDosageId"
+						value="<%=productDosageBean.getProductDosageId()%>">
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Select
 								Product Name :</font>

@@ -13,9 +13,7 @@
 	ProductBean bean = (ProductBean) request.getAttribute("bean");
 	if (bean != null) {
 %>
-<title>
-	<%=bean.getProductName()%> | Dr. Raj Homoeo Pharmacy
-</title>
+<title><%=bean.getProductName()%> | Dr. Raj Homoeo Pharmacy</title>
 <%@include file="UserHeader.jsp"%>
 <section class="bgimage"
 	style="background-image: url(<%=bean.getRemediesImageLink()%>);">
@@ -46,7 +44,7 @@
 				<span class="bold size15 line15">Indication</span>
 				<div class="mainSeperator full dotted"></div>
 				<div class="checkList">
-				
+
 					<%
 					ArrayList<ProductIndicationBean> indicationList = new ProductDAO().getIndication(bean.getProductId());
 					for(int i=0;i<indicationList.size();i++){
@@ -58,10 +56,11 @@
 					<%
 						} 
 					%>
-					
-					
+
+
 				</div>
-				<a href="<%=bean.getForwardLink() %>" class="button responsive">Buy Now</a>
+				<a href="<%=bean.getForwardLink() %>" class="button responsive">Buy
+					Now</a>
 			</div>
 		</div>
 		<div class="row">
@@ -74,10 +73,10 @@
 					ArrayList<ProductCompositionBean> compositionList = (ArrayList<ProductCompositionBean>)new ProductDAO().getComposition(bean.getProductId());
 					if(compositionList.size()==0){
 						%>
-						<tr>
+					<tr>
 						<td>No Composition</td>
 					</tr>
-						<%
+					<%
 					}
 					else{
 					for(int i=0;i<compositionList.size();i++){
@@ -89,7 +88,7 @@
 					<%
 						}}
 					%>
-	
+
 				</table>
 				<!-- <p class="paragraph">
 					<span class="bold">Excipient</span><span class="tab"></span>q.s. to
@@ -106,10 +105,10 @@
 					ArrayList<PriceBean> priceList = (ArrayList<PriceBean>)new ProductDAO().getPrice(bean.getProductId());
 					if(priceList.size()==0){
 						%>
-						<tr>
+					<tr>
 						<td>No Packaging</td>
 					</tr>
-						<%
+					<%
 					}
 					else{
 					for(int i=0;i<priceList.size();i++){
@@ -122,7 +121,7 @@
 					<%
 						}}
 					%>
-					
+
 				</table>
 				<span class="bold size15 line15">Dosage</span>
 				<div class="mainSeperator full dotted"></div>
@@ -130,25 +129,21 @@
 					<!-- <span class="bold">Children :</span> 1 Tablespoon 2-3 times a day
 					or as directed by the physician. <br> <span class="bold">Babies
 						:</span> 1 Teaspoon 2-3 times a day or as directed by the physician. -->
-						
+
 					<%
 					ArrayList<ProductDosageBean> dosageList =(ArrayList<ProductDosageBean>) new ProductDAO().getDosage(bean.getProductId());
 					if(dosageList.size()==0){
 						%>
-						<tr>
-						<td>No Dosage</td>
-					</tr>
-						<%
+						<span>No Dosage</span>
+					<%
 					}
 					else{
 					for(int i=0;i<dosageList.size();i++){
 					%>
-					<tr>
-						<td><%=dosageList.get(i).getContent() %></td>
-					</tr>
+						<%=dosageList.get(i).getContent() %><br>
 					<%
 						}}
-					%>	
+					%>
 				</p>
 				<span class="bold size15 line15">Interaction</span>
 				<div class="mainSeperator full dotted"></div>
@@ -168,20 +163,20 @@
 		<h2 class="fgwhite tcenter">What's Inside</h2>
 		<br> <br>
 		<div class="owl-carousel owl-theme knowYourMedicines">
-		
+
 			<%
 					ArrayList<IngredientBean> ingredientList =(ArrayList<IngredientBean>) new ProductDAO().getIngredient(bean.getProductId());
 					if(ingredientList.size()==0){
 						%>
-						<tr>
-						<td>No Ingredient</td>
-					</tr>
-						<%
+			<tr>
+				<td>No Ingredient</td>
+			</tr>
+			<%
 					}
 					else{
 					for(int i=0;i<ingredientList.size();i++){
 					%>
-					<div class="item tcenter">
+			<div class="item tcenter">
 				<div class="bgwhite inblock knowYourMedicine">
 					<img src="<%=ingredientList.get(i).getPhotoLink() %>" />
 					<h3><%=ingredientList.get(i).getTitle() %></h3>
@@ -189,21 +184,23 @@
 					<p><%=ingredientList.get(i).getDescription() %></p>
 				</div>
 			</div>
-					<%
+			<%
 						}}
-					%>	
+					%>
 		</div>
 	</div>
 </section>
 <section>
-<%
+	<%
 	ArrayList<ReviewBean> reviewList =(ArrayList<ReviewBean>) new ProductDAO().getReview(bean.getProductId());
 %>
 	<div class="container">
 		<h2 class="tcenter" style="margin-bottom: 30px;">Reviews</h2>
 		<div class="row">
 			<div class="cs6 tleft responsive" style="margin-bottom: 10px;">
-				<h3 style="top: 5px;" class="posrel"><%=reviewList.size()%> Review(s)</h3>
+				<h3 style="top: 5px;" class="posrel"><%=reviewList.size()%>
+					Review(s)
+				</h3>
 			</div>
 			<div class="cs6 tright" style="margin-bottom: 10px;">
 				<button type="button" class="button responsive reviewbutton">Write
@@ -213,19 +210,22 @@
 		<div class="reviewForm hidden"
 			style="padding: 30px 0; max-width: 900px; margin: 0 auto;">
 			<h3 class="tcenter" style="margin-bottom: 20px;">Write a Review</h3>
-			<label class="label">Name</label> <input type="text" class="textbox" name="txtCustomerName"/>
-			<label class="label">Ratings</label>
+			<label class="label">Name</label> <input type="text" class="textbox"
+				name="txtCustomerName" /> <label class="label">Ratings</label>
 			<div class="ratingBlock input" style="margin-bottom: 10px;">
 				<span class="item"><img src="imgs/stare.svg" /></span><span
 					class="item"><img src="imgs/stare.svg" /></span><span class="item"><img
 					src="imgs/stare.svg" /></span><span class="item"><img
 					src="imgs/stare.svg" /></span><span class="item"><img
-					src="imgs/stare.svg" /></span> <input type="text" value="0" name="txtRating">
+					src="imgs/stare.svg" /></span> <input type="text" value="0"
+					name="txtRating">
 			</div>
 			<label class="label">Title of Review</label> <input type="text"
-				class="textbox" name="txtTitle" /> <label class="label">Body of Review</label>
+				class="textbox" name="txtTitle" /> <label class="label">Body
+				of Review</label>
 			<textarea type="text" class="textbox" rows="4" name="txtDescription"></textarea>
-			<input type="hidden" name="txtProductId" value=<%=bean.getProductId() %>>
+			<input type="hidden" name="txtProductId"
+				value=<%=bean.getProductId() %>>
 			<div class="tcenter">
 				<button type="button" class="button responsive uppercase">Submit
 					Review</button>
@@ -234,23 +234,24 @@
 		<%
 					if(reviewList.size()==0){
 						%>
-						<tr>
-						<td>No Review</td>
-					</tr>
-						<%
+		<tr>
+			<td>No Review</td>
+		</tr>
+		<%
 					}
 					else{
 					for(int i=0;i<reviewList.size();i++){
 					%>
-					<div class="commentBlock">
+		<div class="commentBlock">
 			<div class="ratingBlock" value="<%=reviewList.get(i).getRating()%>"></div>
-			&nbsp;<span class="name"><%=reviewList.get(i).getCustomerName()%></span> <br>
+			&nbsp;<span class="name"><%=reviewList.get(i).getCustomerName()%></span>
+			<br>
 			<div class="title"><%=reviewList.get(i).getTitle()%></div>
 			<p class="description"><%=reviewList.get(i).getDescription()%></p>
 		</div>
-					<%
+		<%
 						}}
-					%>	
+					%>
 	</div>
 </section>
 <%@include file="UserFooter.jsp"%>
@@ -283,7 +284,7 @@
 <%
 	} else {
 %>
-	<h3>Error Page</h3>
+<h3>Error Page</h3>
 <%
 	}
 %>

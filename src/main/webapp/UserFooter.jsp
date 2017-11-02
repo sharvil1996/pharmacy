@@ -9,10 +9,10 @@
 			<div class="cm4">
 				<a href="#" class="link inblock bold line15">Health &
 					Homoeopathy</a><br> <a href="#" class="link black line15">FAQ
-					on Homoeopathy</a><br> <a href="know-your-medicine" class="link black line15">Know
-					Your Medicine</a><br> <a href="#" class="link black line15">Mind,
-					Body & Spirit</a><br> <a href="#" class="link black line15">Homoeopathic
-					Self-Help</a>
+					on Homoeopathy</a><br> <a href="know-your-medicine"
+					class="link black line15">Know Your Medicine</a><br> <a
+					href="#" class="link black line15">Mind, Body & Spirit</a><br>
+				<a href="#" class="link black line15">Homoeopathic Self-Help</a>
 			</div>
 			<div class="cm4">
 				<a href="company-info" class="link inblock bold line15">About Us</a><br>

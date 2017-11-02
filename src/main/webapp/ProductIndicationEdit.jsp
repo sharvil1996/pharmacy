@@ -33,15 +33,15 @@
 		<div class="col-lg-6">
 			<div class="container">
 				<form action="ProductIndicationUpdateServlet" method="post">
-				
+
 					<%
 						ProductIndicationBean productIndicationBean = (ProductIndicationBean) request
 								.getAttribute("productIndicationBean");
 
 						if (productIndicationBean != null) {
 					%>
-					<br />
-					<input type="hidden" name="productIndicationId" value="<%=productIndicationBean.getProductIndicationId()%>">
+					<br /> <input type="hidden" name="productIndicationId"
+						value="<%=productIndicationBean.getProductIndicationId()%>">
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Select
 								Product </font>

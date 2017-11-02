@@ -22,7 +22,7 @@
 </head>
 <body>
 	<%@ include file="AdminHeader.jsp"%>
-	
+
 	<%
 		List<ProductBean> productList = new ProductDAO().getList();
 		List<IngredientBean> ingredientJSONList = new IngredientDAO().select();
@@ -51,11 +51,13 @@
 		<div class="col-lg-6">
 			<div class="container">
 				<div class="subform">
-					<label>How many composition(s) you want insert?</label>
-					<input type="text" class="form-control howmanytextbox" style="width:300px;margin-bottom:5px;" value="1"/>
-					<input type="button" value="Next" class="btn btn-success nextbutton">
+					<label>How many composition(s) you want insert?</label> <input
+						type="text" class="form-control howmanytextbox"
+						style="width: 300px; margin-bottom: 5px;" value="1" /> <input
+						type="button" value="Next" class="btn btn-success nextbutton">
 				</div>
-				<form action="ProductCompositionInsertServlet" method="post" class="mainform" style="display:none;">
+				<form action="ProductCompositionInsertServlet" method="post"
+					class="mainform" style="display: none;">
 					<br />
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Select
@@ -89,17 +91,17 @@
 					</div>
 					<br />
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Enter Ingredient Details</font>
+						<label class="col-sm-2"> <font size="+1">Enter
+								Ingredient Details</font>
 						</label>
-						<div class="col-sm-4 ingredientContainer">
-						</div>
-						<div class="col-sm-4 compositionContainer">
-						</div>
+						<div class="col-sm-4 ingredientContainer"></div>
+						<div class="col-sm-4 compositionContainer"></div>
 					</div>
-					<input type="text" name="ingredientsArr" class="ingredientIdBox" style="display:none;"/>
-					<input type="text" name="contentArr" class="compositionContentBox" style="display:none;"/>
-					<br /> <br /> <label class="col-sm-2 control-label"></label> <input
-						type="reset" value="Reset" name="reset" class="btn  btn-danger">
+					<input type="text" name="ingredientsArr" class="ingredientIdBox"
+						style="display: none;"  /> <input type="text" name="contentArr"
+						class="compositionContentBox" style="display: none;"  placeholder="Enter Content"/> <br /> <br />
+					<label class="col-sm-2 control-label"></label> <input type="reset"
+						value="Reset" name="reset" class="btn  btn-danger">
 					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 					<input type="Submit" value="Add" name="submit"
 						class="btn btn-success">
@@ -200,8 +202,8 @@
 				var ingre=$(".ingre"+i).val();
 				var comp=$(".comp"+i).val();
 				if(ingre!="0"&&comp!=""){
-					ingreString+=ingre+" ";
-					compString+=comp+" ";
+					ingreString+=ingre+"=";
+					compString+=comp+"=";
 				}
 			}
 			ingreString=ingreString.substr(0,ingreString.length-1);

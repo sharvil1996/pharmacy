@@ -35,16 +35,16 @@
 						</label>
 
 						<div class="col-lg-6">
-							<input type="text" class="form-control" value="${txtTestimonialName}"
-								name="txtTestimonialName" />${name}
+							<input type="text" class="form-control"
+								value="${txtTestimonialName}" name="txtTestimonialName" />${name}
 						</div>
 					</div>
 					<br />
 
 
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Enter Image Link
-								:</font>
+						<label class="col-sm-2"> <font size="+1">Enter
+								Image Link :</font>
 						</label>
 
 						<div class="col-lg-6">
@@ -65,7 +65,8 @@
 						</label>
 
 						<div class="col-lg-6">
-							<textarea class="form-control"  rows="5" cols="50" name="txtDescription">${txtDescription}</textarea>${description}
+							<textarea class="form-control" rows="5" cols="50"
+								name="txtDescription">${txtDescription}</textarea>${description}
 						</div>
 					</div>
 					<br /> <br /> <label class="col-sm-2 control-label"></label> <input

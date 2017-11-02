@@ -35,8 +35,8 @@ td, tr, th {
 		</ol>
 		<br>
 		<br>
-		<a href="ProductIndicationInsert.jsp"><input type="button" value="ADD"
-			name="ADD" class="btn btn-primary"></a> <br>
+		<a href="ProductIndicationInsert.jsp"><input type="button"
+			value="ADD" name="ADD" class="btn btn-primary"></a> <br>
 		<br>
 		<div class="row">
 			<div class="col-xs-12">
@@ -66,13 +66,10 @@ td, tr, th {
 									<td><a
 										href="ProductIndicationDeleteServlet?productIndicationId=<%=bean.getProductIndicationId()%>"><img
 											src="photos/Recycle Bin.ico" height="30" width="30"
-											class="img-rounded" /></a> 
-											
-											&nbsp;&nbsp; <a
+											class="img-rounded" /></a> &nbsp;&nbsp; <a
 										href="ProductIndicationEditServlet?productIndicationId=<%=bean.getProductIndicationId()%>"><img
 											src="photos/edit.ico" height="30" width="30"
 											class="img-rounded" /></a>
-											
 								</tr>
 								<%
 									}

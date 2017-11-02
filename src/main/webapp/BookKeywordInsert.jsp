@@ -47,8 +47,7 @@
 					<br />
 
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Book
-								:</font>
+						<label class="col-sm-2"> <font size="+1">Book :</font>
 						</label>
 						<div class="col-lg-6">
 							<select name="bookId" class="form-control" id="bookId">

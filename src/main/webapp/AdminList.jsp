@@ -35,8 +35,7 @@ td, tr, th {
 		<br>
 		<br>
 		<!-- <a href="adminInsert.jsp"><input type="button" value="ADD"
-			name="ADD" class="btn btn-primary"></a> <br> -->
-		<br>
+			name="ADD" class="btn btn-primary"></a> <br> --> <br>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="box">

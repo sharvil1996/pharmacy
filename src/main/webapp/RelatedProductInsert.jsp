@@ -27,10 +27,10 @@
 		List<RelatedProductBean> relatedProductBeans = new ReletedProductDAO().getList();
 		String relatedProduct = gson.toJson(relatedProductBeans);
 	%>
-	
+
 	<div class="productRawData" style="display: none;"><%=product%></div>
 	<div class="relatedProductRawData" style="display: none;"><%=relatedProduct%></div>
-	
+
 	<%@ include file="AdminHeader.jsp"%>
 	<div style="margin-top: -850px; margin-left: 250px;">
 		<section class="content-header">
@@ -47,11 +47,13 @@
 		<div class="col-lg-6">
 			<div class="container">
 				<div class="subform">
-					<label>How many related products you want insert?</label>
-					<input type="text" class="form-control howmanytextbox" style="width:300px;margin-bottom:5px;" value="1"/>
-					<input type="button" value="Next" class="btn btn-success nextbutton">
+					<label>How many related products you want insert?</label> <input
+						type="text" class="form-control howmanytextbox"
+						style="width: 300px; margin-bottom: 5px;" value="1" /> <input
+						type="button" value="Next" class="btn btn-success nextbutton">
 				</div>
-				<form action="ReletedProductInsertServlet" method="post" class="mainform" style="display:none;">
+				<form action="ReletedProductInsertServlet" method="post"
+					class="mainform" style="display: none;">
 					<br />
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Select
@@ -76,7 +78,8 @@
 								<%
 									}
 								%>
-							</select><%-- <font color="red">${product}</font> --%>
+							</select>
+							<%-- <font color="red">${product}</font> --%>
 						</div>
 					</div>
 					<br />
@@ -84,12 +87,11 @@
 						<label class="col-sm-2"> <font size="+1">Select
 								Related Product(s) </font>
 						</label>
-						<div class="col-lg-6 rproductInputContainer">
-							
-						</div>
+						<div class="col-lg-6 rproductInputContainer"></div>
 					</div>
-					<input type="text" name="txtDummy" class="relatedProductTextBox" style="display:none;"/>
-					<br /> <br /> <br /> <label class="col-sm-2 control-label"></label>
+					<input type="text" name="txtDummy" class="relatedProductTextBox"
+						style="display: none;" /> <br /> <br /> <br /> <label
+						class="col-sm-2 control-label"></label>
 					<!-- <input type="reset" value="Reset" name="reset"
 						class="btn  btn-danger"> -->
 					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -179,7 +181,7 @@
 			for(var i=0;i<rprocount;i++){
 				var val=$(".rpro"+i).val();
 				if(val!="0"){
-					finalString+=val+" ";
+					finalString+=val+"=";
 				}
 			}
 			finalString=finalString.substr(0,finalString.length-1);

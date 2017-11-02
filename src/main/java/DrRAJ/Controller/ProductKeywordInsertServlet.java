@@ -19,7 +19,7 @@ public class ProductKeywordInsertServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String keyword = request.getParameter("txtKeyword");
 		String productId = request.getParameter("productId");
-
+		
 		ProductKeywordBean bean = new ProductKeywordBean();
 		boolean isError = false;
 
@@ -43,7 +43,6 @@ public class ProductKeywordInsertServlet extends HttpServlet {
 			request.getRequestDispatcher("ProductKeywordInsert.jsp").forward(request, response);
 		} else {
 
-			bean.setProductKeywordId(GenrateMathodsUtils.getRandomString(15));
 			if (new ProductKeywordDAO().insert(bean)) {
 				request.getRequestDispatcher("ProductKeywordListServlet").forward(request, response);
 			} else {

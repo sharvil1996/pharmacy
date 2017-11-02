@@ -81,7 +81,7 @@
 						</label>
 
 						<div class="col-lg-6">
-						<textarea class="form-control" rows="5" cols="50"
+							<textarea class="form-control" rows="5" cols="50"
 								name="txtContent">${txtContent}</textarea>${content}
 						</div>
 					</div>

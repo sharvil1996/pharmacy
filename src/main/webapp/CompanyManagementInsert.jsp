@@ -36,7 +36,8 @@
 
 						<div class="col-lg-6">
 							<input type="text" class="form-control"
-								value="${txtCompanyManagementName}" name="txtCompanyManagementName" />${name}
+								value="${txtCompanyManagementName}"
+								name="txtCompanyManagementName" />${name}
 						</div>
 					</div>
 					<br />

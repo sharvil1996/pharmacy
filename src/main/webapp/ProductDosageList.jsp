@@ -62,7 +62,7 @@ td, tr, th {
 
 								<tr align="center">
 									<td><%=productDosage.getProductName()%></td>
-									<td><textarea rows="2" cols="20" disabled="disabled"><%=productDosage.getContent()%></textarea></td>
+									<td><%=productDosage.getContent()%></td>
 									<td><a
 										href="ProductDosageEditServlet?productDosageId=<%=productDosage.getProductDosageId()%>"><img
 											src="photos/edit.ico" height="30" width="30"

@@ -93,7 +93,8 @@
 
 						<div class="col-lg-6">
 							<input class="form-control imagetester" type="text"
-								value="${txtBookPhotoLink}" name="txtBookPhotoLink" target=".imagetarget" />${photoLink}
+								value="${txtBookPhotoLink}" name="txtBookPhotoLink"
+								target=".imagetarget" />${photoLink}
 						</div>
 						<div class="col-md-3">
 							<img src="" alt="Image not found" class="imagetarget"

@@ -41,7 +41,8 @@
 		</div>
 		<div class="cs3 nomargin"></div>
 		<div class="cs1 cx6 nomargin" style="padding-right: 2px;">
-			<input type="button" class="button full active atozbutton" value="A to Z" />
+			<input type="button" class="button full active atozbutton"
+				value="A to Z" />
 		</div>
 		<div class="cs1 cx6 nomargin" style="padding-left: 2px;">
 			<input type="button" class="button full ztoabutton" value="Z to A" />
@@ -58,17 +59,11 @@
 		</div> -->
 	</div>
 	<div class="nothingFound tcenter opaq5 hidden">
-		<br>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br>
 		<h2>
 			Nothing found for "<span class="sterm"></span>"
 		</h2>
-		<br>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br>
 	</div>
 </div>
 </section>

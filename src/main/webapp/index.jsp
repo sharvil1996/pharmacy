@@ -9,16 +9,12 @@
 	style="background-image: url(imgs/homebanner.jpg);">
 	<div class="blackcover opaq2"></div>
 	<div class="container posrel" style="z-index: 2;">
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 		<div class="tcenter fgwhite jumbotext text-2"
 			style="margin-bottom: 40px;">
 			Nature to Safe<br>and Sure Cure
 		</div>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 	</div>
 	<div class="posab overhidden"
 		style="z-index: 3; width: 100%; bottom: -7px;">
@@ -52,14 +48,12 @@
 	<div class="tcenter" style="margin-top: 160px;">
 		<a href="#" class="button uppercase card-1">All Remedies</a>
 	</div>
-	<br>
-	<br>
+	<br> <br>
 </div>
 <section class="bgmain">
 	<div class="container noowldots">
 		<h2 class="fgwhite tcenter">Know Your Medicine</h2>
-		<br>
-		<br>
+		<br> <br>
 		<div class="owl-carousel owl-theme knowYourMedicines">
 			<div class="item tcenter">
 				<div class="bgwhite inblock knowYourMedicine">
@@ -118,8 +112,7 @@
 <section class="bgimage"
 	style="background-image: url(imgs/aboutusbanner.jpg); background-attachment: inherit;">
 	<div class="container">
-		<br>
-		<br>
+		<br> <br>
 		<div class="row">
 			<div class="cm6 nomargin tcenter">
 				<h1 class="fgwhite" style="margin-bottom: 10px;">We're Making
@@ -136,8 +129,7 @@
 <section>
 	<div class="container">
 		<h2 class="tcenter">Testimonials</h2>
-		<br>
-		<br>
+		<br> <br>
 		<div class="owl-carousel owl-theme testimonials">
 
 			<%

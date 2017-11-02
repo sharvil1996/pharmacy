@@ -32,23 +32,10 @@
 			<div class="container">
 				<form action="ProductKeywordInsertServlet" method="post">
 					<br />
-					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Enter Key
-								word :</font>
-						</label>
 
-						<div class="col-lg-6">
-							<input type="text" class="form-control" value="${txtKeyword}"
-								name="txtKeyword" />${keyWord}
-						</div>
-					</div>
-
-
-					<br />
 
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Product
-								:</font>
+						<label class="col-sm-2"> <font size="+1">Product :</font>
 						</label>
 						<div class="col-lg-6">
 							<select name="productId" class="form-control" id="productId">
@@ -74,6 +61,18 @@
 							</select> <font color="red">${product}</font>
 						</div>
 					</div>
+					<br />
+					<div class="row">
+						<label class="col-sm-2"> <font size="+1">Enter Key
+								word :</font>
+						</label>
+
+						<div class="col-lg-6">
+							<textarea name="txtKeyword" rows="5" cols="10" class="form-control" >${txtKeyword}</textarea>${keyWord}
+						</div>
+					</div>
+
+
 					<br /> <br /> <br /> <br /> <label
 						class="col-sm-2 control-label"></label> <input type="reset"
 						value="Reset" name="reset" class="btn  btn-danger">

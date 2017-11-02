@@ -30,14 +30,14 @@
 			<div class="whiteSeperator"></div>
 			<div class="bold">Health & Homoeopathy</div>
 			<div class="whiteSeperator"></div>
-			<a href="#">FAQ on Homoeopathy</a> <a href="know-your-medicine">Know Your Medicine</a>
-			<a href="#">Mind, Body & Spirit</a> <a href="#">Homoeopathic
+			<a href="#">FAQ on Homoeopathy</a> <a href="know-your-medicine">Know
+				Your Medicine</a> <a href="#">Mind, Body & Spirit</a> <a href="#">Homoeopathic
 				Self-Help</a>
 			<div class="whiteSeperator"></div>
 			<div class="bold">About Us</div>
 			<div class="whiteSeperator"></div>
-			<a href="company-info">Company Info</a> <a href="#">Meet With The Founder</a> <a
-				href="#">Our Core Values & Mission</a> <a href="#">Manufacturing
+			<a href="company-info">Company Info</a> <a href="#">Meet With The
+				Founder</a> <a href="#">Our Core Values & Mission</a> <a href="#">Manufacturing
 				Practices</a> <a href="#">Satisfied Customers</a> <a href="#">Contract
 				Manufacturing</a> <a href="#">Company Management</a> <a href="#">Press
 				Information</a> <a href="#">Contact Customer Service</a>
@@ -82,8 +82,8 @@
 				</div>
 				<div class="rightnavbar">
 					<div class="topnavbar">
-						<a class="smallLink" href="find-a-store-or-practitioner">Find a Store or Practitioner</a> <a
-							class="smallButton"
+						<a class="smallLink" href="find-a-store-or-practitioner">Find
+							a Store or Practitioner</a> <a class="smallButton"
 							href="https://www.homeomart.com/seo_key_word?&filter_name=dr.%20raj&filter=ATTRIBU=Dr+Raj+Homoeo+Pharmacy=2=Manufacturer"
 							target="_blank">Buy Online</a>
 						<div class="iconTextBox">
@@ -95,22 +95,24 @@
 						<div class="hover-dropdown">
 							Health & Homoeopathy
 							<div class="hover-dropdown-menu">
-								<a href="#">FAQ on Homoeopathy</a> <a href="know-your-medicine">Know Your
-									Medicine</a> <a href="#">Mind, Body & Spirit</a> <a href="#">Homoeopathic
+								<a href="#">FAQ on Homoeopathy</a> <a href="know-your-medicine">Know
+									Your Medicine</a> <a href="#">Mind, Body & Spirit</a> <a href="#">Homoeopathic
 									Self-Help</a>
 							</div>
 						</div>
 						<div class="hover-dropdown">
 							About Us
 							<div class="hover-dropdown-menu">
-								<a href="company-info">Company Info</a> <a href="#">Meet With The
-									Founder</a> <a href="#">Our Core Values & Mission</a> <a href="#">Manufacturing
-									Practices</a> <a href="#">Satisfied Customers</a> <a href="#">Contract
-									Manufacturing</a> <a href="#">Company Management</a> <a href="#">Press
-									Information</a> <a href="#">Contact Customer Service</a>
+								<a href="company-info">Company Info</a> <a href="#">Meet
+									With The Founder</a> <a href="#">Our Core Values & Mission</a> <a
+									href="#">Manufacturing Practices</a> <a href="#">Satisfied
+									Customers</a> <a href="#">Contract Manufacturing</a> <a href="#">Company
+									Management</a> <a href="#">Press Information</a> <a href="#">Contact
+									Customer Service</a>
 							</div>
 						</div>
-						<a class="link dropdown-button cursorPointer"	target=".remedies-container-dropdown">Remedies</a>
+						<a class="link dropdown-button cursorPointer"
+							target=".remedies-container-dropdown">Remedies</a>
 						<div class="hover-dropdown">
 							Products
 							<div class="hover-dropdown-menu">

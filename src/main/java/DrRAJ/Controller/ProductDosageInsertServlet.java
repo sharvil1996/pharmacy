@@ -46,7 +46,6 @@ public class ProductDosageInsertServlet extends HttpServlet {
 		if (isError) {
 			request.getRequestDispatcher("ProductDosageInsert.jsp").forward(request, response);
 		} else {
-			productDosageBean.setProductDosageId(GenrateMathodsUtils.getRandomString(15));
 			if (new ProductDosageDAO().insert(productDosageBean)) {
 				response.sendRedirect("ProductDosageListServlet");
 			} else {

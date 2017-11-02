@@ -22,15 +22,10 @@
 		style="background-image: url(imgs/homebanner.jpg);">
 	<div class="blackcover opaq2"></div>
 	<div class="container posrel" style="z-index: 2;">
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 		<div class="tcenter fgwhite jumbotext text-2"
-			style="margin-bottom: 40px;">
-			Find a Store or Practitioner
-		</div>
-		<br>
-		<br>
+			style="margin-bottom: 40px;">Find a Store or Practitioner</div>
+		<br> <br>
 	</div>
 	<div class="posab overhidden"
 		style="z-index: 3; width: 100%; bottom: -7px;">
@@ -39,45 +34,41 @@
 	</div>
 	</section>
 	<section>
-		<div class="container">
-			<div class="row">
-				<div class="cs7 nomargin overhidden"
-					style="padding-left: 4px; padding-right: 4px;">
-					<input type="text" class="textbox posrel searchbox" style="top: 5px;"
-						placeholder="Search Stores" />
-				</div>
-				<div class="cs3 nomargin"></div>
-				<div class="cs1 cx6 nomargin" style="padding-right: 2px;">
-					<input type="button" class="button full active atozbutton" value="A to Z" />
-				</div>
-				<div class="cs1 cx6 nomargin" style="padding-left: 2px;">
-					<input type="button" class="button full ztoabutton" value="Z to A" />
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="cs7 nomargin overhidden"
+				style="padding-left: 4px; padding-right: 4px;">
+				<input type="text" class="textbox posrel searchbox"
+					style="top: 5px;" placeholder="Search Stores" />
 			</div>
-			<br><br>
-			<div class="row storeContainer">
-				<!-- <div class="cs4">
+			<div class="cs3 nomargin"></div>
+			<div class="cs1 cx6 nomargin" style="padding-right: 2px;">
+				<input type="button" class="button full active atozbutton"
+					value="A to Z" />
+			</div>
+			<div class="cs1 cx6 nomargin" style="padding-left: 2px;">
+				<input type="button" class="button full ztoabutton" value="Z to A" />
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row storeContainer">
+			<!-- <div class="cs4">
 					<div class="store_template borderMain">
 					<div class="bold size12">Store Name, City</div>
 					<div>61 Wellfield Road, Roath, Cardiff, City Name, State Name</div>
 					<div>9876543210, 6547891230</div>
 					</div>
 				</div> -->
-			</div>
 		</div>
-		<div class="nothingFound tcenter opaq5 hidden">
-			<br>
-			<br>
-			<br>
-			<br>
-			<h2>
-				Nothing found for "<span class="sterm"></span>"
-			</h2>
-			<br>
-			<br>
-			<br>
-			<br>
-		</div>
+	</div>
+	<div class="nothingFound tcenter opaq5 hidden">
+		<br> <br> <br> <br>
+		<h2>
+			Nothing found for "<span class="sterm"></span>"
+		</h2>
+		<br> <br> <br> <br>
+	</div>
 	</section>
 	<%@include file="UserFooter.jsp"%>
 	<script type="text/javascript">

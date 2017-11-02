@@ -38,7 +38,8 @@
 
 						if (bean != null) {
 					%>
-					<br /> <input type="hidden" name="priceId" value="<%=bean.getPriceId()%>">
+					<br /> <input type="hidden" name="priceId"
+						value="<%=bean.getPriceId()%>">
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Select
 								Product </font>

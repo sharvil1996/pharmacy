@@ -382,7 +382,6 @@ public class ProductDAO {
 					product.setCnt(rs.getInt("cnt") + "");
 					product.setRemediesImageLink(rs.getString("photoLink"));
 				}
-				System.out.println("HI");
 				return product;
 
 			} catch (SQLException e) {

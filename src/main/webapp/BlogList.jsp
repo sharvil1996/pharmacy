@@ -63,7 +63,8 @@ td, tr, th {
 								<tr align="center">
 									<td><%=bean.getBlogTitle()%></td>
 									<td><%=bean.getDate()%></td>
-									<td><img src="<%=bean.getImageLink()%>" width="150" height="150"/></td>
+									<td><img src="<%=bean.getImageLink()%>" width="150"
+										height="150" /></td>
 									<td><%=bean.getUrlLink()%></td>
 									<td><textarea disabled="disabled"><%=bean.getContent()%></textarea></td>
 									<td><a href="BlogEditServlet?blogId=<%=bean.getBlogId()%>"><img

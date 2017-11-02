@@ -32,7 +32,8 @@ td, tr, th {
 		</ol>
 		<br>
 		<br>
-		<a href="IngredientInsert.jsp" name="ADD" class="btn btn-primary">ADD</a> <br>
+		<a href="IngredientInsert.jsp" name="ADD" class="btn btn-primary">ADD</a>
+		<br>
 		<br>
 		<div class="row">
 			<div class="col-xs-12">

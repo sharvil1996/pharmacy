@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import DrRAJ.Bean.ProductIndicationBean;
 import DrRAJ.Utils.DBConnection;
+import DrRAJ.Utils.GenrateMathodsUtils;
 
 public class ProductIndicationDAO {
 
@@ -17,36 +18,39 @@ public class ProductIndicationDAO {
 	boolean result = false;
 
 	public boolean insert(ProductIndicationBean bean) {
-		conn = DBConnection.getConnection();
 
-		if (conn != null) {
-			String insertSQL = "INSERT INTO productindication(productIndicationId,productId,indication) values(?,?,?)";
-			try {
+		String temp[] = bean.getIndication().split("=");
+		for (String a : temp) {
+			conn = DBConnection.getConnection();
 
-				pstmt = conn.prepareStatement(insertSQL);
-				pstmt.setString(1, bean.getProductIndicationId());
-				pstmt.setString(2, bean.getProductId());
-				pstmt.setString(3, bean.getIndication());
-
-				int rowsAffected = pstmt.executeUpdate();
-
-				if (rowsAffected > 0) {
-					result = true;
-				} else {
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-
+			if (conn != null) {
+				String insertSQL = "INSERT INTO productindication(productIndicationId,productId,indication) values(?,?,?)";
 				try {
-					conn.close();
+
+					pstmt = conn.prepareStatement(insertSQL);
+					pstmt.setString(1, GenrateMathodsUtils.getRandomString(15));
+					pstmt.setString(2, bean.getProductId());
+					pstmt.setString(3, a);
+
+					int rowsAffected = pstmt.executeUpdate();
+
+					if (rowsAffected > 0) {
+						result = true;
+					} else {
+					}
 				} catch (SQLException e) {
 					e.printStackTrace();
+				} finally {
+
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
 				}
+
 			}
-
 		}
-
 		return result;
 	}
 

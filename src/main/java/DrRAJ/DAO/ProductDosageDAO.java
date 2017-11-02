@@ -9,6 +9,7 @@ import java.util.List;
 
 import DrRAJ.Bean.ProductDosageBean;
 import DrRAJ.Utils.DBConnection;
+import DrRAJ.Utils.GenrateMathodsUtils;
 
 public class ProductDosageDAO {
 	private Connection connection = null;
@@ -17,40 +18,46 @@ public class ProductDosageDAO {
 	boolean result = false;
 
 	public boolean insert(ProductDosageBean productDosageBean) {
-		connection = DBConnection.getConnection();
-		if (connection != null) {
-			String insertSQL = "INSERT INTO productdosage(productDosageId, productId, content)  " + "values (?,?,?)";
-			try {
-				connection.setAutoCommit(false);
-				pstmt = connection.prepareStatement(insertSQL);
-				pstmt.setString(1, productDosageBean.getProductDosageId());
-				pstmt.setString(2, productDosageBean.getProductId());
-				pstmt.setString(3, productDosageBean.getContent());
-				int rowsAffected = pstmt.executeUpdate();
-				if (rowsAffected > 0) {
-					result = true;
-				}
-			} catch (SQLException e) {
-				try {
-					connection.rollback();
-					result = false;
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-				e.printStackTrace();
-			} finally {
-				try {
-					connection.commit();
-					connection.setAutoCommit(true);
-					connection.close();
 
+		String temp[] = productDosageBean.getContent().split("=");
+		for (int i = 0; i < temp.length; i++) {
+			connection = DBConnection.getConnection();
+			if (connection != null) {
+				String insertSQL = "INSERT INTO productdosage(productDosageId, productId, content)  "
+						+ "values (?,?,?)";
+				try {
+					connection.setAutoCommit(false);
+					pstmt = connection.prepareStatement(insertSQL);
+					pstmt.setString(1, GenrateMathodsUtils.getRandomString(15));
+					pstmt.setString(2, productDosageBean.getProductId());
+					pstmt.setString(3, temp[i]);
+					int rowsAffected = pstmt.executeUpdate();
+					if (rowsAffected > 0) {
+						result = true;
+					}
 				} catch (SQLException e) {
+					try {
+						connection.rollback();
+						result = false;
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
 					e.printStackTrace();
-				}
-			}
+				} finally {
+					try {
+						connection.commit();
+						connection.setAutoCommit(true);
+						connection.close();
 
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+
+			}
 		}
 		return result;
+
 	}
 
 	public List<ProductDosageBean> getList() {

@@ -63,8 +63,7 @@ td, tr, th {
 								<tr align="center">
 									<td><%=product.getProductName()%></td>
 									<td><%=product.getRemediesName()%></td>
-									<td><a
-										href="<%=product.getProductURL()%>"><i
+									<td><a href="<%=product.getProductURL()%>"><i
 											class="fa fa-th-list fa-lg" aria-hidden="true"></i></a>&nbsp;&nbsp;
 										<a
 										href="ProductEditServlet?productId=<%=product.getProductId()%>"><img

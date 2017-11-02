@@ -41,8 +41,8 @@
 					if (storeDetailsBean != null) {
 				%>
 				<form action="StoreDetailsUpdateServlet" method="post">
-				<input type="hidden" name="storeId" value="<%=storeDetailsBean.getStoreId() %>">
-					<br />
+					<input type="hidden" name="storeId"
+						value="<%=storeDetailsBean.getStoreId() %>"> <br />
 
 					<div class="row">
 						<label class="col-sm-2"> <font size="+1">Enter

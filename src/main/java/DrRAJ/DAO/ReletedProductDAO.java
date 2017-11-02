@@ -21,14 +21,14 @@ public class ReletedProductDAO {
 	boolean result = false;
 
 	public boolean insert(RelatedProductBean bean, String relatedProducts) {
-	
+
 		connection = DBConnection.getConnection();
 		if (connection != null) {
 
-			String arr[] = relatedProducts.split(" ");
-			
+			String arr[] = relatedProducts.split("=");
+
 			for (int i = 0; i < arr.length; i++) {
-				System.out.println(arr[i] + "Hiiii");
+				connection = DBConnection.getConnection();
 				String insertSQL = "INSERT INTO relatedproduct(relatedProductId,relatedId,productId)"
 						+ " values(?,?,?)";
 				try {
@@ -36,16 +36,20 @@ public class ReletedProductDAO {
 					pstmt.setString(1, GenrateMathodsUtils.getRandomString(15));
 					pstmt.setString(2, arr[i]);
 					pstmt.setString(3, bean.getProductId());
-					
-					System.out.println("Inserted");
+
 					int rowsAffected = pstmt.executeUpdate();
 					if (rowsAffected > 0) {
 						result = true;
 					}
 				} catch (SQLException e) {
-						e.printStackTrace();
+					e.printStackTrace();
 				} finally {
-					
+					try {
+						connection.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 
 			}

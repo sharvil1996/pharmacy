@@ -64,7 +64,8 @@ td, tr, th {
 
 								<tr align="center">
 									<td><%=remediesBean.getName()%></td>
-									<td><img src="<%=remediesBean.getPhotolink()%>" height="50" width="50" /></td>
+									<td><img src="<%=remediesBean.getPhotolink()%>"
+										height="50" width="50" /></td>
 									<td><%=remediesBean.getForwardLink()%></td>
 									<td><a
 										href="RemediesDeleteServlet?remediesId=<%=remediesBean.getRemediesId()%>"><img

@@ -73,24 +73,28 @@ td, tr, th {
 									<td>
 										<%
 										if(review.getIsValid().equals("1")){
-										%>	
-											<input type="button" target="<%=review.getReviewId() %>" targetValue="0" class="btn btn-success reviewStateChangeButton" value="Yes"/>
+										%> <input type="button" target="<%=review.getReviewId() %>"
+										targetValue="0"
+										class="btn btn-success reviewStateChangeButton" value="Yes" />
 										<%
 										}
 										else{
-										%>	
-											<input type="button" target="<%=review.getReviewId() %>" targetValue="1" class="btn btn-danger reviewStateChangeButton" value="No"/>
-										<%
+										%> <input type="button" target="<%=review.getReviewId() %>"
+										targetValue="1" class="btn btn-danger reviewStateChangeButton"
+										value="No" /> <%
 										}
 										%>
 									</td>
-									<td><%-- <a
+									<td>
+										<%-- <a
 										href="ReviewEditServlet?reviewId=<%=review.getReviewId()%>"><img
 											src="photos/edit.ico" height="30" width="30"
-											class="img-rounded" /></a>&nbsp;&nbsp; --%><a
+											class="img-rounded" /></a>&nbsp;&nbsp; --%>
+										<a
 										href="ReviewDeleteServlet?reviewId=<%=review.getReviewId()%>"><img
 											src="photos/Recycle Bin.ico" height="30" width="30"
-											class="img-rounded" /></a></td>
+											class="img-rounded" /></a>
+									</td>
 								</tr>
 								<%
 									}

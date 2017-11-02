@@ -24,8 +24,8 @@ public class ProductCompositionInsertServlet extends HttpServlet {
 		String content = request.getParameter("txtContent");
 		String ingredientsId = request.getParameter("selIngredientsName");
 		
-		String contents[] = request.getParameter("contentArr").split(" ");
-		String ingredientsArr[] = request.getParameter("ingredientsArr").split(" ");
+		String contents[] = request.getParameter("contentArr").split("=");
+		String ingredientsArr[] = request.getParameter("ingredientsArr").split("=");
 		
 		ProductCompositionBean productCompositionBean = new ProductCompositionBean();
 

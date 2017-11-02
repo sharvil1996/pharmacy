@@ -10,6 +10,7 @@ import java.util.List;
 import DrRAJ.Bean.ProductKeywordBean;
 import DrRAJ.Bean.DosageCategoryBean;
 import DrRAJ.Utils.DBConnection;
+import DrRAJ.Utils.GenrateMathodsUtils;
 
 public class ProductKeywordDAO {
 
@@ -19,38 +20,42 @@ public class ProductKeywordDAO {
 	boolean result = false;
 
 	public boolean insert(ProductKeywordBean bean) {
-		connection = DBConnection.getConnection();
-		if (connection != null) {
-			String insertSQL = "INSERT INTO productkeyword(keyword,productId,productkeywordId)" + " values(?,?,?)";
-			try {
-				connection.setAutoCommit(false);
-				pstmt = connection.prepareStatement(insertSQL);
-				pstmt.setString(1, bean.getKeyword());
-				pstmt.setString(2, bean.getProductId());
-				pstmt.setString(3, bean.getProductKeywordId());
-				int rowsAffected = pstmt.executeUpdate();
-				if (rowsAffected > 0) {
-					result = true;
-				}
-			} catch (SQLException e) {
-				try {
-					connection.rollback();
-					result = false;
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-				e.printStackTrace();
-			} finally {
-				try {
-					connection.commit();
-					connection.setAutoCommit(true);
-					connection.close();
 
+		String temp[] = bean.getKeyword().split("=");
+		for (int i = 0; i < temp.length; i++) {
+			connection = DBConnection.getConnection();
+			if (connection != null) {
+				String insertSQL = "INSERT INTO productkeyword(keyword,productId,productkeywordId)" + " values(?,?,?)";
+				try {
+					connection.setAutoCommit(false);
+					pstmt = connection.prepareStatement(insertSQL);
+					pstmt.setString(1, temp[i]);
+					pstmt.setString(2, bean.getProductId());
+					pstmt.setString(3, GenrateMathodsUtils.getRandomString(15));
+					int rowsAffected = pstmt.executeUpdate();
+					if (rowsAffected > 0) {
+						result = true;
+					}
 				} catch (SQLException e) {
+					try {
+						connection.rollback();
+						result = false;
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
 					e.printStackTrace();
-				}
-			}
+				} finally {
+					try {
+						connection.commit();
+						connection.setAutoCommit(true);
+						connection.close();
 
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+
+			}
 		}
 		return result;
 	}

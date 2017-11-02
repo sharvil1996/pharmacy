@@ -66,8 +66,8 @@
 						</label>
 
 						<div class="col-lg-6">
-							<input type="text" class="form-control" value="${txtProductIndication}"
-								name="txtProductIndication" />${indication}
+						
+							<textarea rows="5" cols="50" name="txtProductIndication">${txtProductIndication}</textarea>${indication}
 						</div>
 					</div>
 

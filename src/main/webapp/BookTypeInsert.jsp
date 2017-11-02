@@ -30,8 +30,8 @@
 				<form action="BookTypeInsertServlet" method="post">
 					<br />
 					<div class="row">
-						<label class="col-sm-2"> <font size="+1">Enter
-								Book Type :</font>
+						<label class="col-sm-2"> <font size="+1">Enter Book
+								Type :</font>
 						</label>
 
 						<div class="col-lg-6">
