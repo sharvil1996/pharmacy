@@ -25,26 +25,26 @@ public class DoMyFilter implements Filter {
 		int a = ((HttpServletRequest) request).getRequestURI().toString().split("/").length;
 		String s[] = ((HttpServletRequest) request).getRequestURI().toString().split("/");
 
-		if (a == 2) {
+		if (a == 1) {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} else {
 			// System.out.println(((HttpServletRequest)
 			// request).getRequestURI().toString());
-			if (s[2].equalsIgnoreCase("login") || s[2].equalsIgnoreCase("company-info")
-					|| s[2].equalsIgnoreCase("manufacturing-practices")
-					|| s[2].equalsIgnoreCase("contract-manufacturing") || s[2].equalsIgnoreCase("dr-raj-products")
-					|| s[2].equalsIgnoreCase("find-a-store-or-practitioner")
-					|| s[2].equalsIgnoreCase("faq")
-					|| s[2].equalsIgnoreCase("know-your-medicine")
-					|| s[2].equalsIgnoreCase("remedies")
+			if (s[1].equalsIgnoreCase("login") || s[1].equalsIgnoreCase("company-info")
+					|| s[1].equalsIgnoreCase("manufacturing-practices")
+					|| s[1].equalsIgnoreCase("contract-manufacturing") || s[1].equalsIgnoreCase("dr-raj-products")
+					|| s[1].equalsIgnoreCase("find-a-store-or-practitioner")
+					|| s[1].equalsIgnoreCase("faq")
+					|| s[1].equalsIgnoreCase("know-your-medicine")
+					|| s[1].equalsIgnoreCase("remedies")
 			) {
 				chain.doFilter(request, response);
 			} else {
-				// System.out.println("Hello" + s[2]);
-				if (a == 3 && !(s[2].contains(".jsp") || s[2].contains("Servlet") || s[2].contains(".html")
-						|| s[2].contains(".htm") || s[2].contains("servlet"))) {
+				// System.out.println("Hello" + s[1]);
+				if (a == 2 && !(s[1].contains(".jsp") || s[1].contains("Servlet") || s[1].contains(".html")
+						|| s[1].contains(".htm") || s[1].contains("servlet"))) {
 
-					RemediesBean remediesbean = new RemediesDAO().getByURL(s[2]);
+					RemediesBean remediesbean = new RemediesDAO().getByURL(s[1]);
 					if (remediesbean != null) {
 						if (remediesbean != null) {
 							request.setAttribute("remediesbean", remediesbean);
@@ -52,14 +52,14 @@ public class DoMyFilter implements Filter {
 							request.getRequestDispatcher(str).forward(request, response);
 						}
 					} else {
-						ArrayList<ProductBean> categoryBean = new ProductCategoryDAO().getByURL(s[2]);
+						ArrayList<ProductBean> categoryBean = new ProductCategoryDAO().getByURL(s[1]);
 						if (categoryBean != null && categoryBean.size() != 0) {
 							System.out.println(categoryBean.size());
 							request.setAttribute("categoryBean", categoryBean);
 							String str = "/ProductCategory.jsp";
 							request.getRequestDispatcher(str).forward(request, response);
 						} else {
-							ProductBean bean = new ProductDAO().getByURL(s[2]);
+							ProductBean bean = new ProductDAO().getByURL(s[1]);
 							if (bean != null) {
 								request.setAttribute("bean", bean);
 								String str = "/Product.jsp";
