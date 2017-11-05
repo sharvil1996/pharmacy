@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Remedies | Dr. Raj Homoeo Pharmacy</title>
+<title>Remedies | Dr. Raj Homeo Pharmacy</title>
 <%@include file="UserHeader.jsp"%>
 <%
 	Gson gson = new Gson();

@@ -62,7 +62,7 @@ td, tr, th {
 									<td><%=bean.getTitle()%></td>
 									<td><%=bean.getSubTitle()%></td>
 									<td><%=bean.getDescription()%></td>
-									<td><%=bean.getPhotoLink()%></td>
+									<td><img src="<%=bean.getPhotoLink()%>" width="70" height="50"/></td>
 									<td><a
 										href="IngredientEditServlet?ingredientId=<%=bean.getIngredientsId()%>"><img
 											src="photos/edit.ico" height="30" width="30"

@@ -1,27 +1,29 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-<title>Login | Dr Raj System</title>
+<title>Login | Feedback System</title>
 <noscript>
 	<div style="color: #FF0000">place enable java script</div>
 </noscript>
 <link rel="shortcut icon" href="photos/daiict.png" />
 <script type="text/javascript" src="javaScript/showhidepwd.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#showHide").click(function() {
-			if ($("#pwd").attr("type") == "password") {
+	<script type="text/javascript">
+		
+		$(document).ready(function () {
+		$("#showHide").click(function () {
+			if ($("#pwd").attr("type")=="password") {
 				$("#pwd").attr("type", "text");
-			} else {
+			}
+			else{
 				$("#pwd").attr("type", "password");
 			}
-
+		
+			});
 		});
-	});
-</script>
+	</script>
 </head>
 <body>
 	<%@ include file="loginHeader.jsp"%>
@@ -49,9 +51,9 @@
 						</div>
 					</div>
 					<div class="input-group m-b-20 fg-line	">
-						<input type="checkbox" id="showHide" /> <label for="showHide"
-							id="showHideLabel" class="header">Show Password</label>
-
+						<input type="checkbox" id="showHide" />
+						<label for="showHide" id="showHideLabel" class="header">Show Password</label>
+                    
 					</div>
 					<input type="submit" value="Sign In"
 						class="btn waves-effect waves-light blue accent-4 hoverable white-text">

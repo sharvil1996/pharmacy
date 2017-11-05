@@ -13,7 +13,7 @@
 	ProductBean bean = (ProductBean) request.getAttribute("bean");
 	if (bean != null) {
 %>
-<title><%=bean.getProductName()%> | Dr. Raj Homoeo Pharmacy</title>
+<title><%=bean.getProductName()%> | Dr. Raj Homeo Pharmacy</title>
 <%@include file="UserHeader.jsp"%>
 <section class="bgimage"
 	style="background-image: url(<%=bean.getRemediesImageLink()%>);">

@@ -75,9 +75,8 @@
 						</label>
 
 						<div class="col-lg-6">
-							<input type="text" class="form-control"
-								value="<%=productIndicationBean.getIndication()%>"
-								name="txtProductIndication" />${indication}
+							<textarea class="form-control" rows="5" cols="50"
+								name="txtProductIndication"><%=productIndicationBean.getIndication()%></textarea>${indication}
 						</div>
 					</div>
 
